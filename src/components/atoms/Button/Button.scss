@@ -1,0 +1,26 @@
+:root {
+  --white: #ffffff;
+}
+
+.btn {
+  min-width: 88px;
+  height: 40px;
+  outline: none;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border-radius: 2.5px;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+}
+
+.pill {
+  border-radius: 20px;
+}
+
+.icon {
+  margin-left: 10px;
+}
