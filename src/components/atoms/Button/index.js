@@ -1,2 +1,1 @@
-import Button from './Button';
-export default Button;
+module.exports = require('./Button')
