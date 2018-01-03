@@ -4,15 +4,18 @@ You can view [all Components](https://silverhill.github.io/coupon-components)
 
 ## Install and Use
   * `yarn add -S coupon-components`
+  * Import styles in the root App
+    `import 'coupon-components/build/css/styles.css'`
   * ``` import { Button } from 'coupon-components' ```
 
-## Dev and Publish environment
-* run `yarn`
-* `yarn storybook` run dev environment
-* `yarn build` to compile
-* `yarn build-storybook` to compile statics files
-* `mv storybook-static docs`
-* `git add .`
-* `git commit -m 'FEAT: Feature Name'`
-* `git push origin master`
+## Dev Environment
+* install with `yarn`
+* run dev environment `yarn storybook`
+
+## Build and Publish package
+* `yarn build` to transpile and compile for publish package
+* change the version of new package
 * `npm publish`
+
+## Build Documentation
+* `yarn build-docs` for compile and publish stoybook in github project
