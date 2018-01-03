@@ -1,1 +1,2 @@
 export {default as Button} from './components/atoms/Button/Button';
+export {default as Icon} from './components/atoms/Icon/Icon';

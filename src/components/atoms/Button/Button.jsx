@@ -22,15 +22,16 @@ class Button extends Component {
   }
 
   render () {
-    const { text, onClick, className, rightIcon, type, shape } = this.props
+    const { text, onClick, className, rightIcon, leftIcon, type } = this.props
     const colorBtn = colors[this.props.type] || colors.primary
 
     return (
       <div className={className}>
-        <button type={type} className={cx(styles.btn, colorBtn, shape)}
+        <button type={type} className={cx(styles.btn, colorBtn)}
           onClick={onClick}>
+          {leftIcon && <Icon className={styles.leftIcon} name={leftIcon} size={16} />}
           {text}
-          {rightIcon && <Icon className={styles.icon} name={rightIcon} size={16} />}
+          {rightIcon && <Icon className={styles.rightIcon} name={rightIcon} size={16} />}
         </button>
       </div>
     )
@@ -45,8 +46,8 @@ Button.propTypes = {
     PropTypes.string
   ]),
   className: PropTypes.string,
+  leftIcon: PropTypes.string,
   rightIcon: PropTypes.string,
-  shape: PropTypes.string
 }
 
 export default Button

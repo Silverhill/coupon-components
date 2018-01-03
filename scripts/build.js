@@ -87,7 +87,7 @@ measureFileSizesBeforeBuild(paths.appBuild)
       const buildFolder = path.relative(process.cwd(), paths.appBuild);
       printHostingInstructions(
         appPackage,
-        publicUrl,
+        // publicUrl,
         publicPath,
         buildFolder,
         useYarn

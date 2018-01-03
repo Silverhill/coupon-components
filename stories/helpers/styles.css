@@ -1,0 +1,29 @@
+.section {
+  padding: 20px;
+}
+
+.dark {
+  background-color: #292D3F;
+}
+
+.labelContainer {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.label {
+  text-transform: uppercase;
+  color: #C8C8CC;
+  margin-bottom: 5px;
+  font-size: x-small;
+}
+
+.color {
+  height: 60px;
+  width: 250px;
+  border: 1px solid #EFEFF4;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
