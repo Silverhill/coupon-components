@@ -1,0 +1,56 @@
+@import "../../../styles/palette";
+
+.title, .subtitle, .header {
+  margin: 0;
+}
+
+.p {
+  color: $darkColor;
+}
+
+.label {
+  opacity: 0.5;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.highlight {
+  color: $primaryColor;
+}
+
+.secondary {
+  color: $neutralColorDark;
+}
+
+.disabled {
+  color: $neutralColorMedium;
+  cursor: not-allowed;
+}
+
+.inverted {
+  color: $whiteColor;
+}
+
+.smallText {
+  font-size: 13px;
+}
+
+.lead {
+  font-size: 18px;
+}
+
+.bolder {
+  font-weight: bold;
+}
+
+.lighter {
+  font-weight: 400;
+}
+
+.error {
+  color: $pinkRed;
+}
+
+.fontFamily{
+  font-family: sans-serif;
+}
