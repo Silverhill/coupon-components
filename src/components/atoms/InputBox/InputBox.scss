@@ -1,0 +1,80 @@
+@import "../../../styles/palette";
+
+$paddingLeftWithIcon: 30px;
+$paddingLeft: 1rem;
+$borderInput: 2px;
+
+.input {
+  position: relative;
+}
+
+.input.leftIcon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  & .inputBox {
+    padding-left: $paddingLeftWithIcon;
+
+    &:focus{
+      padding-left: calc($paddingLeftWithIcon - 1px);
+    }
+  }
+}
+
+.input.rightIcon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  & .inputBox {
+    padding-right: $paddingLeftWithIcon;
+
+    &:focus{
+      padding-right: calc($paddingLeftWithIcon - 1px);
+    }
+  }
+}
+
+.likePlaceholder {
+  color: $neutralColorDark;
+}
+
+.lIcon{
+  position: absolute;
+  left: 10px;
+}
+.rIcon{
+  position: absolute;
+  right: 10px;
+}
+
+.inputBox {
+  width: 100%;
+  border-radius: 5px;
+  border: solid 0.5px $neutralColorMedium;
+  height: 45px;
+  color: $darkColor;
+  background-color: $neutralColorLight;
+  padding-left: $paddingLeft;
+  box-sizing: border-box;
+  transition: 0.2s ease;
+
+  &::placeholder {
+    color: $neutralColorDark;
+  }
+
+  &:focus {
+    border-color: $secondaryColorAlpha;
+    border-width: $borderInput;
+    padding-left: calc($paddingLeft - 1px);
+  }
+}
+
+.inputBox:focus {
+  outline: none;
+}
+
+.pill {
+  border-radius: 20px;
+}
