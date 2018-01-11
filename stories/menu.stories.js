@@ -17,7 +17,7 @@ const options = [
   }
 ]
 
-const story = storiesOf('Atoms/Menu', module)
+const story = storiesOf('Molecules/Menu', module)
 
 story.add('Basic menu',
   withInfo(`
