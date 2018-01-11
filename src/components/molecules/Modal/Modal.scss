@@ -1,0 +1,70 @@
+$cardShadow: 0px 1px 2px rgba(0,0,0,0.5);
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  background-color: white;
+  width: 28rem;
+  height: 30rem;
+  padding: 1rem;
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  box-shadow: $cardShadow;
+}
+
+.content {
+  display: block;
+  height: 100%;
+}
+
+.modalClose {
+  height: 45px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+// Animations
+
+.enter {
+  opacity: 0.1;
+
+  &.enterActive {
+    opacity: 1;
+    transition: 300ms;
+  }
+}
+
+.leave {
+  opacity: 1;
+
+  &.leaveActive {
+    opacity: 0.01;
+    transition: 300ms;
+  }
+}
+
+.appear {
+  opacity: 0.1;
+
+  &.appearActive {
+    opacity: 1;
+    transition: 300ms;
+  }
+}

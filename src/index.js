@@ -4,3 +4,4 @@ export {default as Typography} from './components/atoms/Typography';
 export {default as InputBox} from './components/atoms/InputBox/InputBox';
 export {default as Preloader} from './components/atoms/Loaders';
 export {default as Menu} from './components/molecules/Menu';
+export {default as Modal} from './components/molecules/Modal';
