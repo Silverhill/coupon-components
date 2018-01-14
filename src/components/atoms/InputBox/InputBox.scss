@@ -1,6 +1,6 @@
 @import "../../../styles/palette";
 
-$paddingLeftWithIcon: 30px;
+$paddingLeftWithIcon: 40px;
 $paddingLeft: 1rem;
 $borderInput: 2px;
 
@@ -42,11 +42,11 @@ $borderInput: 2px;
 
 .lIcon{
   position: absolute;
-  left: 10px;
+  left: 20px;
 }
 .rIcon{
   position: absolute;
-  right: 10px;
+  right: 20px;
 }
 
 .inputBox {
@@ -59,13 +59,14 @@ $borderInput: 2px;
   padding-left: $paddingLeft;
   box-sizing: border-box;
   transition: 0.2s ease;
+  font-size: 12px;
 
   &::placeholder {
     color: $neutralColorDark;
   }
 
   &:focus {
-    border-color: $secondaryColorAlpha;
+    border-color: $neutralColorDark;
     border-width: $borderInput;
     padding-left: calc($paddingLeft - 1px);
   }
