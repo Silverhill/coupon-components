@@ -6,14 +6,15 @@ import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
 
 class Section extends Component {
+  static displayName = 'Section';
   render () {
     const ComponentMargin = React.Children.toArray(this.props.children)
       .map((child, i) => {
         if (React.isValidElement(child)) {
-          const ChildrenComponent = child.type
+          const ChildrenComponent = child.type;
           return (
-            <div style={{marginBottom: 10}}>
-              <ChildrenComponent key={`section-${i}`} {...child.props} />
+            <div style={{marginBottom: 10}} key={`section-${i}`}>
+              <ChildrenComponent {...child.props} />
             </div>
           )
         }
