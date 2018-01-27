@@ -26,6 +26,7 @@ story.add('Basic Inputs',
           <InputBox placeholder='Press other key!' onKeyPress={action('On Key pressed')} />
           <InputBox type='password' placeholder='Type your pass' />
           <InputBox id='basic-input' type='text' placeholder='On Change' onChange={action('On Change')} />
+          <InputBox type='text' placeholder='Input with label' labelText='I am a label' />
 
           <div style={{width: 200, marginTop: 20}}>
             <InputBox placeholder='Input with width 200px' />
@@ -50,7 +51,8 @@ story.add('Basic pill input Box',
         <Section>
           <InputBox leftIcon='FaUser'
                     placeholder='Usuario'
-                    shape='pill'/>
+                    shape='pill'
+                    labelText='I am a label'/>
         </Section>
       </div>
     )
