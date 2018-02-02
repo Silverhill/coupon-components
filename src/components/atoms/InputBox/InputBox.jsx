@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 import Icon from '../Icon/Icon'
-import Label from '../Typography/Label'
 
 import styles from './InputBox.scss'
 const cx = classNames.bind(styles)
@@ -39,7 +38,6 @@ class InputBox extends Component {
       onChange, // eslint-disable-line no-unused-vars
       resetOnEnter, // eslint-disable-line no-unused-vars
       value,
-      labelText,
       rightIcon,
       leftIcon,
       leftIconConfig,
@@ -69,41 +67,33 @@ class InputBox extends Component {
     )
 
     return (
-      <div>
-        {labelText &&
-          <Label>
-            {labelText}
-          </Label>
+      <div className={iconClassNames}>
+        {leftIcon &&
+          <Icon
+            className={customClassLeftIcon}
+            name={leftIcon}
+            color={leftIconC.color}
+            style={leftIconC.style}
+          />
         }
 
-        <div className={iconClassNames}>
-          {leftIcon &&
-            <Icon
-              className={customClassLeftIcon}
-              name={leftIcon}
-              color={leftIconC.color}
-              style={leftIconC.style}
-            />
-          }
+        <input type={type}
+          className={cx(styles.inputBox, shape)}
+          style={style}
+          placeholder={placeholder}
+          value={value || this.state.value}
+          onChange={this.handleChange}
+          onKeyPress={this.handleSubmit}
+          {...other} />
 
-          <input type={type}
-            className={cx(styles.inputBox, shape)}
-            style={style}
-            placeholder={placeholder}
-            value={value || this.state.value}
-            onChange={this.handleChange}
-            onKeyPress={this.handleSubmit}
-            {...other} />
-
-          {rightIcon &&
-            <Icon
-              name={rightIcon}
-              className={customClassRightIcon}
-              color={rigthIconC.color}
-              style={rigthIconC.style}
-            />
-          }
-        </div>
+        {rightIcon &&
+          <Icon
+            name={rightIcon}
+            className={customClassRightIcon}
+            color={rigthIconC.color}
+            style={rigthIconC.style}
+          />
+        }
       </div>
     )
   }
@@ -122,7 +112,6 @@ InputBox.propTypes = {
   value: PropTypes.string,
   leftIcon: PropTypes.string,
   rightIcon: PropTypes.string,
-  labelText: PropTypes.string,
   leftIconConfig: PropTypes.shape({
     likePLaceholder: PropTypes.bool,
     customClass: PropTypes.string,
