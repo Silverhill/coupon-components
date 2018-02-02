@@ -52,9 +52,10 @@ $borderInput: 2px;
 .inputBox {
   width: 100%;
   border-radius: 5px;
-  border: solid 1px $neutralColorMedium;
+  border: solid 0.5px $neutralColorMedium;
   height: 45px;
   color: $darkColor;
+  background-color: $neutralColorLight;
   padding-left: $paddingLeft;
   box-sizing: border-box;
   transition: 0.2s ease;
@@ -65,7 +66,7 @@ $borderInput: 2px;
   }
 
   &:focus {
-    border-color: $brightBlue;
+    border-color: $neutralColorDark;
     border-width: $borderInput;
     padding-left: calc($paddingLeft - 1px);
   }
