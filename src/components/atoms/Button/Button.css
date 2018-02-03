@@ -1,7 +1,8 @@
 @value (
   whiteColor,
   sunshineLightYellow,
-  strong-pink
+  strong-pink,
+  neutralColorMedium
 ) from 'Styles/palette.css';
 
 :root {
@@ -9,6 +10,7 @@
 }
 
 .btn {
+  width: 100%;
   min-width: 88px;
   height: 40px;
   outline: none;
@@ -37,4 +39,9 @@
 
 .gradient {
   background-image: linear-gradient(60deg, sunshineLightYellow, 20%, strong-pink);
+}
+
+.disabled {
+  background-color: neutralColorMedium;
+  pointer-events: none;
 }

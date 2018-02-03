@@ -69,3 +69,15 @@ story.add('Gradient button',
     () => <Button onClick={action('clicked')} text="Ingresar" shape="pill" gradient />
   )
 );
+
+story.add('Custom Width',
+  withInfo()(
+    () => <Button onClick={action('clicked')} text="Ingresar" shape="pill" customWidth="25%" />
+  )
+);
+
+story.add('Disabled Button',
+  withInfo()(
+    () => <Button onClick={action('clicked')} text="Ingresar" shape="pill" disabled="true" customWidth="25%" />
+  )
+);
