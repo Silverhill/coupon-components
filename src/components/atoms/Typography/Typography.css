@@ -1,12 +1,19 @@
-@import "../../../styles/palette";
-@import "../../../styles/fonts";
+@value colors: 'Styles/palette.css';
+@value (
+  darkColor,
+  primaryColor,
+  neutralColorDark,
+  neutralColorMedium,
+  whiteColor,
+  pinkRed,
+) from colors;
 
 .title, .subtitle, .header {
   margin: 0;
 }
 
 .p {
-  color: $darkColor;
+  color: darkColor;
 }
 
 .label {
@@ -16,20 +23,20 @@
 }
 
 .highlight {
-  color: $primaryColor;
+  color: primaryColor;
 }
 
 .secondary {
-  color: $neutralColorDark;
+  color: neutralColorDark;
 }
 
 .disabled {
-  color: $neutralColorMedium;
+  color: neutralColorMedium;
   cursor: not-allowed;
 }
 
 .inverted {
-  color: $whiteColor;
+  color: whiteColor;
 }
 
 .smallText {
@@ -49,9 +56,9 @@
 }
 
 .error {
-  color: $pinkRed;
+  color: pinkRed;
 }
 
 .fontFamily{
-  font-family: Lato-Regular;
+  font-family: 'open-sans';
 }

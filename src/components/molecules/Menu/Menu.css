@@ -1,5 +1,10 @@
-@import "../../../styles/common.scss";
-@import "../../../styles/palette.scss";
+@value colors: 'Styles/palette.css';
+@value cardShadow: 'Styles/common.css';
+@value (
+  neutralColorLight,
+  primaryColor,
+  neutralColorMedium,
+) from colors;
 
 .menu {
   display: block;
@@ -14,13 +19,13 @@
 .list {
   display: block;
   min-width: 120px;
-  background-color: $neutralColorLight;
+  background-color: neutralColorLight;
   padding: 0;
   margin: 0;
   list-style: none;
   border-radius: 2px;
   overflow: hidden;
-  box-shadow: $cardShadow;
+  box-shadow: cardShadow;
   position: absolute;
   top: 1.5rem;
   animation-name: fadeInDown;
@@ -33,7 +38,7 @@
   display: block;
 
   &:hover {
-    color: $primaryColor;
+    color: primaryColor;
   }
 
   &:focus,
@@ -43,7 +48,7 @@
 }
 
 .active {
-  color: $primaryColor !important;
+  color: primaryColor !important;
 }
 
 .item {
@@ -55,7 +60,7 @@
   margin: 0;
 
   &:hover {
-    background-color: $neutralColorMedium;
+    background-color: neutralColorMedium;
   }
 }
 

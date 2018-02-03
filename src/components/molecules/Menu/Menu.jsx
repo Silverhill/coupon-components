@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Icon from 'Atoms/Icon'
 import MenuOptions from './MenuOptions'
-import styles from './Menu.scss'
+import styles from './Menu.css'
 import PropTypes from 'prop-types'
 
 import classNames from 'classnames/bind'

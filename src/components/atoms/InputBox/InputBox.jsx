@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 import Icon from '../Icon/Icon'
 
-import styles from './InputBox.scss'
+import styles from './InputBox.css'
 const cx = classNames.bind(styles)
 
 class InputBox extends Component {

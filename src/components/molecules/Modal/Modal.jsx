@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom'
 import { CSSTransitionGroup } from 'react-transition-group'
 import PropTypes from 'prop-types'
 import Icon from 'Atoms/Icon'
-import styles from './Modal.scss'
-import { accentColor } from 'Styles/palette.scss'
+import styles from './Modal.css'
+import { accentColor } from 'Styles/palette.css'
 
 class Modal extends Component {
   leaveDelay = 200

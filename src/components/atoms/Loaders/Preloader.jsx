@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './Preloader.scss'
+import styles from './Preloader.css'
 
 const Preloader = ({ size, color }) => {
   const ballStyles = {

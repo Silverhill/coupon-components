@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './Typography.scss'
+import styles from './Typography.css'
 
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)

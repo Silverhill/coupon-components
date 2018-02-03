@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Icon from 'Atoms/Icon'
 import Typography from 'Atoms/Typography'
-import styles from './Menu.scss'
+import styles from './Menu.css'
 
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
