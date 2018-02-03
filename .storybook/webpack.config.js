@@ -7,6 +7,7 @@
 // to "React Create App". This only has babel loader to load JavaScript.
 const path = require('path');
 const autoprefixer = require('autoprefixer');
+const values = require('postcss-modules-values');
 
 module.exports = {
   plugins: [
@@ -51,6 +52,7 @@ module.exports = {
               // https://github.com/facebookincubator/create-react-app/issues/2677
               ident: 'postcss',
               plugins: () => [
+                values(),
                 require('postcss-flexbugs-fixes'),
                 autoprefixer({
                   browsers: [
