@@ -59,3 +59,29 @@ story.add('Simple Card',
     )
   )
 );
+
+story.add('Card with title',
+  withInfo(`
+    Implementation for basic Card
+  `)(
+    () => (
+      <div>
+        <Section style={{width: '300px'}}>
+          <Card title="Campañas" subtitle="Activas">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut eum molestias in ab, dicta vitae distinctio! Sed dolores amet, voluptate voluptatum accusantium architecto quas numquam, suscipit sit est deleniti porro!
+          </Card>
+        </Section>
+        <Section style={{width: '300px'}}>
+          <Card title="My List">
+            <ul>
+              <li>item 1</li>
+              <li>item 2</li>
+              <li>item 3</li>
+              <li>item 4</li>
+            </ul>
+          </Card>
+        </Section>
+      </div>
+    )
+  )
+);
