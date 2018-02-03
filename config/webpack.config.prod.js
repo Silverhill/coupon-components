@@ -1,6 +1,6 @@
 'use strict';
 
-const autoprefixer = require('autoprefixer');
+const cssNext = require('postcss-cssnext');
 const values = require('postcss-modules-values');
 const path = require('path');
 const webpack = require('webpack');
@@ -178,7 +178,7 @@ module.exports = {
           // use the "style" loader inside the async code so CSS from them won't be
           // in the main CSS file.
           {
-            test: /\.(css|sass|scss)$/,
+            test: /\.css$/,
             loader: ExtractTextPlugin.extract(
               Object.assign(
                 {
@@ -192,15 +192,12 @@ module.exports = {
                     {
                       loader: require.resolve('css-loader'),
                       options: {
-                        importLoaders: 1,
+                        importLoaders: 2,
                         minimize: true,
                         modules: true,
                         sourceMap: shouldUseSourceMap,
                         localIdentName: "[name]__[local]___[hash:base64:4]"
                       },
-                    },
-                    {
-                      loader: require.resolve('sass-loader')
                     },
                     {
                       loader: require.resolve('postcss-loader'),
@@ -211,15 +208,7 @@ module.exports = {
                         plugins: () => [
                           values(),
                           require('postcss-flexbugs-fixes'),
-                          autoprefixer({
-                            browsers: [
-                              '>1%',
-                              'last 4 versions',
-                              'Firefox ESR',
-                              'not ie < 9', // React doesn't support IE8 anyway
-                            ],
-                            flexbox: 'no-2009',
-                          }),
+                          cssNext(),
                         ],
                       },
                     },

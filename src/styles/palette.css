@@ -1,0 +1,36 @@
+@value clearBlue: #2962ff;
+@value clearBlueAlpha: #2962fa;
+@value pinkRed: #ff4a67;
+@value lightRoyalBlue: #5c4cfd;
+@value lightRoyalBlueAlpha: #5c4cfd;
+@value dark: #000000;
+@value dodgerBlue: #518cff;
+@value brightLightBlue: #26faff;
+@value purplishBlue: #651fff;
+@vlaue brightBlue: #0076ff;
+@value paleGray: #e4e4e4;
+@value paleLilac: #fafafa;
+@value silverColor: #c8c8cc;
+@value charcoalGrey: #394154;
+@value baseGray: #4a4a4a;
+@value baseBlue: #4a90e2;
+@value baseGreen: #b8e986;
+
+/****************
+ * Pallette
+ ****************/
+@value primaryColor: lightRoyalBlue;
+@value primaryColorAlpha: lightRoyalBlueAlpha;
+@value secondaryColorAlpha: clearBlueAlpha;
+@value secondaryColor: clearBlue;
+@value neutralColorDark: silverColor;
+@value neutralColorMedium: paleGray;
+@value neutralColorLight: paleLilac;
+@value darkColor: charcoalGrey;
+@value whiteColor: white;
+@value accentColor: clearBlue;
+@value accentColorSecondary: pinkRed;
+
+/****************
+ * Pallette Variables
+ ****************/

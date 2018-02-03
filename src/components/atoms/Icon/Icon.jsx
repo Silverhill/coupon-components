@@ -7,7 +7,7 @@ import * as Octicons from 'react-icons/lib/go'
 import * as Typicons from 'react-icons/lib/ti'
 import classNames from 'classnames/bind'
 
-import styles from './Icon.scss'
+import styles from './Icon.css'
 const cx = classNames.bind(styles)
 
 class Icon extends Component {

@@ -6,8 +6,9 @@
 // When you add this file, we won't add the default configurations which is similar
 // to "React Create App". This only has babel loader to load JavaScript.
 const path = require('path');
-const autoprefixer = require('autoprefixer');
+// const autoprefixer = require('autoprefixer');
 const values = require('postcss-modules-values');
+const cssNext = require('postcss-cssnext');
 
 module.exports = {
   plugins: [
@@ -31,19 +32,16 @@ module.exports = {
         loaders: ['json-loader'],
       },
       {
-        test: /\.(css|sass|scss)$/,
+        test: /\.css$/,
         use: [
           require.resolve('style-loader'),
           {
             loader: require.resolve('css-loader'),
             options: {
-              importLoaders: 1,
+              importLoaders: 2,
               modules: true,
               localIdentName: "[name]__[local]___[hash:base64:4]"
             },
-          },
-          {
-            loader: require.resolve('sass-loader')
           },
           {
             loader: require.resolve('postcss-loader'),
@@ -53,16 +51,8 @@ module.exports = {
               ident: 'postcss',
               plugins: () => [
                 values(),
+                cssNext(),
                 require('postcss-flexbugs-fixes'),
-                autoprefixer({
-                  browsers: [
-                    '>1%',
-                    'last 4 versions',
-                    'Firefox ESR',
-                    'not ie < 9', // React doesn't support IE8 anyway
-                  ],
-                  flexbox: 'no-2009',
-                }),
               ],
             },
           },

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 import Icon from 'Atoms/Icon'
 
-import styles from './Button.scss'
-import globalStyles from 'Styles/common.scss'
+import styles from './Button.css'
+import globalStyles from 'Styles/common.css'
 
 const cx = classNames.bind(styles)
 

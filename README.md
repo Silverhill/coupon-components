@@ -2,7 +2,7 @@
 All components for the coupon apps.
 You can view [all Components](https://silverhill.github.io/coupon-components)
 
-We are using [postcss-modules-values](https://www.npmjs.com/package/postcss-modules-values)
+We are using [postcss-modules-values](https://www.npmjs.com/package/postcss-modules-values) and [PostCss Next](http://cssnext.io/)
 
 ## Install and Use
   * `yarn add -S coupon-components`
