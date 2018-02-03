@@ -1,6 +1,7 @@
 'use strict';
 
 const autoprefixer = require('autoprefixer');
+const values = require('postcss-modules-values');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -208,6 +209,7 @@ module.exports = {
                         // https://github.com/facebookincubator/create-react-app/issues/2677
                         ident: 'postcss',
                         plugins: () => [
+                          values(),
                           require('postcss-flexbugs-fixes'),
                           autoprefixer({
                             browsers: [
