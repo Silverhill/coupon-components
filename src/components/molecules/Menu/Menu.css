@@ -1,9 +1,9 @@
 @value colors: 'Styles/palette.css';
-@value cardShadow: 'Styles/common.css';
+@value cardShadow from 'Styles/common.css';
 @value (
   neutralColorLight,
   primaryColor,
-  neutralColorMedium,
+  neutralColorMedium
 ) from colors;
 
 .menu {

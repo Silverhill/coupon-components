@@ -5,7 +5,7 @@
   neutralColorDark,
   neutralColorMedium,
   whiteColor,
-  pinkRed,
+  pinkRed
 ) from colors;
 
 .title, .subtitle, .header {

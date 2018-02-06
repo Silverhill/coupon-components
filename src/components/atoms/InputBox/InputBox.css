@@ -3,7 +3,7 @@
   neutralColorDark,
   neutralColorMedium,
   neutralColorLight,
-  darkColor,
+  darkColor
 ) from colors;
 
 @value paddingLeftWithIcon: 40px;
