@@ -6,16 +6,18 @@
 // When you add this file, we won't add the default configurations which is similar
 // to "React Create App". This only has babel loader to load JavaScript.
 const path = require('path');
-// const autoprefixer = require('autoprefixer');
-const values = require('postcss-modules-values');
-const cssNext = require('postcss-cssnext');
+const webpack = require('webpack');
+
+const CSSNext = require('postcss-cssnext')
+// const rucksack = require('rucksack-css')
+const values = require('postcss-modules-values')
+const importPostcss = require('postcss-import')
 
 module.exports = {
   plugins: [
-    // your custom plugins
   ],
   resolve: {
-    extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx', '.scss', '.sass'],
+    extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx', '.css'],
     alias: {
       Actions: path.resolve(__dirname, '../src/actions'),
       Atoms: path.resolve(__dirname, '../src/components/atoms'),
@@ -24,6 +26,7 @@ module.exports = {
       Styles: path.resolve(__dirname, '../src/styles'),
     }
   },
+  target: 'web',
   module: {
     rules: [
       // add your custom rules.
@@ -38,7 +41,7 @@ module.exports = {
           {
             loader: require.resolve('css-loader'),
             options: {
-              importLoaders: 2,
+              importLoaders: 1,
               modules: true,
               localIdentName: "[name]__[local]___[hash:base64:4]"
             },
@@ -49,10 +52,11 @@ module.exports = {
               // Necessary for external CSS imports to work
               // https://github.com/facebookincubator/create-react-app/issues/2677
               ident: 'postcss',
-              plugins: () => [
+              plugins: (loader) => [
                 values(),
-                cssNext(),
-                require('postcss-flexbugs-fixes'),
+                CSSNext(),
+                importPostcss(),
+                // require('postcss-flexbugs-fixes')
               ],
             },
           },

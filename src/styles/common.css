@@ -1,3 +1,13 @@
+@value (
+  clearBlue,
+  purplishBlue,
+  pinkRed,
+  dark,
+  whiteColor,
+  neutralColorLight,
+  neutralColorMedium
+) from 'Styles/palette.css';
+
 /*
  * Common styles
  */
@@ -13,28 +23,6 @@
  @value headerHeight: 4.4rem;
 
 
- :root {
-   --clear-blue: #2962ff;
-   --pink-red: #f50057;
-   --light-royal-blue: #5c4cfd;
-   --dark: #161735;
-   --dodger-blue: #518cff;
-   --dark-blue-grey-60: rgba(34, 45, 76, 0.6);
-   --bright-light-blue: #26faff;
-   --bright-blue: #0076ff;
-   --pale-grey: #efeff4;
-   --cool-grey: #b9b9c4;
-   --pale-lilac: #fafaff;
-   --white: #ffffff;
-   --purplish-blue: #651fff;
-   --color-grey: #b9b9c4;
-   --column-align: {
-     display: flex;
-     flex-direction: column;
-   };
- }
-
-
  .container {
    display: block;
    padding: 20 8%;
@@ -42,9 +30,9 @@
 
  :global(.card) {
    border-radius: 5px;
-   background-color: var(--white);
+   background-color: whiteColor;
    box-shadow: 0 1px 2px 0 rgba(81, 96, 115, 0.2);
-   border: solid 0.5px var(--color-grey);
+   border: solid 0.5px neutralColorMedium;
  }
 
  .smCard {
@@ -56,7 +44,7 @@
  }
 
  .btnPrimary {
-   background-color: var(--purplish-blue);
+   background-color: purplishBlue;
  }
 
  .btnPrimary:hover{
@@ -64,7 +52,7 @@
  }
 
  .btnSecondary {
-   background-color: var(--pink-red);
+   background-color: pinkRed;
  }
 
  .btnSecondary:hover{
@@ -73,7 +61,7 @@
 
  :global(.nav) {
    text-decoration: none;
-   color: var(--dark);
+   color: dark;
    padding: 0 10;
    font-weight: bold;
    align-items: center;
@@ -86,6 +74,6 @@
  }
 
  :global(.active-nav) {
-   color: var(--clear-blue);
+   color: clearBlue;
    border-bottom: 3px solid;
  }

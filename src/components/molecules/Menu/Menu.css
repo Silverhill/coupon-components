@@ -1,0 +1,94 @@
+@value colors: 'Styles/palette.css';
+@value cardShadow from 'Styles/common.css';
+@value (
+  neutralColorLight,
+  primaryColor,
+  neutralColorMedium
+) from colors;
+
+.menu {
+  display: block;
+  position: relative;
+  outline: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.list {
+  display: block;
+  min-width: 120px;
+  background-color: neutralColorLight;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: cardShadow;
+  position: absolute;
+  top: 1.5rem;
+  animation-name: fadeInDown;
+  animation-duration: 200ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.icon {
+  display: block;
+
+  &:hover {
+    color: primaryColor;
+  }
+
+  &:focus,
+  & svg:focus {
+    outline: none !important;
+  }
+}
+
+.active {
+  color: primaryColor !important;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 0;
+
+  &:hover {
+    background-color: neutralColorMedium;
+  }
+}
+
+.itemIcon {
+  margin-right: 10px;
+}
+
+.option {
+  margin: 0;
+}
+
+.rightMenu {
+  left: 0;
+}
+
+.leftMenu {
+  right: 0;
+}
+
+@keyframes fadeInDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0.1;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
