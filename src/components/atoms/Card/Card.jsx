@@ -1,20 +1,17 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import classNames from 'classnames/bind'
-import styles from './Card.css'
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
+import styles from './Card.css';
 
-const cx = classNames.bind(styles)
+const cx = classNames.bind(styles);
 
-class Card extends Component {
-  render () {
-    const { className, width, flex, height, style, ...other } = this.props
-    return (
-      <div className={cx(styles.cardWrapper, 'card', className)} style={{width, flex, height, ...style}} {...other}>
-        {this.props.children}
-      </div>
-    )
-  }
-}
+const Card = ({ className, width, flex, height, style, children, ...other }) => {
+  return (
+    <div className={cx(styles.cardWrapper, className)} style={{width, flex, height, ...style}} {...other}>
+      {children}
+    </div>
+  )
+};
 
 Card.propTypes = {
   children: PropTypes.any,
@@ -23,6 +20,6 @@ Card.propTypes = {
   flex: PropTypes.number,
   height: PropTypes.string,
   style: PropTypes.object
-}
+};
 
-export default Card
+export default Card;

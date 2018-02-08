@@ -1,27 +1,19 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import classNames from 'classnames/bind'
-import Typography from 'Atoms/Typography'
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
+import Typography from 'Atoms/Typography';
 
-import styles from './HeaderBar.scss'
+import styles from './HeaderBar.css';
 
 const cx = classNames.bind(styles)
 
-class HeaderBar extends Component {
-  constructor (props) {
-    super(props)
-  }
-
-  render() {
-    const { title, titleProps, subtitle, subtitleProps} = this.props
-
-    return (
-      <div className={cx(styles.headerBar)}>
-        {title && <Typography.Subtitle highlight {...titleProps}>{title}</Typography.Subtitle>}
-        {subtitle && <Typography.Header secondary bolder {...subtitleProps}>{subtitle}</Typography.Header>}
-      </div>
-    );
-  }
+const HeaderBar = ({ title, titleProps, subtitle, subtitleProps }) => {
+  return (
+    <div className={cx(styles.headerBar)}>
+      {title && <Typography.Subtitle highlight {...titleProps}>{title}</Typography.Subtitle>}
+      {subtitle && <Typography.Header secondary bolder {...subtitleProps}>{subtitle}</Typography.Header>}
+    </div>
+  );
 }
 
 HeaderBar.propTypes = {

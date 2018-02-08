@@ -1,8 +1,12 @@
-@import "../../../styles/palette.scss";
+@value palette: "Styles/palette.css";
+@value (
+  neutralColorLight,
+  neutralColorMedium
+) from palette;
 
 .headerBar{
-  color: $neutralColorLight;
-  background-color: $neutralColorMedium;
+  color: neutralColorLight;
+  background-color: neutralColorMedium;
   display: flex;
   flex-direction: column;
   justify-content: center;

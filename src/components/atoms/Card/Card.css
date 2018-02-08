@@ -1,5 +1,16 @@
+@value palette: 'Styles/palette.css';
+@value cardShadow from 'Styles/common.css';
+@value (
+  whiteColor,
+  neutralColorMedium
+) from palette;
+
 .cardWrapper {
   padding: 0.7rem;
   display: flex;
   box-sizing: border-box;
+  border-radius: 5px;
+  background-color: whiteColor;
+  box-shadow: 0 1px 2px 0 rgba(81, 96, 115, 0.2);
+  border: solid 0.5px neutralColorMedium;
 }
