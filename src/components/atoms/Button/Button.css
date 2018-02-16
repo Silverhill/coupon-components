@@ -5,10 +5,6 @@
   neutralColorMedium
 ) from 'Styles/palette.css';
 
-:root {
-  --white: #ffffff;
-}
-
 .btn {
   width: 100%;
   min-width: 88px;
@@ -23,6 +19,19 @@
   justify-content: center;
   cursor: pointer;
   border: none;
+}
+
+.small {
+  font-size: 10px;
+  width: 15%;
+}
+.medium {
+  font-size: 15px;
+  width: 35%;
+}
+.large {
+  font-size: 20px;
+  width: 60%;
 }
 
 .pill {

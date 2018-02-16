@@ -25,7 +25,7 @@ story.add('Simple button with text',
 
 story.add('Secondary button with text',
   withInfo()(
-    () => <Button onClick={action('clicked')} text="Secondary Button"  type='secondary' />
+    () => <Button onClick={action('clicked')} text="Secondary Button"  color='secondaryColor' />
   )
 );
 
@@ -78,6 +78,18 @@ story.add('Custom Width',
 
 story.add('Disabled Button',
   withInfo()(
-    () => <Button onClick={action('clicked')} text="Ingresar" shape="pill" disabled="true" customWidth="25%" />
+    () => <Button onClick={action('clicked')} text="Ingresar" shape="pill" disabled customWidth="25%" />
+  )
+);
+
+story.add('Custom Color',
+  withInfo()(
+    () => <Button onClick={action('clicked')} text="Ingresar" shape="pill" color="baseGreen" />
+  )
+);
+
+story.add('Custom Size',
+  withInfo()(
+    () => <Button onClick={action('clicked')} text="Ingresar" shape="pill" size="small"/>
   )
 );
