@@ -2,7 +2,8 @@
 @value cardShadow from 'Styles/common.css';
 @value (
   whiteColor,
-  neutralColorMedium
+  neutralColorMedium,
+  accentColorSecondary
 ) from palette;
 
 .cardWrapper {
@@ -28,7 +29,7 @@
 }
 
 .line {
-  background: red;
+  background: accentColorSecondary;
   height: 2px;
   width: 20px;
   margin-right: 15px;
@@ -40,7 +41,7 @@
     content: '';
     height: 4px;
     width: 4px;
-    background-color: red;
+    background: accentColorSecondary;
     position: absolute;
     right: -8px;
     border-radius: 50%;
