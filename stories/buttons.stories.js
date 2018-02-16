@@ -57,3 +57,15 @@ story.add('Simple button with icon',
     )
   )
 );
+
+story.add('Pill button',
+  withInfo()(
+    () => <Button onClick={action('clicked')} text="Pill Button" shape="pill" />
+  )
+);
+
+story.add('Gradient button',
+  withInfo()(
+    () => <Button onClick={action('clicked')} text="Ingresar" shape="pill" gradient />
+  )
+);

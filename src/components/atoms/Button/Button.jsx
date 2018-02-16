@@ -22,12 +22,12 @@ class Button extends Component {
   }
 
   render () {
-    const { text, onClick, className, rightIcon, leftIcon, type } = this.props
+    const { text, onClick, className, rightIcon, leftIcon, type, shape, gradient } = this.props
     const colorBtn = colors[this.props.type] || colors.primary
 
     return (
       <div className={className}>
-        <button type={type} className={cx(styles.btn, colorBtn)}
+        <button type={type} className={cx(styles.btn, colorBtn, shape, { [styles.gradient]: gradient })}
           onClick={onClick}>
           {leftIcon && <Icon className={styles.leftIcon} name={leftIcon} size={16} />}
           {text}
@@ -48,6 +48,7 @@ Button.propTypes = {
   className: PropTypes.string,
   leftIcon: PropTypes.string,
   rightIcon: PropTypes.string,
+  shape: PropTypes.string,
 }
 
 export default Button
