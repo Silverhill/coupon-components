@@ -36,3 +36,18 @@ story.add('Notification with actions',
   )
 );
 
+story.add('Warning Notification',
+  withInfo()(
+    () => {
+    const actions = [
+      {
+        label: 'details',
+        component: <a href="/details">Ver Detalles</a>
+      }
+    ];
+
+    return <Notification title="Informacion General" description="Description del contenido" actions={actions} type="warning"/>
+    }
+  )
+);
+

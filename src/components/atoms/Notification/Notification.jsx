@@ -8,13 +8,27 @@ import styles from './Notification.css';
 const cx = classNames.bind(styles)
 
 const Notification = ({ title, titleProps, description, descriptionProps, actions, type }) => {
+
+  const classNames = cx(
+    styles.notification,
+    {
+      [styles[type]]: type,
+    },
+  );
+  const specialPadding = actions ? '5px' : '20px';
+
   return (
-    <div className={cx(styles.notification)}>
+    <div className={classNames} style={{paddingBottom: specialPadding}}>
       {title && <Typography.Subtitle {...titleProps}>{title}</Typography.Subtitle>}
       {description && <Typography.Header {...descriptionProps}>{description}</Typography.Header>}
-      {actions && actions.map((action) => {
-        return (<span key={action.label}>{action.component}</span>)
-      })}
+      {actions && <div className={cx(styles.footer)}>
+        {
+          actions.map((action) => {
+            return (<span className={cx(styles.action)} key={action.label}>{action.component}</span>)
+          })
+        }
+      </div>}
+
     </div>
   );
 }

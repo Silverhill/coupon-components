@@ -1,3 +1,59 @@
+@value (
+  successAccent,
+  successNeutral,
+  successLight,
+  infoAccent,
+  infoNeutral,
+  infoLight,
+  warningAccent,
+  warningNeutral,
+  warningLight,
+  dangerAccent,
+  dangerNeutral,
+  dangerLight,
+  neutralColorMedium,
+  neutralColorLight
+) from 'Styles/palette.css';
+
 .notification {
-  padding: 20px;
+  padding: 20px 20px 5px 20px;
+  background-color: neutralColorLight;
+  border: 1px solid;
+  border-color: neutralColorMedium;
+  border-radius: 2px;
+}
+
+
+.footer{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.action{
+  padding: 5px;
+  cursor: pointer;
+}
+
+.success{
+  color: successAccent;
+  background-color: successNeutral;
+  border-color: successLight;
+}
+
+.info{
+  color: infoAccent;
+  background-color: infoNeutral;
+  border-color: infoLight;
+}
+
+.warning{
+  color: warningAccent;
+  background-color: warningNeutral;
+  border-color: warningLight;
+}
+
+.danger{
+  color: dangerAccent;
+  background-color: dangerNeutral;
+  border-color: dangerLight;
 }
