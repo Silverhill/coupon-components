@@ -1,0 +1,10 @@
+@value palette: 'Styles/palette.css';
+
+@value (
+  neutralColorMedium
+) from palette;
+
+.container{
+  border-bottom: 3px solid;
+  border-color: neutralColorMedium;
+}
