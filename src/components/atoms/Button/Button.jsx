@@ -41,7 +41,7 @@ class Button extends Component {
 
     return (
       <div className={className}>
-        <button style={{width:customWidth, backgroundColor: colorBtn}} className={classNames}
+        <button style={{width:customWidth, backgroundColor: !disabled && colorBtn}} className={classNames}
           onClick={onClick}>
           {leftIcon && <Icon className={styles.leftIcon} name={leftIcon} size={16} />}
           {text}

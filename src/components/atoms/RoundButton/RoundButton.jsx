@@ -42,7 +42,7 @@ class RoundButton extends Component {
 
     return (
       <div className={className}>
-        <button style={{backgroundColor: colorBtn}} className={classNames}
+        <button style={{backgroundColor: !disabled && colorBtn}} className={classNames}
           onClick={onClick}>
           {icon && <Icon name={icon} size={this.getIconSize(size)} />}
         </button>
