@@ -1,6 +1,6 @@
 @value colors: "Styles/palette.css";
 @value (
-  gray1
+  neutralColorPlain
 ) from colors;
 
 .container {
@@ -11,7 +11,7 @@
 
 .line {
   position: absolute;
-  border: 0.1rem solid gray1;
+  border: 0.1rem solid neutralColorPlain;
   top: 50%;
   transform: translateY(-50%);
   width: 99%;

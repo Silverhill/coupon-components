@@ -12,12 +12,13 @@
 @value paleLilac: #fafafa;
 @value silverColor: #c8c8cc;
 @value charcoalGrey: #394154;
-@value baseGray: #4a4a4a;
 @value baseBlue: #4a90e2;
 @value baseGreen: #b8e986;
 @value sunshineLightYellow: rgba(255, 252, 53, 0.884);
 @value strongPink: #ff007c;
 @value gray1: #c7c7cd;
+@value baseGray: #4a4a4a;
+@value baseGrayMedium: #c7c7cd;
 
 /****************
  * Pallette
@@ -29,10 +30,11 @@
 @value neutralColorDark: silverColor;
 @value neutralColorMedium: paleGray;
 @value neutralColorLight: paleLilac;
+@value neutralColorPlain: baseGrayMedium;
 @value darkColor: charcoalGrey;
 @value whiteColor: white;
-@value blueColor: brightBlue;
 @value accentColor: clearBlue;
 @value accentColorSecondary: pinkRed;
 @value starGradient: sunshineLightYellow;
 @value endGradient: strongPink;
+@value highlightNeutral: brightBlue;

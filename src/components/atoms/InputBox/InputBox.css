@@ -3,7 +3,7 @@
   neutralColorDark,
   neutralColorMedium,
   darkColor,
-  blueColor
+  highlightNeutral
 ) from colors;
 
 @value paddingLeftWithIcon: 40px;
@@ -71,7 +71,7 @@
   }
 
   &:focus {
-    border-color: blueColor;
+    border-color: highlightNeutral;
     border-width: borderInput;
     padding-left: calc(paddingLeft - 1px);
   }
