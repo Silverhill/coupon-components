@@ -16,3 +16,4 @@ export {default as RowNotification} from './components/molecules/RowNotification
 export {default as RoundButton} from './components/atoms/RoundButton/RoundButton';
 export {default as Tooltip} from 'Atoms/Tooltip';
 export {default as Cupon} from './components/molecules/Cupon';
+export {default as RowHunter} from './components/molecules/RowHunter';
