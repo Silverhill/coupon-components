@@ -1,0 +1,37 @@
+@value (
+  whiteColor,
+  neutralColorMedium
+) from 'Styles/palette.css';
+
+.btn {
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border-radius: 50%;
+  color: whiteColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+}
+
+.small {
+  width: 20px;
+  height: 20px;
+}
+
+.medium {
+  width: 30px;
+  height: 30px;
+}
+
+.large {
+  width: 40px;
+  height: 40px;
+}
+
+.disabled {
+  background-color: neutralColorMedium;
+  pointer-events: none;
+}

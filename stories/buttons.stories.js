@@ -25,7 +25,7 @@ story.add('Simple button with text',
 
 story.add('Secondary button with text',
   withInfo()(
-    () => <Button onClick={action('clicked')} text="Secondary Button"  type='secondary' />
+    () => <Button onClick={action('clicked')} text="Secondary Button"  color='secondaryColor' />
   )
 );
 
@@ -55,5 +55,41 @@ story.add('Simple button with icon',
         </Section>
       </div>
     )
+  )
+);
+
+story.add('Pill button',
+  withInfo()(
+    () => <Button onClick={action('clicked')} text="Pill Button" shape="pill" />
+  )
+);
+
+story.add('Gradient button',
+  withInfo()(
+    () => <Button onClick={action('clicked')} text="Ingresar" shape="pill" gradient />
+  )
+);
+
+story.add('Custom Width',
+  withInfo()(
+    () => <Button onClick={action('clicked')} text="Ingresar" shape="pill" customWidth="25%" />
+  )
+);
+
+story.add('Disabled Button',
+  withInfo()(
+    () => <Button onClick={action('clicked')} text="Ingresar" shape="pill" disabled customWidth="25%" />
+  )
+);
+
+story.add('Custom Color',
+  withInfo()(
+    () => <Button onClick={action('clicked')} text="Ingresar" shape="pill" color="baseGreen" />
+  )
+);
+
+story.add('Custom Size',
+  withInfo()(
+    () => <Button onClick={action('clicked')} text="Ingresar" shape="pill" size="small"/>
   )
 );

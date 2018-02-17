@@ -8,3 +8,5 @@ export {default as Menu} from './components/molecules/Menu';
 export {default as Modal} from './components/molecules/Modal';
 export {default as HeaderBar} from './components/molecules/HeaderBar';
 export {default as Panel} from './components/molecules/Panel';
+export {default as RoundButton} from './components/atoms/RoundButton/RoundButton';
+

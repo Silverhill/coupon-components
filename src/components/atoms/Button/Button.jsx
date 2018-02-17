@@ -4,14 +4,9 @@ import classNames from 'classnames/bind'
 import Icon from 'Atoms/Icon'
 
 import styles from './Button.css'
-import globalStyles from 'Styles/common.css'
+import * as palette from 'Styles/palette.css';
 
 const cx = classNames.bind(styles)
-
-let colors = {
-  primary: globalStyles.btnPrimary,
-  secondary: globalStyles.btnSecondary
-}
 
 class Button extends Component {
   constructor (props) {
@@ -22,12 +17,31 @@ class Button extends Component {
   }
 
   render () {
-    const { text, onClick, className, rightIcon, leftIcon, type } = this.props
-    const colorBtn = colors[this.props.type] || colors.primary
+    const { text,
+            onClick,
+            className,
+            rightIcon,
+            leftIcon,
+            color,
+            shape,
+            gradient,
+            customWidth,
+            disabled,
+            size }= this.props
+    const colorBtn = palette[color] || palette.primaryColor
+    let classNames = cx(
+      styles.btn,
+      shape,
+      {
+        [styles.gradient]: gradient,
+        disabled,
+        [styles[size]]: size,
+      },
+    );
 
     return (
       <div className={className}>
-        <button type={type} className={cx(styles.btn, colorBtn)}
+        <button style={{width:customWidth, backgroundColor: !disabled && colorBtn}} className={classNames}
           onClick={onClick}>
           {leftIcon && <Icon className={styles.leftIcon} name={leftIcon} size={16} />}
           {text}
@@ -40,7 +54,7 @@ class Button extends Component {
 
 Button.propTypes = {
   onClick: PropTypes.func,
-  type: PropTypes.string,
+  color: PropTypes.string,
   text: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.string
@@ -48,6 +62,10 @@ Button.propTypes = {
   className: PropTypes.string,
   leftIcon: PropTypes.string,
   rightIcon: PropTypes.string,
+  shape: PropTypes.string,
+  customWidth: PropTypes.string,
+  disabled: PropTypes.bool,
+  size: PropTypes.string,
 }
 
 export default Button
