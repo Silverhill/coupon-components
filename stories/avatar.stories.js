@@ -46,20 +46,20 @@ story.add('With border and colors',
       <div>
         <Section style={{display: 'flex', alignItems:'center', justifyContent:'space-around'}}>
           <div style={{width: '100px', textAlign:'center'}}>
-            <Avatar image='https://cdn.dribbble.com/users/600973/screenshots/1640127/7b4819237638866c446472e7406b15cf.jpg' borderColor='primaryColor'/>
-            <h5>100px</h5>
+            <Avatar image='https://photos.smugmug.com/Events/Digital-Art-1/i-8j8nFzV/3/09584cb4/L/Daenerys%20and%20Drogon%20Poly%20Odins%20Iris%20W-L.jpg' borderColor='accentColorSecondary'/>
+            <h5>default border</h5>
           </div>
           <div style={{width: '75px', textAlign:'center'}}>
-            <Avatar image='https://photos.smugmug.com/Events/Digital-Art-1/i-8j8nFzV/3/09584cb4/L/Daenerys%20and%20Drogon%20Poly%20Odins%20Iris%20W-L.jpg' borderColor='accentColorSecondary'/>
-            <h5>75px</h5>
+            <Avatar image='https://cdn.dribbble.com/users/600973/screenshots/1640127/7b4819237638866c446472e7406b15cf.jpg' borderColor='primaryColor'/>
+            <h5>custom border color</h5>
           </div>
           <div style={{width: '50px', textAlign:'center'}}>
-            <Avatar image='https://mir-s3-cdn-cf.behance.net/project_modules/1400/316d6c36433989.571c87a695d14.png' borderColor='highlightNeutral'/>
-            <h5>50px</h5>
+            <Avatar image='https://mir-s3-cdn-cf.behance.net/project_modules/1400/316d6c36433989.571c87a695d14.png' borderColor='highlightNeutral' borderSize='2px'/>
+            <h5>custom border size</h5>
           </div>
           <div style={{width: '25px', textAlign:'center'}}>
-            <Avatar image='https://i.pinimg.com/564x/df/ba/63/dfba6384ad4d33d5967d600df5cc1319.jpg' borderColor='neutralColorMedium'/>
-            <h5>25px</h5>
+            <Avatar image='https://i.pinimg.com/564x/df/ba/63/dfba6384ad4d33d5967d600df5cc1319.jpg' borderColor='noFound'/>
+            <h5>invalid color</h5>
           </div>
         </Section>
       </div>

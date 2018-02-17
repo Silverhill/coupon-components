@@ -14,8 +14,9 @@ class Avatar extends Component {
       borderColor,
       ...other
     } = this.props
-    const colorBorder = palette[borderColor] || palette.accentColorSecondary
-    let borderStyles = this.props.borderColor ? '4px solid ' + colorBorder : 'none'
+    let colorBorder = palette[borderColor] || palette.accentColorSecondary
+    let colorSize = this.props.borderSize || '4px'
+    let borderStyles = this.props.borderColor ? colorSize + ' solid ' + colorBorder : 'none'
     let stylesComponent = {backgroundImage: `url(${this.props.image})`, border: borderStyles}
     return (
       <div className={styles.container}>
@@ -28,7 +29,8 @@ class Avatar extends Component {
 
 Avatar.propTypes = {
   image: PropTypes.string,
-  borderColor: PropTypes.string
+  borderColor: PropTypes.string,
+  borderSize: PropTypes.string
 }
 
 export default Avatar
