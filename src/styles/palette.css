@@ -16,7 +16,7 @@
 @value baseBlue: #4a90e2;
 @value baseGreen: #b8e986;
 @value sunshineLightYellow: rgba(255, 252, 53, 0.884);
-@value strong-pink: #ff007c;
+@value strongPink: #ff007c;
 
 /****************
  * Pallette
@@ -32,3 +32,5 @@
 @value whiteColor: white;
 @value accentColor: clearBlue;
 @value accentColorSecondary: pinkRed;
+@value starGradient: sunshineLightYellow;
+@value endGradient: strongPink;
