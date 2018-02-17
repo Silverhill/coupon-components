@@ -5,6 +5,7 @@ import { action } from '@storybook/addon-actions'
 import { withInfo } from '@storybook/addon-info';
 import Section from './helpers/Section';
 import { InputBox } from '../src';
+import { InputNested } from '../src';
 
 const story = storiesOf('Atoms/Inputs', module)
 
@@ -52,6 +53,36 @@ story.add('Basic pill input Box',
           <InputBox leftIcon='FaUser'
                     placeholder='Usuario'
                     shape='pill'/>
+        </Section>
+      </div>
+    )
+  )
+);
+
+story.add('Nested Inputs',
+  withInfo(`
+    description or documentation about my component, supports markdown
+
+    ~~~js
+    <InputNested labelText="Some text"></InputNested>
+    ~~~
+
+  `)(
+    () => (
+      <div style={{width: 500}}>
+        <Section >
+          <InputNested>
+            < InputBox type='text' placeholder='Input 1' />
+            < InputBox type='text' placeholder='Input 2' />
+            < InputBox type='text' placeholder='Input 3' />
+          </InputNested>
+        </Section>
+        <Section>
+          <InputNested labelText='Please fill the form'>
+            < InputBox type='number' placeholder='Day' />
+            < InputBox type='number' placeholder='Month' />
+            < InputBox type='number' placeholder='Year' />
+          </InputNested>
         </Section>
       </div>
     )

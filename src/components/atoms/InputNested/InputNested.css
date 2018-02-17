@@ -1,0 +1,18 @@
+@value colors: "Styles/palette.css";
+@value (
+  neutralColorPlain
+) from colors;
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.line {
+  position: absolute;
+  border: 0.1rem solid neutralColorPlain;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 99%;
+}
