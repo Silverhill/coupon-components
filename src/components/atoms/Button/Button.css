@@ -21,6 +21,10 @@
   border: none;
 }
 
+.btn:hover{
+   opacity: 0.8;
+ }
+
 .small {
   font-size: 10px;
   width: 15%;

@@ -57,6 +57,7 @@ story.add('Icon with custom styles',
         <Section style={{display: 'flex', padding: 20, alignItems: 'flex-start'}}>
           <Icon name='MdWifi' color='#3BA3F8' size={20} style={{marginRight: 20, marginTop: 10}} />
           <Icon name='TiCode' color='purple' size={30} style={{marginRight: 20, marginTop: 20}} />
+          <Icon name='TiCode' size={30} color='#FFFF' style={{padding: 10, backgroundColor: '#3BA3F8', borderRadius: '50%'}} />
         </Section>
       </div>
     )
