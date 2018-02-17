@@ -2,7 +2,8 @@
 @value cardShadow from 'Styles/common.css';
 @value (
   whiteColor,
-  neutralColorMedium
+  neutralColorMedium,
+  accentColorSecondary
 ) from palette;
 
 .cardWrapper {
@@ -13,4 +14,36 @@
   background-color: whiteColor;
   box-shadow: 0 1px 2px 0 rgba(81, 96, 115, 0.2);
   border: solid 0.5px neutralColorMedium;
+}
+
+.description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 30px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.line {
+  background: accentColorSecondary;
+  height: 2px;
+  width: 20px;
+  margin-right: 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &::before{
+    content: '';
+    height: 4px;
+    width: 4px;
+    background: accentColorSecondary;
+    position: absolute;
+    right: -8px;
+    border-radius: 50%;
+  }
 }
