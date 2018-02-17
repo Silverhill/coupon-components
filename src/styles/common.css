@@ -36,22 +36,6 @@
    max-width: 500px;
  }
 
- .btnPrimary {
-   background-color: purplishBlue;
- }
-
- .btnPrimary:hover{
-   opacity: 0.8;
- }
-
- .btnSecondary {
-   background-color: pinkRed;
- }
-
- .btnSecondary:hover{
-   opacity: 0.8;
- }
-
  :global(.nav) {
    text-decoration: none;
    color: dark;
