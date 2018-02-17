@@ -5,14 +5,8 @@ import Icon from 'Atoms/Icon'
 
 import styles from './Button.css'
 import * as palette from 'Styles/palette.css';
-import globalStyles from 'Styles/common.css';
 
 const cx = classNames.bind(styles)
-
-let colors = {
-  primary: globalStyles.btnPrimary,
-  secondary: globalStyles.btnSecondary
-}
 
 class Button extends Component {
   constructor (props) {
