@@ -1,14 +1,45 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import * as Ionicons from 'react-icons/lib/io'
-import * as FontAwesome from 'react-icons/lib/fa'
-import * as Material from 'react-icons/lib/md'
-import * as Octicons from 'react-icons/lib/go'
-import * as Typicons from 'react-icons/lib/ti'
-import classNames from 'classnames/bind'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import * as Ionicons from 'react-icons/lib/io';
+import * as FontAwesome from 'react-icons/lib/fa';
+import * as Material from 'react-icons/lib/md';
+import * as Octicons from 'react-icons/lib/go';
+import * as Typicons from 'react-icons/lib/ti';
+import customIcons from './customIcons';
+import classNames from 'classnames/bind';
 
 import styles from './Icon.css'
 const cx = classNames.bind(styles)
+
+const CustomIcon = ({ name, size = '1em', color }) => {
+
+  const getPath = () => {
+    const iconName = (name || '').substring(2);
+    const icon = Object.keys(customIcons).includes(iconName);
+
+    if(icon) return customIcons[iconName];
+
+    console.warn(`The name --->${name}<--- does not exist, You could make sure that the name --->${iconName}<--- exists in the list of custom icons.`);
+    return '';
+  }
+
+  return (
+    <svg
+      fill="currentColor"
+      preserveAspectRatio="xMidYMid meet"
+      width={size}
+      height={size}
+      viewBox="0 0 20 20"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      style={{ verticalAlign: 'middle', color }}
+    >
+      <g>
+        <path d={getPath()}></path>
+      </g>
+    </svg>
+  );
+}
 
 class Icon extends Component {
   capitalize = string => {
@@ -22,14 +53,15 @@ class Icon extends Component {
   }
 
   get icon () {
-    const { name } = this.props
+    const { name, ...other } = this.props
 
-    if (/^Io/.test(name)) return {name: Ionicons[name], family: 'Ionicons'}
-    else if (/^Fa/.test(name)) return {name: FontAwesome[name], family: 'FontAwesome'}
-    else if (/^Md/.test(name)) return {name: Material[name], family: 'Material'}
-    else if (/^Ti/.test(name)) return {name: Typicons[name], family: 'Typicon'}
-    else if (/^Go/.test(name)) return {name: Octicons[name], family: 'Octoicons'}
-    return {name: Ionicons['IoBug'], family: 'Ionicons'}
+    if (/^Io/.test(name)) return {component: Ionicons[name], family: 'Ionicons'}
+    else if (/^Fa/.test(name)) return {component: FontAwesome[name], family: 'FontAwesome'}
+    else if (/^Md/.test(name)) return {component: Material[name], family: 'Material'}
+    else if (/^Ti/.test(name)) return {component: Typicons[name], family: 'Typicon'}
+    else if (/^Go/.test(name)) return {component: Octicons[name], family: 'Octoicons'}
+    else if (/^Cp/.test(name)) return {component: <CustomIcon name={name} {...other} />, family: 'Couponicons' }
+    return {component: Ionicons['IoBug'], family: 'Ionicons'}
   }
 
   onClicked = e => {
@@ -51,14 +83,17 @@ class Icon extends Component {
       onClick: !!onClick
     }
 
-    const Icon = this.icon.name
+    const Icon = /^Cp/.test(name)
+      ? this.icon.component
+      : React.createElement(this.icon.component, {...other});
+
     return (
       <i className={cx(styles.iconContainer, className, customStyles, { disabled })}
         onClick={this.onClicked}
         data-family={this.icon.family}
         style={style}
       >
-        {React.createElement(Icon, {...other})}
+        {Icon}
       </i>
     )
   }
