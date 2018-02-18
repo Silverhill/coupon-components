@@ -8,48 +8,45 @@ import * as palette from 'Styles/palette.css';
 
 const cx = classNames.bind(styles)
 
-class Button extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      text: this.props.text || ''
-    }
-  }
+const Button = ({
+  text,
+  onClick,
+  className,
+  rightIcon,
+  leftIcon,
+  color,
+  shape,
+  gradient,
+  customWidth,
+  disabled,
+  size,
+  style,
+  ...other }) => {
 
-  render () {
-    const { text,
-            onClick,
-            className,
-            rightIcon,
-            leftIcon,
-            color,
-            shape,
-            gradient,
-            customWidth,
-            disabled,
-            size }= this.props
-    const colorBtn = palette[color] || palette.primaryColor
-    let classNames = cx(
-      styles.btn,
-      shape,
-      {
-        [styles.gradient]: gradient,
-        disabled,
-        [styles[size]]: size,
-      },
-    );
+  const colorBtn = palette[color] || palette.primaryColor
+  let classNames = cx(
+    styles.btn,
+    shape,
+    {
+      [styles.gradient]: gradient,
+      disabled,
+      [styles[size]]: size,
+    },
+  );
 
-    return (
-      <div className={className}>
-        <button style={{width:customWidth, backgroundColor: !disabled && colorBtn}} className={classNames}
-          onClick={onClick}>
-          {leftIcon && <Icon className={styles.leftIcon} name={leftIcon} size={16} />}
-          {text}
-          {rightIcon && <Icon className={styles.rightIcon} name={rightIcon} size={16} />}
-        </button>
-      </div>
-    )
-  }
+  return (
+    <div className={className} {...other}>
+      <button
+        style={{width:customWidth, backgroundColor: !disabled && colorBtn, ...style}}
+        className={classNames}
+        onClick={onClick}
+      >
+        {leftIcon && <Icon className={styles.leftIcon} name={leftIcon} size={16} />}
+        {text}
+        {rightIcon && <Icon className={styles.rightIcon} name={rightIcon} size={16} />}
+      </button>
+    </div>
+  )
 }
 
 Button.propTypes = {

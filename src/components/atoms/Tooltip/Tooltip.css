@@ -1,0 +1,127 @@
+@value (
+  darkColor,
+  whiteColor
+) from 'Styles/palette.css';
+@value arrowSize: 7px;
+@value transitionSize: 5px;
+
+.isShowing {
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  &.bottom {
+    bottom: 0;
+  }
+
+  &.top {
+    top: 0;
+  }
+
+  &.left {
+    left: 0;
+  }
+
+  &.right {
+    right: 0;
+  }
+}
+
+.base {
+  position: absolute;
+  background: darkColor;
+  padding: 0.6rem;
+  border-radius: 0.3rem;
+  color: whiteColor;
+  display: inline;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0);
+  z-index: 1;
+  transition: visibility 0s ease-in-out 0.1s, opacity 0.2s ease-in-out, all 0.1s ease-in-out;
+  min-width: 80px;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+}
+
+.top {
+  composes: base;
+  left: 50%;
+  top: transitionSize;
+  transform: translate(-50%, -110%);
+
+  &:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: arrowSize solid transparent;
+    border-right: arrowSize solid transparent;
+    border-top: arrowSize solid #394154;
+    position: absolute;
+    bottom: calc(2px - arrowSize);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.right {
+  composes: base;
+  bottom: 50%;
+  right: transitionSize;
+  transform: translate(110%, 50%);
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: arrowSize solid transparent;
+    border-bottom: arrowSize solid transparent;
+    border-right: arrowSize solid darkColor;
+    top: 50%;
+    left: calc(2px - arrowSize);
+    transform: translateY(-50%);
+  }
+}
+
+.left {
+  composes: base;
+  bottom: 50%;
+  left: transitionSize;
+  transform: translate(-110%, 50%);
+
+  &:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: arrowSize solid transparent;
+    border-bottom: arrowSize solid transparent;
+    border-left: arrowSize solid darkColor;
+    position: absolute;
+    top: 50%;
+    right: calc(2px - arrowSize);
+    transform: translateY(-50%);
+  }
+}
+
+.bottom {
+  composes: base;
+  bottom: transitionSize;
+  left: 50%;
+  transform: translate(-50%, 120%);
+
+  &:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: arrowSize solid transparent;
+    border-right: arrowSize solid transparent;
+    border-bottom: arrowSize solid darkColor;
+    position: absolute;
+    top: calc(2px - arrowSize);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
