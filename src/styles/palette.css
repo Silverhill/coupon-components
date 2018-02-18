@@ -19,7 +19,18 @@
 @value gray1: #c7c7cd;
 @value baseGray: #4a4a4a;
 @value baseGrayMedium: #c7c7cd;
-
+@value greenAccent: #3c763d;
+@value greenNeutral: #dff0d8;
+@value greenLight: #d6e9c6;
+@value blueAccent: #31708f;
+@value blueNeutral: #d9edf7;
+@value blueLight: #bce8f1;
+@value brownAccent: #8a6d3b;
+@value brownNeutral: #fcf8e3;
+@value brownLight: #faebcc;
+@value redAccent: #a94442;
+@value redNeutral: #f2dede;
+@value redLight: #ebccd1;
 /****************
  * Pallette
  ****************/
@@ -38,3 +49,15 @@
 @value starGradient: sunshineLightYellow;
 @value endGradient: strongPink;
 @value highlightNeutral: brightBlue;
+@value successAccent: greenAccent;
+@value successNeutral: greenNeutral;
+@value successLight: greenLight;
+@value infoAccent: blueAccent;
+@value infoNeutral: blueNeutral;
+@value infoLight: blueLight;
+@value warningAccent: brownAccent;
+@value warningNeutral: brownNeutral;
+@value warningLight: brownLight;
+@value dangerAccent: redAccent;
+@value dangerNeutral: redNeutral;
+@value dangerLight: redLight;
