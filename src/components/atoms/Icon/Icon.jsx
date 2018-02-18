@@ -19,7 +19,10 @@ const CustomIcon = ({ name, size = '1em', color }) => {
 
     if(icon) return customIcons[iconName];
 
-    console.warn(`The name --->${name}<--- does not exist, You could make sure that the name --->${iconName}<--- exists in the list of custom icons.`);
+    console.warn(`
+      The name --->${name}<--- does not exist,
+      You could make sure that the name --->${iconName}<--- exists in the list of custom icons.
+    `);
     return '';
   }
 
