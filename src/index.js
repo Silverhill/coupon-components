@@ -12,6 +12,6 @@ export {default as Modal} from './components/molecules/Modal';
 export {default as HeaderBar} from './components/molecules/HeaderBar';
 export {default as Panel} from './components/molecules/Panel';
 export {default as Plan} from './components/molecules/Plan';
+export {default as RowNotification} from './components/molecules/RowNotification';
 export {default as RoundButton} from './components/atoms/RoundButton/RoundButton';
 export {default as Tooltip} from 'Atoms/Tooltip';
-

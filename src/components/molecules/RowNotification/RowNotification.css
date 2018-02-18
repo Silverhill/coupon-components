@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.userInformation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.avatar {
+  width: 50px;
+}
+
+.information {
+  display: block;
+  text-align: left;
+  padding: 0 50px;
+}
+
+.cuponInformation {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+}
