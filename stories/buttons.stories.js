@@ -3,12 +3,13 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
+import { withKnobs, boolean } from '@storybook/addon-knobs/react';
 import { Button } from '../src';
 import Section from './helpers/Section';
 
 // storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 const story = storiesOf('Atoms/Button', module)
+story.addDecorator(withKnobs);
 
 story.add('Simple button with text',
   withInfo(`
@@ -78,7 +79,7 @@ story.add('Custom Width',
 
 story.add('Disabled Button',
   withInfo()(
-    () => <Button onClick={action('clicked')} text="Ingresar" shape="pill" disabled customWidth="25%" />
+    () => <Button onClick={action('clicked')} text="Ingresar" shape="pill" disabled={ boolean('Disabled', false) } customWidth="25%" />
   )
 );
 
