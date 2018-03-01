@@ -11,9 +11,9 @@ const cx = classNames.bind(styles)
 
 class RowHunter extends Component {
   render () {
-    const { data, onClick } = this.props
+    const { data, onClick, className } = this.props
     return (
-      <div className={styles.container} onClick={onClick}>
+      <div className={cx(styles.container, className)} onClick={onClick}>
         <div className={styles.userInformation}>
           <div className={styles.avatar}>
             <Avatar image={data.user.image}/>
@@ -59,7 +59,8 @@ class RowHunter extends Component {
 
 RowHunter.propTypes = {
   data: PropTypes.object,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  className: PropTypes.string
 }
 
 export default RowHunter;
