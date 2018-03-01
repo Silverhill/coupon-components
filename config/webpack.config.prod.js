@@ -36,7 +36,7 @@ if (env.stringified['process.env'].NODE_ENV !== '"production"') {
 }
 
 // Note: defined here because it will be used more than once.
-const cssFilename = 'css/styles.css';
+const cssFilename = 'styles.css';
 
 // ExtractTextPlugin expects the build output to be flat.
 // (See https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/27)
@@ -195,6 +195,7 @@ module.exports = {
                         importLoaders: 2,
                         minimize: true,
                         modules: true,
+                        url: false,
                         sourceMap: shouldUseSourceMap,
                         localIdentName: "[name]__[local]___[hash:base64:4]"
                       },
@@ -212,6 +213,9 @@ module.exports = {
                         ],
                       },
                     },
+                    // {
+                    //   loader: require.resolve('url-loader')
+                    // }
                   ],
                 },
                 extractTextPluginOptions

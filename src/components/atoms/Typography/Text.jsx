@@ -5,7 +5,7 @@ import styles from './Typography.css'
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
 
-const Text = ({ highlight, secondary, disabled, inverted, small, lead, inline, bold=false, light=false, normal=true, error, className, style, children }) => {
+const Text = ({ highlight, secondary, disabled, inverted, small, lead, inline, bold, light, normal=true, error, className, style, children }) => {
 
   if(light || bold) normal = false;
   const theProps = {

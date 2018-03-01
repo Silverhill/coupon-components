@@ -5,9 +5,7 @@ import styles from './Typography.css'
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
 
-const Title = ({ highlight, secondary, disabled, inverted, light=false, style, bold=false, className, children, normal=true }) => {
-
-  if(light || bold) normal = false;
+const Title = ({ highlight, secondary, disabled, inverted, light, style, bold, className, children }) => {
   const customStyles = {
     highlight,
     secondary,
@@ -15,7 +13,6 @@ const Title = ({ highlight, secondary, disabled, inverted, light=false, style, b
     inverted,
     light,
     bold,
-    normal,
   }
 
   return (
