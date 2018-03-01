@@ -5,9 +5,7 @@ import styles from './Typography.css'
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
 
-const Header = ({className, children, highlight, secondary, disabled, inverted, light=false, bold=false, style, normal=true}) => {
-
-  if(light || bold) normal = false;
+const Header = ({className, children, highlight, secondary, disabled, inverted, light, bold, style}) => {
   const customStyles = {
     highlight,
     secondary,
@@ -15,7 +13,6 @@ const Header = ({className, children, highlight, secondary, disabled, inverted, 
     inverted,
     light,
     bold,
-    normal
   }
   return <h4 className={cx(styles.header, className, customStyles)} style={style}>{children}</h4>
 }

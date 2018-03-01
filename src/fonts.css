@@ -1,0 +1,97 @@
+/*
+ * FAKTPRO
+ */
+
+@font-face {
+  font-family: 'FaktPro-Bold';
+  src: url('../fonts/FaktPro-Bold.woff') format('woff'); /* Modern Browsers */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'FaktPro-Hair';
+  src: url('../fonts/FaktPro-Hair.woff') format('woff'); /* Modern Browsers */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'FaktPro-Medium';
+  src: url('../fonts/FaktPro-Medium.woff') format('woff'); /* Modern Browsers */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'FaktPro-Light';
+  src: url('../fonts/FaktPro-Light.woff') format('woff'); /* Modern Browsers */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'FaktPro-Semibold';
+  src: url('../fonts/FaktPro-Semibold.woff') format('woff'); /* Modern Browsers */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'FaktPro-Thin';
+  src: url('../fonts/FaktPro-Thin.woff') format('woff'); /* Modern Browsers */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'FaktPro-Normal';
+  src: url('../fonts/FaktPro-Normal.woff') format('woff'); /* Modern Browsers */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/*
+ * LATO
+ */
+
+@font-face {
+  font-family: 'Lato-Regular';
+  src: url('../fonts/Lato-Regular.woff') format('woff'); /* Modern Browsers */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'Lato-Bold';
+  src: url('../fonts/Lato-Bold.woff') format('woff'); /* Modern Browsers */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'Lato-Thin';
+  src: url('../fonts/Lato-Thin.woff') format('woff'); /* Modern Browsers */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'Lato-Light';
+  src: url('../fonts/Lato-Light.woff') format('woff'); /* Modern Browsers */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'Lato-Semibold';
+  src: url('../fonts/Lato-Semibold.woff') format('woff'); /* Modern Browsers */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: 'FaktPro-Normal';
+}
