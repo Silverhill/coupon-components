@@ -21,6 +21,9 @@ const data = {
 
 story.add('Simple Row',
   withInfo()(
-    () => <RowNotification data={data}/>
+    () =>
+    <div style={{width: '750px', borderTop:'1px solid #c7c7c7', borderBottom:'1px solid #c7c7c7'}}>
+      <RowNotification data={data} onClick={action('Click Row!')}/>
+    </div>
   )
 );

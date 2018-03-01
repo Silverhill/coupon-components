@@ -12,15 +12,15 @@ class RowNotification extends Component {
   render () {
     const { data, onClick } = this.props
     return (
-      <div className={styles.container}>
+      <div className={styles.container} onClick={onClick}>
         <div className={styles.userInformation}>
           <div className={styles.avatar}>
             <Avatar image={data.user.image}/>
           </div>
           <div className={styles.information}>
-            <Typography.Title>
+            <Typography.Subtitle bold>
               {data.user.name}
-            </Typography.Title>
+            </Typography.Subtitle>
           </div>
         </div>
         <div className={styles.cuponInformation}>
