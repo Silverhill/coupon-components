@@ -7,19 +7,18 @@ import styles from './Avatar.css'
 const cx = classNames.bind(styles)
 
 class Avatar extends Component {
-
   render () {
     const {
       image,
       borderColor,
-      ...other
+      className,
     } = this.props
     let colorBorder = palette[borderColor] || palette.accentColorSecondary
     let colorSize = this.props.borderSize || '4px'
     let borderStyles = this.props.borderColor ? colorSize + ' solid ' + colorBorder : 'none'
-    let stylesComponent = {backgroundImage: `url(${this.props.image})`, border: borderStyles}
+    let stylesComponent = {backgroundImage: `url(${image})`, border: borderStyles}
     return (
-      <div className={styles.container}>
+      <div className={cx(styles.container, className)}>
         <div className={cx(styles.ratio, styles.imgResponsive, styles.imgCircle)}
             style={stylesComponent}/>
       </div>

@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import classNames from 'classnames/bind'
-import Icon from 'Atoms/Icon'
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
+import Icon from 'Atoms/Icon';
 
-import styles from './Button.css'
+import styles from './Button.css';
 import * as palette from 'Styles/palette.css';
 
-const cx = classNames.bind(styles)
+const cx = classNames.bind(styles);
 
 const Button = ({
   text,

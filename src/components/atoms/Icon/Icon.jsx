@@ -105,6 +105,8 @@ class Icon extends Component {
 Icon.propTypes = {
   name: PropTypes.string,
   style: PropTypes.object,
+  size: PropTypes.number,
+  color: PropTypes.string,
   className: PropTypes.string,
   onClick: PropTypes.func,
   disabled: PropTypes.bool
