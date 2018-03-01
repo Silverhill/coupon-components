@@ -19,7 +19,7 @@ class RowHunter extends Component {
             <Avatar image={data.user.image}/>
           </div>
           <div className={styles.information}>
-            <Typography.Header small>
+            <Typography.Header small bold>
               {data.user.name}
             </Typography.Header>
             <Typography.Text small secondary lighter>
@@ -38,7 +38,7 @@ class RowHunter extends Component {
           </div>
           <div className={styles.cupon}>
             <Icon
-              name="MdWifi"
+              name="CpTicket"
               color={palette.endGradient}
               size={20}
               style={{marginRight: 20,

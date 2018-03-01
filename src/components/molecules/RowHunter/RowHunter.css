@@ -1,3 +1,9 @@
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -5,9 +11,7 @@
 }
 
 .userInformation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  composes: flex;
 }
 
 .avatar {
@@ -20,16 +24,20 @@
   padding: 0 0 0 50px;
 }
 
+.information p {
+  margin: 0;
+}
+
+.information h4 {
+  margin: 5px 0;
+}
+
 .cuponInformation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  composes: flex;
 }
 
 .date {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  composes: flex;
 }
 
 .date p {
@@ -37,8 +45,6 @@
 }
 
 .cupon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  composes: flex;
   padding: 0 0 0 50px;
 }
