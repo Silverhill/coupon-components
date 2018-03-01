@@ -7,12 +7,12 @@ import styles from './InputNested.css'
 const cx = classNames.bind(styles)
 
 class InputNested extends Component {
-
   render () {
     const {
       labelText,
-      ...other
-    } = this.props
+      className
+    } = this.props;
+
     return (
       <div>
         {labelText &&
@@ -20,7 +20,7 @@ class InputNested extends Component {
             {labelText}
           </Label>
         }
-        <div className={styles.container} >
+        <div className={cx(styles.container, className)} >
           <div className={styles.line}/>
           {this.props.children}
         </div>

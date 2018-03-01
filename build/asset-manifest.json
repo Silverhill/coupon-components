@@ -3,5 +3,16 @@
   "main.css.map": "css/styles.css.map",
   "main.js": "main.js",
   "main.js.map": "main.js.map",
-  "static/media/FaktPro-Medium.woff": "static/media/FaktPro-Medium.8406c5c1.woff"
+  "static/media/FaktPro-Bold.woff": "static/media/FaktPro-Bold.1a36d9ce.woff",
+  "static/media/FaktPro-Hair.woff": "static/media/FaktPro-Hair.c0060f26.woff",
+  "static/media/FaktPro-Light.woff": "static/media/FaktPro-Light.6f51d961.woff",
+  "static/media/FaktPro-Medium.woff": "static/media/FaktPro-Medium.8406c5c1.woff",
+  "static/media/FaktPro-Normal.woff": "static/media/FaktPro-Normal.14e19ecc.woff",
+  "static/media/FaktPro-Semibold.woff": "static/media/FaktPro-Semibold.53bd44ff.woff",
+  "static/media/FaktPro-Thin.woff": "static/media/FaktPro-Thin.d73766a8.woff",
+  "static/media/Lato-Bold.woff": "static/media/Lato-Bold.d878b6c2.woff",
+  "static/media/Lato-Light.woff": "static/media/Lato-Light.90301aa0.woff",
+  "static/media/Lato-Regular.woff": "static/media/Lato-Regular.27bd77b9.woff",
+  "static/media/Lato-Semibold.woff": "static/media/Lato-Semibold.c2b50f4a.woff",
+  "static/media/Lato-Thin.woff": "static/media/Lato-Thin.13fa4c60.woff"
 }

@@ -1,16 +1,16 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import classNames from 'classnames/bind'
-import styles from './Panel.css'
-import HeaderBar from 'Molecules/HeaderBar'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
+import styles from './Panel.css';
+import HeaderBar from 'Molecules/HeaderBar';
 
 const cx = classNames.bind(styles)
 
 class Panel extends Component {
   render () {
-    const { className, title, subtitle, children } = this.props
+    const { className, title, subtitle, children } = this.props;
     return (
-      <div className={styles.panel}>
+      <div className={cx(styles.panel, className)}>
         <HeaderBar title={title} subtitle={subtitle}/>
         <div className={styles.container}>
           {children}
