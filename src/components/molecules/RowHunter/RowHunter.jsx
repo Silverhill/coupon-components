@@ -5,6 +5,7 @@ import styles from './RowHunter.css'
 import Avatar from 'Atoms/Avatar'
 import Typography from 'Atoms/Typography';
 import Icon from 'Atoms/Icon'
+import * as palette from 'Styles/palette.css';
 
 const cx = classNames.bind(styles)
 
@@ -21,30 +22,34 @@ class RowHunter extends Component {
             <Typography.Header small>
               {data.user.name}
             </Typography.Header>
-            <Typography.Text small>
+            <Typography.Text small secondary lighter>
               {data.user.email}
             </Typography.Text>
           </div>
         </div>
         <div className={styles.cuponInformation}>
           <div className={styles.date}>
-            <Typography.Text small>
+            <Typography.Text small secondary>
               Ultimo cupon utilizado:
             </Typography.Text>
-            <Typography.Text small>
+            <Typography.Text small secondary>
               {data.cupon.date}
             </Typography.Text>
           </div>
           <div className={styles.cupon}>
             <Icon
               name="MdWifi"
-              color="#3BA3F8"
+              color={palette.endGradient}
               size={20}
-              style={{marginRight: 20, marginTop: 10}}
+              style={{marginRight: 20,
+                      padding: 10,
+                      background: palette.coverMainColor,
+                      borderRadius: '50%'
+                    }}
             />
-            <Typography.Text>
+            <Typography.Title>
               {data.cupon.total}
-            </Typography.Text>
+            </Typography.Title>
           </div>
         </div>
       </div>

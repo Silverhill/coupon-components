@@ -22,7 +22,16 @@ const data = {
 
 story.add('Simple Row',
   withInfo()(
-    () => <RowHunter data={data}/>
+    () => (
+      <div>
+        <Section>
+          <h4>Basic Row</h4>
+          <div style={{width: '750px', borderTop:'1px solid #c7c7c7', borderBottom:'1px solid #c7c7c7'}}>
+            <RowHunter data={data}/>
+          </div>
+        </Section>
+      </div>
+    )
   )
 );
 
