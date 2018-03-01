@@ -5,14 +5,16 @@ import styles from './Typography.css'
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
 
-const Label = ({highlight, secondary, disabled, inverted, style, lighter, bolder, className, children}) => {
+const Label = ({highlight, secondary, disabled, inverted, style, light=false, bold=false, normal=true, className, children}) => {
+  if(light || bold) normal = false;
   const customStyles = {
     highlight,
     secondary,
     disabled,
     inverted,
-    lighter,
-    bolder
+    light,
+    bold,
+    normal,
   }
 
   return (
@@ -32,8 +34,8 @@ Label.propTypes = {
   disabled: PropTypes.bool,
   inverted: PropTypes.bool,
   style: PropTypes.object,
-  lighter: PropTypes.bool,
-  bolder: PropTypes.bool
+  bold: PropTypes.bool,
+  light: PropTypes.bool
 }
 
 export default Label

@@ -5,14 +5,17 @@ import styles from './Typography.css'
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
 
-const Header = ({className, children, highlight, secondary, disabled, inverted, lighter, bolder, style}) => {
+const Header = ({className, children, highlight, secondary, disabled, inverted, light=false, bold=false, style, normal=true}) => {
+
+  if(light || bold) normal = false;
   const customStyles = {
     highlight,
     secondary,
     disabled,
     inverted,
-    lighter,
-    bolder
+    light,
+    bold,
+    normal
   }
   return <h4 className={cx(styles.header, className, customStyles)} style={style}>{children}</h4>
 }
@@ -25,8 +28,8 @@ Header.propTypes = {
   disabled: PropTypes.bool,
   inverted: PropTypes.bool,
   style: PropTypes.object,
-  lighter: PropTypes.bool,
-  bolder: PropTypes.bool
+  light: PropTypes.bool,
+  bold: PropTypes.bool
 }
 
 export default Header

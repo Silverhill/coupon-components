@@ -24,7 +24,8 @@ story.add('Title',
           <Typography.Title secondary>This is a cool title with secondary color</Typography.Title>
           <Typography.Title style={{color: 'blue'}}>This is a cool title with custom styles</Typography.Title>
           <Typography.Title disabled>This is a cool disabled title</Typography.Title>
-          <Typography.Title lighter>This is a cool lighter title</Typography.Title>
+          <Typography.Title light>This is a cool light title</Typography.Title>
+          <Typography.Title bold>This is a cool bold title</Typography.Title>
         </Section>
 
         <Section dark>
@@ -51,7 +52,7 @@ story.add('Text',
           <Typography.Text highlight>highlight: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sapiente tempora provident repellat, vitae facilis quasi officiis dolorum enim maxime quis distinctio harum, delectus ipsam numquam natus aperiam, recusandae amet!</Typography.Text>
           <Typography.Text secondary>secondary: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sapiente tempora provident repellat, vitae facilis quasi officiis dolorum enim maxime quis distinctio harum, delectus ipsam numquam natus aperiam, recusandae amet!</Typography.Text>
           <Typography.Text lead>lead text: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sapiente tempora provident repellat, vitae facilis quasi officiis dolorum enim maxime quis distinctio harum, delectus ipsam numquam natus aperiam, recusandae amet!</Typography.Text>
-          <Typography.Text inline>inline text: Lorem ipsum dolor sit amet, <Typography.Text inline bolder>consectetur adipisicing elit. Obcaecati sapiente</Typography.Text> maxime quis distinctio harum, delectus ipsam numquam <Typography.Text inline highlight>natus aperiam</Typography.Text>, recusandae amet!</Typography.Text>
+          <Typography.Text inline>inline text: Lorem ipsum dolor sit amet, <Typography.Text inline bold>consectetur adipisicing elit. Obcaecati sapiente</Typography.Text> maxime quis distinctio harum, delectus ipsam numquam <Typography.Text inline highlight>natus aperiam</Typography.Text>, recusandae amet!</Typography.Text>
           <Typography.Text style={{ color: 'blue' }}>style: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sapiente tempora provident repellat, vitae facilis quasi officiis dolorum enim maxime quis distinctio harum, delectus ipsam numquam natus aperiam, recusandae amet!</Typography.Text>
           <Typography.Text disabled>disabled: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sapiente tempora provident repellat, vitae facilis quasi officiis dolorum enim maxime quis distinctio harum, delectus ipsam numquam natus aperiam, recusandae amet!</Typography.Text>
           <Typography.Text error>error: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sapiente tempora provident repellat, vitae facilis quasi officiis dolorum enim maxime quis distinctio harum, delectus ipsam numquam natus aperiam, recusandae amet!</Typography.Text>
@@ -81,7 +82,7 @@ story.add('Small Text',
           <Typography.Text small highlight>highlight: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sapiente tempora provident repellat, vitae facilis quasi officiis dolorum enim maxime quis distinctio harum, delectus ipsam numquam natus aperiam, recusandae amet!</Typography.Text>
           <Typography.Text small secondary>secondary: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sapiente tempora provident repellat, vitae facilis quasi officiis dolorum enim maxime quis distinctio harum, delectus ipsam numquam natus aperiam, recusandae amet!</Typography.Text>
           <Typography.Text small lead>lead text: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sapiente tempora provident repellat, vitae facilis quasi officiis dolorum enim maxime quis distinctio harum, delectus ipsam numquam natus aperiam, recusandae amet!</Typography.Text>
-          <Typography.Text small inline>inline text: Lorem ipsum dolor sit amet, <Typography.Text small inline bolder>consectetur adipisicing elit. Obcaecati sapiente</Typography.Text> maxime quis distinctio harum, delectus ipsam numquam <Typography.Text inline highlight>natus aperiam</Typography.Text>, recusandae amet!</Typography.Text>
+          <Typography.Text small inline>inline text: Lorem ipsum dolor sit amet, <Typography.Text small inline bold>consectetur adipisicing elit. Obcaecati sapiente</Typography.Text> maxime quis distinctio harum, delectus ipsam numquam <Typography.Text inline highlight>natus aperiam</Typography.Text>, recusandae amet!</Typography.Text>
           <Typography.Text small style={{ color: 'blue' }}>style: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sapiente tempora provident repellat, vitae facilis quasi officiis dolorum enim maxime quis distinctio harum, delectus ipsam numquam natus aperiam, recusandae amet!</Typography.Text>
           <Typography.Text small disabled>disabled: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sapiente tempora provident repellat, vitae facilis quasi officiis dolorum enim maxime quis distinctio harum, delectus ipsam numquam natus aperiam, recusandae amet!</Typography.Text>
           <Typography.Text small error>error: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sapiente tempora provident repellat, vitae facilis quasi officiis dolorum enim maxime quis distinctio harum, delectus ipsam numquam natus aperiam, recusandae amet!</Typography.Text>
@@ -111,7 +112,8 @@ story.add('Header',
           <Typography.Header highlight>highlight: This is highlight header</Typography.Header>
           <Typography.Header secondary>secondary: This is a secondary header</Typography.Header>
           <Typography.Header disabled>disabled: This is a disabled header</Typography.Header>
-          <Typography.Header lighter>lighter: This is a disabled header</Typography.Header>
+          <Typography.Header light>lighter: This is a disabled header</Typography.Header>
+          <Typography.Header bold>bold: This is a disabled header</Typography.Header>
           <Typography.Header style={{color: 'cornflowerblue'}}>style: This is a custom styled header</Typography.Header>
 
           <Section dark>
@@ -139,7 +141,8 @@ story.add('Subtitle',
           <Typography.Subtitle highlight>highlight: This is highlight Subtitle</Typography.Subtitle>
           <Typography.Subtitle secondary>secondary: This is a secondary Subtitle</Typography.Subtitle>
           <Typography.Subtitle disabled>disabled: This is a disabled Subtitle</Typography.Subtitle>
-          <Typography.Subtitle lighter>lighter: This is a disabled Subtitle</Typography.Subtitle>
+          <Typography.Subtitle light>lighter: This is a disabled Subtitle</Typography.Subtitle>
+          <Typography.Subtitle bold>bold: This is a disabled Subtitle</Typography.Subtitle>
           <Typography.Subtitle style={{color: 'cornflowerblue'}}>style: This is a custom styled Subtitle</Typography.Subtitle>
 
           <Section dark>
@@ -167,7 +170,8 @@ story.add('Label',
           <Typography.Label highlight>highlight: This is highlight Label</Typography.Label>
           <Typography.Label secondary>secondary: This is a secondary Label</Typography.Label>
           <Typography.Label disabled>disabled: This is a disabled Label</Typography.Label>
-          <Typography.Label lighter>lighter: This is a disabled Label</Typography.Label>
+          <Typography.Label light>light: This is a disabled Label</Typography.Label>
+          <Typography.Label bold>bold: This is a disabled Label</Typography.Label>
           <Typography.Label style={{color: 'cornflowerblue'}}>style: This is a custom styled Label</Typography.Label>
 
           <Section dark>

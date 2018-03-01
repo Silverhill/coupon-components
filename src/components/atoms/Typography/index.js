@@ -1,3 +1,4 @@
+import 'Styles/fonts.css';
 import Title from './Title'
 import Text from './Text'
 import Header from './Header'

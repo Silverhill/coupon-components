@@ -47,18 +47,26 @@
   font-size: 18px;
 }
 
-.bolder {
-  font-weight: bold;
+.normal {
+  font-weight: normal;
+  font-family: 'FaktPro-Normal';
 }
 
-.lighter {
-  font-weight: 400;
+.normalText {
+  font-weight: normal;
+  font-family: 'Lato-Regular';
+}
+
+.bold {
+  font-weight: bold;
+  font-family: 'FaktPro-Bold';
+}
+
+.light {
+  font-weight: 300;
+  font-family: 'FaktPro-Thin';
 }
 
 .error {
   color: pinkRed;
-}
-
-.fontFamily{
-  font-family: 'open-sans';
 }

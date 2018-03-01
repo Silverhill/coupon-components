@@ -74,7 +74,7 @@ story.add('Icon with event',
         <Section style={{display: 'flex', padding: 20, alignItems: 'flex-start'}}>
           <Icon name='IoUniversity' color='purple' size={20} onClick={action('Click Icon!')} />
           <Icon name='IoUniversity' color='purple' size={20} onClick={action('Click Icon!')} disabled />
-          <Icon name='CpTicketa' color='white' size={30} onClick={action('Click Icon!')} style={{padding: 10, backgroundColor: 'black', borderRadius: '50%'}}/>
+          <Icon name='CpTicket' color='pink' size={30} onClick={action('Click Icon!')} style={{padding: 10, backgroundColor: 'black', borderRadius: '50%'}}/>
         </Section>
       </div>
     )
