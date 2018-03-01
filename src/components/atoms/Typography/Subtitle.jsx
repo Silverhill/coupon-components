@@ -5,14 +5,16 @@ import styles from './Typography.css'
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
 
-const Subtitle = ({highlight, secondary, disabled, inverted, style, light, bold, className, children}) => {
+const Subtitle = ({highlight, secondary, disabled, inverted, style, light, bold, normalFont=true, className, children}) => {
+  if(light || bold) normalFont = false;
   const customStyles = {
     highlight,
     secondary,
     disabled,
     inverted,
     light,
-    bold
+    bold,
+    normalFont,
   }
 
   return (

@@ -5,7 +5,8 @@ import styles from './Typography.css'
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
 
-const Label = ({highlight, secondary, disabled, inverted, style, light, bold, className, children}) => {
+const Label = ({highlight, secondary, disabled, inverted, style, light, bold, normalFont=true, className, children}) => {
+  if(light || bold) normalFont = false;
   const customStyles = {
     highlight,
     secondary,
@@ -13,6 +14,7 @@ const Label = ({highlight, secondary, disabled, inverted, style, light, bold, cl
     inverted,
     light,
     bold,
+    normalFont,
   }
 
   return (

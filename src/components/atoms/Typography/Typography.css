@@ -52,6 +52,11 @@
   font-family: 'Lato-Regular';
 }
 
+.normalFont {
+  font-weight: normal;
+  font-family: 'FaktPro-Normal';
+}
+
 .bold {
   font-weight: bold;
   font-family: 'FaktPro-Bold';
