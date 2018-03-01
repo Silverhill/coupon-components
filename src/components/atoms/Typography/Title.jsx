@@ -5,13 +5,17 @@ import styles from './Typography.css'
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
 
-const Title = ({highlight, secondary, disabled, inverted, lighter, style, className, children}) => {
+const Title = ({ highlight, secondary, disabled, inverted, light=false, style, bold=false, className, children, normal=true }) => {
+
+  if(light || bold) normal = false;
   const customStyles = {
     highlight,
     secondary,
     disabled,
     inverted,
-    lighter
+    light,
+    bold,
+    normal,
   }
 
   return (
@@ -30,7 +34,9 @@ Title.propTypes = {
   secondary: PropTypes.bool,
   disabled: PropTypes.bool,
   inverted: PropTypes.bool,
-  style: PropTypes.object
+  style: PropTypes.object,
+  bold: PropTypes.bool,
+  light: PropTypes.bool,
 }
 
 export default Title

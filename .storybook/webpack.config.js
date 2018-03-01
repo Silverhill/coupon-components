@@ -6,6 +6,7 @@
 // When you add this file, we won't add the default configurations which is similar
 // to "React Create App". This only has babel loader to load JavaScript.
 const path = require('path');
+const fs = require('fs');
 const webpack = require('webpack');
 
 const CSSNext = require('postcss-cssnext')
@@ -35,6 +36,15 @@ module.exports = {
         loaders: ['json-loader'],
       },
       {
+        test: /\.woff$/,
+        use: {
+          loader: "url-loader",
+          options: {
+            limit: 50000,
+          },
+        },
+      },
+      {
         test: /\.css$/,
         use: [
           require.resolve('style-loader'),
@@ -62,6 +72,17 @@ module.exports = {
           },
         ],
       },
+      // {
+      //   // Exclude `js` files to keep "css" loader working as it injects
+      //   // its runtime that would otherwise processed through "file" loader.
+      //   // Also exclude `html` and `json` extensions so they get processed
+      //   // by webpacks internal loaders.
+      //   exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/],
+      //   loader: require.resolve('file-loader'),
+      //   options: {
+      //     name: 'static/media/[name].[hash:8].[ext]',
+      //   },
+      // },
     ],
   },
 };

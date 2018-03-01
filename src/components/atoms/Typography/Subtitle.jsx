@@ -5,14 +5,15 @@ import styles from './Typography.css'
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
 
-const Subtitle = ({highlight, secondary, disabled, inverted, style, lighter, bolder, className, children}) => {
+const Subtitle = ({highlight, secondary, disabled, inverted, style, light=false, bold=false, normal=true, className, children}) => {
   const customStyles = {
     highlight,
     secondary,
     disabled,
     inverted,
-    lighter,
-    bolder
+    light,
+    bold,
+    normal,
   }
 
   return (
@@ -32,8 +33,8 @@ Subtitle.propTypes = {
   disabled: PropTypes.bool,
   inverted: PropTypes.bool,
   style: PropTypes.object,
-  lighter: PropTypes.bool,
-  bolder: PropTypes.bool
+  bold: PropTypes.bool,
+  light: PropTypes.bool
 }
 
 export default Subtitle
