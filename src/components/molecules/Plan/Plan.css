@@ -1,0 +1,31 @@
+@value (
+  neutralColorMedium
+) from 'Styles/palette.css';
+
+.container{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid;
+  border-color: neutralColorMedium;
+  padding: 2px;
+}
+.plan{
+
+}
+.icon{
+
+}
+.information{
+
+}
+.status{
+
+}
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid;
+  border-color: neutralColorMedium;
+  width: 90%;
+}
