@@ -27,7 +27,7 @@ story.add('Simple Row',
         <Section>
           <h4>Basic Row</h4>
           <div style={{width: '750px', borderTop:'1px solid #c7c7c7', borderBottom:'1px solid #c7c7c7'}}>
-            <RowHunter data={data}/>
+            <RowHunter data={data} onClick={action('Click Row!')}/>
           </div>
         </Section>
       </div>
