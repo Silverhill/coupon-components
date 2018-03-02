@@ -3,10 +3,12 @@ import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import Section from './helpers/Section';
-import { Tooltip, Card, Icon, Button } from '../src'
+import { Tooltip, Card, Icon, Button, Typography } from '../src'
 
 
 const story = storiesOf('Atoms/Tooltip', module)
+
+const tooltipContent = 'Hola WOW!';
 
 story.add('Basic Tooltip',
   withInfo()(
@@ -16,7 +18,7 @@ story.add('Basic Tooltip',
         <div style={{ display: 'flex', alignItems: 'center' }}>
 
           <div style={{ marginRight: '50px' }}>
-            <Tooltip content="Hola" direction="bottom">
+            <Tooltip content={tooltipContent} direction="bottom">
               <button>Hola!</button>
             </Tooltip>
           </div>
@@ -26,19 +28,19 @@ story.add('Basic Tooltip',
           </div>
 
           <div style={{ marginRight: '50px' }}>
-            <Tooltip content="Hola hola como estas!" direction="top">
+            <Tooltip content={tooltipContent} direction="top">
               <button>Hola!</button>
             </Tooltip>
           </div>
 
           <div style={{ marginRight: '250px' }}>
-            <Tooltip content="Hola hola como estas!" direction="right">
+            <Tooltip content={tooltipContent} direction="right">
               <button>Hola!</button>
             </Tooltip>
           </div>
 
           <div style={{ marginRight: '50px' }}>
-            <Tooltip content="Hola hola como estas!" direction="left">
+            <Tooltip content={tooltipContent} direction="left">
               <button>Hola!</button>
             </Tooltip>
           </div>
@@ -109,7 +111,7 @@ class TriggerTooltipExample extends Component {
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <div style={{ marginRight: '50px' }}>
 
-            <Tooltip content="WOW!" direction="top" trigger={isTooltipShowing}>
+            <Tooltip content={tooltipContent} direction="top" trigger={isTooltipShowing}>
               <Icon name="IoUniversity" />
             </Tooltip>
 

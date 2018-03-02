@@ -8,7 +8,7 @@
   pinkRed
 ) from colors;
 
-.title, .subtitle, .header {
+.title, .subtitle, .header, .p {
   margin: 0;
 }
 
@@ -69,4 +69,13 @@
 
 .error {
   color: pinkRed;
+}
+
+a {
+  font-family: 'FaktPro-Normal';
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'FaktPro-Normal';
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import Header from '../Typography/Header';
 
 import styles from './Tooltip.css';
 const cx = classNames.bind(styles);
@@ -14,9 +15,11 @@ const Bubble = ({ direction, className, content, show, width }) => {
     [styles.isShowing]: show,
   };
 
+  console.log(Header);
+
   return (
     <span className={cx(className, tooltipStyles)} style={{ width }}>
-      {content}
+      <Header>{content}</Header>
     </span>
   );
 };
