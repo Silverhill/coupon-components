@@ -43,7 +43,7 @@ class RowHunter extends Component {
               size={20}
               style={{marginRight: 20,
                       padding: 10,
-                      background: palette.coverMainColor,
+                      background: palette.baseGrayLow,
                       borderRadius: '50%'
                     }}
             />
