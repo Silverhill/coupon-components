@@ -17,6 +17,7 @@
 
 .imgCircle {
   border-radius: 50%;
+  min-width: 20px;
 }
 
 .imgResponsive {

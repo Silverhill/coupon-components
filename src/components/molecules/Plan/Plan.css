@@ -12,10 +12,13 @@
   border-radius: 10px;
   padding-left: 10px;
   padding-right: 10px;
+  cursor: pointer;
+
   &:hover {
     border-color: highlightNeutral;
   }
 }
+
 .plan{
   display: flex;
   padding-bottom: 15px;
@@ -39,6 +42,7 @@
   align-items: center;
   border-top: 2px solid neutralColorMedium;
   width: 100%;
+  padding: 15px 0;
 }
 
 .selected {
