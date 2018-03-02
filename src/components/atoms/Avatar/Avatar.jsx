@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
-import * as palette from 'Styles/palette.css';
+import * as palette from 'Styles/palette.css'
 
 import styles from './Avatar.css'
 const cx = classNames.bind(styles)

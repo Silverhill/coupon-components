@@ -1,23 +1,20 @@
 @value colors: "Styles/palette.css";
 @value (
-  accentColorSecondary
+  whiteColor
 ) from colors;
-
-.flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+@value paddingCupon: 10px;
+@value borderRadius: 10px;
 
 .container {
-  background-color: accentColorSecondary;
   position: relative;
-  border-radius: 10px;
+  border-radius: borderRadius;
   cursor: pointer;
-}
+  max-width: 400px;
+  display: flex;
 
-.container:hover {
-  opacity: 0.9;
+  &:hover {
+    opacity: 0.9;
+  }
 }
 
 .container::before {
@@ -26,11 +23,11 @@
   width: 15px;
   height: 15px;
   border-radius: 7.5px;
-  background-color: white;
+  background-color: whiteColor;
   position: absolute;
   top: 50%;
   left: 0;
-  margin: -7.5px;
+  transform: translate(-50%, -50%);
 }
 
 .container::after {
@@ -39,25 +36,15 @@
   width: 15px;
   height: 15px;
   border-radius: 7.5px;
-  background-color: white;
+  background-color: whiteColor;
   position: absolute;
   top: 50%;
   right: 0;
-  margin: -7.5px;
-}
-
-.userInformation {
-  composes: flex;
+  transform: translate(50%, -50%);
 }
 
 .avatar {
   width: 40px;
-}
-
-.information {
-  display: block;
-  text-align: left;
-  padding: 0 0 0 50px;
 }
 
 .brandCampaing {
@@ -77,17 +64,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: paddingCupon 0;
 }
 
 .cuponInformation {
   background-repeat: no-repeat;
   background-size: cover;
-  position: absolute;
+  position: relative;
   width: 80%;
-  height: 100%;
-  top: 0;
-  right: 0;
-  border-radius: 10px;
+  border-radius: borderRadius;
 }
 
 .backgroundPromo {
@@ -95,7 +80,7 @@
   width: 100%;
   height: 100%;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000000);
-  border-radius: 10px;
+  border-radius: borderRadius;
 }
 
 .promo {
@@ -103,7 +88,7 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding: 10px 0;
+  padding: paddingCupon 0;
 }
 
 .promoTitle {
@@ -111,8 +96,7 @@
 }
 
 .promo p {
-  padding: 0 10px;
+  padding: 0 paddingCupon;
   margin: 0;
 }
-
 

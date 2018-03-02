@@ -3,19 +3,21 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 import styles from './Cupon.css'
 import Avatar from 'Atoms/Avatar'
-import Typography from 'Atoms/Typography';
+import Typography from 'Atoms/Typography'
 import Icon from 'Atoms/Icon'
-import * as palette from 'Styles/palette.css';
+import * as palette from 'Styles/palette.css'
 
 const cx = classNames.bind(styles)
 
 class Cupon extends Component {
   render () {
-    const { data, onClick, color, className } = this.props
+    const { data, onClick, color, className, disabled, gold } = this.props
     let stylesImage = {backgroundImage: `url(${data.cupon.image})`}
     let colorCupon = palette[color] || palette.accentColorSecondary
+    colorCupon = disabled ? palette.neutralColorPlain : colorCupon
+    colorCupon = gold ? palette.goldGradient : colorCupon
     return (
-      <div className={cx(styles.container, className)} onClick={onClick} style={{backgroundColor: colorCupon}}>
+      <div className={cx(styles.container, className)} onClick={onClick} style={{background: colorCupon}}>
         <div className={styles.brandCampaing}>
           <div className={styles.avatar}>
             <Avatar image={data.maker.image}/>
@@ -55,7 +57,9 @@ class Cupon extends Component {
 Cupon.propTypes = {
   data: PropTypes.object,
   onClick: PropTypes.func,
-  className: PropTypes.string
+  className: PropTypes.string,
+  disabled: PropTypes.bool,
+  gold: PropTypes.bool
 }
 
 export default Cupon;
