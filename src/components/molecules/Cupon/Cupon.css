@@ -1,0 +1,121 @@
+@value colors: "Styles/palette.css";
+@value (
+  accentColorSecondary
+) from colors;
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: accentColorSecondary;
+  position: relative;
+  border-radius: 10px;
+}
+
+.container::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 7.5px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin: -7.5px;
+}
+
+.container::after {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 7.5px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin: -7.5px;
+}
+
+.userInformation {
+  composes: flex;
+}
+
+.avatar {
+  width: 40px;
+}
+
+.information {
+  display: block;
+  text-align: left;
+  padding: 0 0 0 50px;
+}
+
+.brandCampaing {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 65px 0;
+  position: relative;
+}
+
+.cupons {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cuponInformation {
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  border-radius: 10px;
+}
+
+.secondary {
+  background-color: #c7c7c7;
+}
+
+.primary {
+  background-color: accentColorSecondary;
+}
+
+.neutral {
+  background-color: #fffcfc;
+}
+
+.backgroundPromo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000000);
+  border-radius: 10px;
+}
+
+.promo {
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.promo p {
+  padding: 0 10px;
+}
+
+.promoTitle {
+  margin: 0;
+}
