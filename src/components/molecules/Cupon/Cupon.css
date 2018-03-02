@@ -13,6 +13,11 @@
   background-color: accentColorSecondary;
   position: relative;
   border-radius: 10px;
+  cursor: pointer;
+}
+
+.container:hover {
+  opacity: 0.9;
 }
 
 .container::before {
@@ -85,18 +90,6 @@
   border-radius: 10px;
 }
 
-.secondary {
-  background-color: #c7c7c7;
-}
-
-.primary {
-  background-color: accentColorSecondary;
-}
-
-.neutral {
-  background-color: #fffcfc;
-}
-
 .backgroundPromo {
   position: absolute;
   width: 100%;
@@ -110,12 +103,16 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  padding: 10px 0;
+}
+
+.promoTitle {
+  margin: 5px 0 !important;
 }
 
 .promo p {
   padding: 0 10px;
-}
-
-.promoTitle {
   margin: 0;
 }
+
+
