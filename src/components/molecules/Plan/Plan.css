@@ -1,0 +1,46 @@
+@value (
+  neutralColorMedium,
+  highlightNeutral
+) from 'Styles/palette.css';
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid neutralColorMedium;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  &:hover {
+    border-color: highlightNeutral;
+  }
+}
+.plan{
+  display: flex;
+  padding-bottom: 15px;
+  padding-top: 10px;
+}
+
+.information{
+  margin-left: 15px;
+}
+
+.status{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid neutralColorMedium;
+  width: 100%;
+}
+
+.selected {
+  border-color: highlightNeutral;
+}
