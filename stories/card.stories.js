@@ -3,9 +3,10 @@ import React from 'react'
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions'
+import { withKnobs, text } from '@storybook/addon-knobs/react';
 import Section from './helpers/Section';
 
-import { Card } from '../src';
+import { Card, Typography } from '../src';
 
 const list = [
   {title: 'Matematica', description: 'Clases del Sr Peppe', url: '/task/3'},
@@ -14,6 +15,10 @@ const list = [
 ]
 
 const story = storiesOf('Atoms/Card', module)
+story.addDecorator( withKnobs );
+
+const loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut eum molestias in ab, dicta vitae distinctio! Sed dolores amet, voluptate voluptatum accusantium architecto quas numquam, suscipit sit est deleniti porro!";
+const content = <Typography.Text>{text('Texto', loremIpsum)}</Typography.Text>
 
 story.add('Cards with custom size',
   withInfo(`
@@ -22,21 +27,9 @@ story.add('Cards with custom size',
     () => (
       <div>
         <Section>
-          <Card width={'400px'}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut eum molestias in ab, dicta vitae distinctio! Sed dolores amet, voluptate voluptatum accusantium architecto quas numquam, suscipit sit est deleniti porro!
+          <Card width={text('Custom width', '500px')}>
+            {content}
           </Card>
-          <Card width={'30%'} height={'500px'}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut eum molestias in ab, dicta vitae distinctio! Sed dolores amet, voluptate voluptatum accusantium architecto quas numquam, suscipit sit est deleniti porro!
-          </Card>
-
-          <div style={{display: 'flex'}}>
-            <Card width={'20%'}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut eum molestias in ab, dicta vitae distinctio! Sed dolores amet, voluptate voluptatum accusantium architecto quas numquam, suscipit sit est deleniti porro!
-            </Card>
-            <Card flex={1}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate neque in maxime cupiditate iste aut libero non, veniam deleniti blanditiis. Voluptas consequatur rerum quasi ullam impedit maxime placeat explicabo tempore.
-            </Card>
-          </div>
         </Section>
       </div>
     )
@@ -52,7 +45,7 @@ story.add('Simple Card',
       <div>
         <Section style={{width: '300px'}}>
           <Card>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut eum molestias in ab, dicta vitae distinctio! Sed dolores amet, voluptate voluptatum accusantium architecto quas numquam, suscipit sit est deleniti porro!
+            {content}
           </Card>
         </Section>
       </div>
@@ -68,16 +61,16 @@ story.add('Card with title',
       <div>
         <Section style={{width: '300px'}}>
           <Card title="Campañas" subtitle="Activas">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut eum molestias in ab, dicta vitae distinctio! Sed dolores amet, voluptate voluptatum accusantium architecto quas numquam, suscipit sit est deleniti porro!
+            {content}
           </Card>
         </Section>
         <Section style={{width: '300px'}}>
           <Card title="My List">
             <ul>
-              <li>item 1</li>
-              <li>item 2</li>
-              <li>item 3</li>
-              <li>item 4</li>
+              <li><Typography.Header>item 1</Typography.Header></li>
+              <li><Typography.Header>item 2</Typography.Header></li>
+              <li><Typography.Header>item 3</Typography.Header></li>
+              <li><Typography.Header>item 4</Typography.Header></li>
             </ul>
           </Card>
         </Section>
