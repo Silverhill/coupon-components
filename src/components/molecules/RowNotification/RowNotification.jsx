@@ -1,19 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames/bind'
 import styles from './RowNotification.css'
 import Avatar from 'Atoms/Avatar'
 import Typography from 'Atoms/Typography';
-import Icon from 'Atoms/Icon'
-
-const cx = classNames.bind(styles)
 
 class RowNotification extends Component {
   render () {
     const {
       name,
       image,
-      email,
       dateCoupon,
       codeCoupon,
       onClick
