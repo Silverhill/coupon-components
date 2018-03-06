@@ -13,9 +13,9 @@ const data = {
     image: 'https://i.pinimg.com/originals/11/0f/00/110f0057f178a5f1357925aad67a9dd4.png',
     name: 'Jhon Snow'
   },
-  cupon: {
+  coupon: {
     date: '07 Nov 2017',
-    codigo: 12341234
+    code: 12341234
   }
 }
 
@@ -23,7 +23,13 @@ story.add('Simple Row',
   withInfo()(
     () =>
     <div style={{width: '750px', borderTop:'1px solid #c7c7c7', borderBottom:'1px solid #c7c7c7'}}>
-      <RowNotification data={data} onClick={action('Click Row!')}/>
+      <RowNotification
+        name={data.user.name}
+        image={data.user.image}
+        email={data.user.email}
+        dateCoupon={data.coupon.date}
+        codeCoupon={data.coupon.code}
+        onClick={action('Click Row!')}/>
     </div>
   )
 );

@@ -58,7 +58,7 @@ story.add('With border and colors',
             <h5>custom border size</h5>
           </div>
           <div style={{width: '25px', textAlign:'center'}}>
-            <Avatar image='https://i.pinimg.com/564x/df/ba/63/dfba6384ad4d33d5967d600df5cc1319.jpg' borderColor='noFound'/>
+            <Avatar image={null} borderColor='noFound'/>
             <h5>invalid color</h5>
           </div>
         </Section>

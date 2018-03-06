@@ -16,11 +16,12 @@ class Avatar extends Component {
     let colorBorder = palette[borderColor] || palette.accentColorSecondary
     let colorSize = this.props.borderSize || '4px'
     let borderStyles = this.props.borderColor ? colorSize + ' solid ' + colorBorder : 'none'
-    let stylesComponent = {backgroundImage: `url(${image})`, border: borderStyles}
+    let stylesComponent = image ? {backgroundImage: `url(${image})`, border: borderStyles} : {}
     return (
       <div className={cx(styles.container, className)}>
         <div className={cx(styles.ratio, styles.imgResponsive, styles.imgCircle)}
-            style={stylesComponent}/>
+          style={stylesComponent}
+        />
       </div>
     )
   }
