@@ -10,25 +10,32 @@ const cx = classNames.bind(styles)
 
 class RowNotification extends Component {
   render () {
-    const { data, onClick } = this.props
+    const {
+      name,
+      image,
+      email,
+      dateCoupon,
+      codeCoupon,
+      onClick
+    } = this.props
     return (
       <div className={styles.container} onClick={onClick}>
         <div className={styles.userInformation}>
           <div className={styles.avatar}>
-            <Avatar image={data.user.image}/>
+            <Avatar image={image}/>
           </div>
           <div className={styles.information}>
             <Typography.Subtitle bold>
-              {data.user.name}
+              {name}
             </Typography.Subtitle>
           </div>
         </div>
         <div className={styles.cuponInformation}>
           <Typography.Label lighter style={{margin:0}}>
-            Uso el cupón: # {data.cupon.codigo}
+            Uso el cupón: # {codeCoupon}
           </Typography.Label>
           <Typography.Label lighter style={{margin:0}}>
-            {data.cupon.date}
+            {dateCoupon}
           </Typography.Label>
         </div>
       </div>
@@ -37,7 +44,11 @@ class RowNotification extends Component {
 }
 
 RowNotification.propTypes = {
-  data: PropTypes.object,
+  name: PropTypes.string,
+  image: PropTypes.string,
+  email: PropTypes.string,
+  dateCoupon: PropTypes.string,
+  codeCoupon: PropTypes.string,
   onClick: PropTypes.func
 }
 

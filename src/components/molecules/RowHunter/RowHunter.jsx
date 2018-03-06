@@ -11,31 +11,41 @@ const cx = classNames.bind(styles)
 
 class RowHunter extends Component {
   render () {
-    const { data, onClick, className } = this.props
+    const {
+      name,
+      image,
+      email,
+      dateLastCoupon,
+      totalCoupons,
+      onClick,
+      className
+    } = this.props
     return (
       <div className={cx(styles.container, className)} onClick={onClick}>
         <div className={styles.userInformation}>
           <div className={styles.avatar}>
-            <Avatar image={data.user.image}/>
+            <Avatar image={image}/>
           </div>
           <div className={styles.information}>
             <Typography.Header small bold>
-              {data.user.name}
+              {name}
             </Typography.Header>
             <Typography.Text small secondary lighter>
-              {data.user.email}
+              {email}
             </Typography.Text>
           </div>
         </div>
         <div className={styles.cuponInformation}>
-          <div className={styles.date}>
-            <Typography.Text small secondary>
-              Ultimo cupon utilizado:
-            </Typography.Text>
-            <Typography.Text small secondary>
-              {data.cupon.date}
-            </Typography.Text>
-          </div>
+          {dateLastCoupon &&
+            <div className={styles.date}>
+              <Typography.Text small secondary>
+                Ultimo cupon utilizado:
+              </Typography.Text>
+              <Typography.Text small secondary>
+                {dateLastCoupon}
+              </Typography.Text>
+            </div>
+          }
           <div className={styles.cupon}>
             <Icon
               name="CpTicket"
@@ -48,7 +58,7 @@ class RowHunter extends Component {
                     }}
             />
             <Typography.Title>
-              {data.cupon.total}
+              {totalCoupons || 0}
             </Typography.Title>
           </div>
         </div>
@@ -58,9 +68,13 @@ class RowHunter extends Component {
 }
 
 RowHunter.propTypes = {
-  data: PropTypes.object,
-  onClick: PropTypes.func,
-  className: PropTypes.string
+  className: PropTypes.string,
+  name: PropTypes.string,
+  image: PropTypes.string,
+  email: PropTypes.string,
+  dateLastCoupon: PropTypes.string,
+  totalCoupons: PropTypes.number,
+  onClick: PropTypes.func
 }
 
 export default RowHunter;

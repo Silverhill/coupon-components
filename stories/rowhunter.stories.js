@@ -14,7 +14,7 @@ const data = {
     name: 'Jhon Snow',
     email: 'jhonsnow@winterfall.com'
   },
-  cupon: {
+  coupon: {
     date: '19/12/2017',
     total: 50
   }
@@ -27,13 +27,17 @@ story.add('Simple Row',
         <Section>
           <h4>Basic Row</h4>
           <div style={{width: '750px', borderTop:'1px solid #c7c7c7', borderBottom:'1px solid #c7c7c7'}}>
-            <RowHunter data={data} onClick={action('Click Row!')}/>
+            <RowHunter
+              name={data.user.name}
+              image={data.user.image}
+              email={data.user.email}
+              dateLastCoupon={data.coupon.date}
+              totalCoupons={data.coupon.total}
+              onClick={action('Click Row!')}
+            />
           </div>
         </Section>
       </div>
     )
   )
 );
-
-
-
