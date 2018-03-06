@@ -6,6 +6,7 @@
 // When you add this file, we won't add the default configurations which is similar
 // to "React Create App". This only has babel loader to load JavaScript.
 const path = require('path');
+const paths = require('../config/paths');
 const fs = require('fs');
 const webpack = require('webpack');
 
@@ -13,6 +14,7 @@ const CSSNext = require('postcss-cssnext')
 // const rucksack = require('rucksack-css')
 const values = require('postcss-modules-values')
 const importPostcss = require('postcss-import')
+const eslintFormatter = require('react-dev-utils/eslintFormatter');
 
 module.exports = {
   plugins: [
@@ -30,6 +32,20 @@ module.exports = {
   target: 'web',
   module: {
     rules: [
+      {
+        test: /\.(js|jsx|mjs)$/,
+        enforce: 'pre',
+        include: paths.appSrc,
+        use: [
+          {
+            options: {
+              formatter: eslintFormatter,
+              eslintPath: require.resolve('eslint'),
+            },
+            loader: require.resolve('eslint-loader'),
+          },
+        ],
+      },
       // add your custom rules.
       {
         test: /\.json$/,
