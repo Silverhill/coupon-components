@@ -1,7 +1,6 @@
 @value clearBlue: #2962ff;
 @value clearBlueAlpha: #2962fa;
 @value pinkRed: #ff4a67;
-@value lightRoyalBlue: #5c4cfd;
 @value lightRoyalBlueAlpha: #5c4cfd;
 @value dark: #000000;
 @value brightBlue: #0076ff;
@@ -43,9 +42,8 @@
 /****************
  * Pallette
  ****************/
-@value primaryColorAlpha: lightRoyalBlueAlpha;
-@value secondaryColorAlpha: clearBlueAlpha;
-@value neutralColorDark: silverColor;
+
+@value neutralColorDark: #8F8E94;
 @value neutralColorMedium: paleGray;
 @value neutralColorLight: paleLilac;
 @value neutralColorPlain: baseGrayMedium;

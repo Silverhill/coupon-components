@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 import Icon from '../Icon/Icon'
-import Label from '../Typography/Label'
+import Text from '../Typography/Text'
 
 import styles from './InputBox.css'
 const cx = classNames.bind(styles)
@@ -71,9 +71,9 @@ class InputBox extends Component {
     return (
       <div>
         {labelText &&
-          <Label>
+          <Text small bold>
             {labelText}
-          </Label>
+          </Text>
         }
 
         <div className={iconClassNames}>
