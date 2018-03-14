@@ -17,3 +17,4 @@ export {default as RoundButton} from './components/atoms/RoundButton/RoundButton
 export {default as Tooltip} from 'Atoms/Tooltip';
 export {default as Cupon} from './components/molecules/Cupon';
 export {default as RowHunter} from './components/molecules/RowHunter';
+export {default as StepByStep} from './components/molecules/StepByStep';
