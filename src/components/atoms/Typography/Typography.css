@@ -2,6 +2,8 @@
 @value (
   darkColor,
   primaryColor,
+  secondaryColor,
+  highlightColor,
   neutralColorDark,
   neutralColorMedium,
   whiteColor,
@@ -23,11 +25,11 @@
 }
 
 .highlight {
-  color: primaryColor;
+  color: highlightColor;
 }
 
 .secondary {
-  color: neutralColorDark;
+  color: secondaryColor;
 }
 
 .disabled {

@@ -50,7 +50,7 @@ story.add('With border and colors',
             <h5>default border</h5>
           </div>
           <div style={{width: '75px', textAlign:'center'}}>
-            <Avatar image='https://cdn.dribbble.com/users/600973/screenshots/1640127/7b4819237638866c446472e7406b15cf.jpg' borderColor='primaryColor'/>
+            <Avatar image='https://cdn.dribbble.com/users/600973/screenshots/1640127/7b4819237638866c446472e7406b15cf.jpg' borderColor='secondaryColor'/>
             <h5>custom border color</h5>
           </div>
           <div style={{width: '50px', textAlign:'center'}}>

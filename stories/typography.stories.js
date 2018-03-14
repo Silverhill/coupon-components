@@ -22,7 +22,7 @@ story.add('Title',
         <Section>
           <Typography.Title highlight>This is a cool title with highlight</Typography.Title>
           <Typography.Title secondary>This is a cool title with secondary color</Typography.Title>
-          <Typography.Title style={{color: 'blue'}}>This is a cool title with custom styles</Typography.Title>
+          <Typography.Title style={{color: 'red'}}>This is a cool title with custom styles</Typography.Title>
           <Typography.Title disabled>This is a cool disabled title</Typography.Title>
           <Typography.Title light>This is a cool light title</Typography.Title>
           <Typography.Title bold>This is a cool bold title</Typography.Title>
