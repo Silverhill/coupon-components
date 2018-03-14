@@ -15,8 +15,6 @@ const Bubble = ({ direction, className, content, show, width }) => {
     [styles.isShowing]: show,
   };
 
-  console.log(Header);
-
   return (
     <span className={cx(className, tooltipStyles)} style={{ width }}>
       <Header>{content}</Header>
