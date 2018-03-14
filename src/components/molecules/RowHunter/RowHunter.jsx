@@ -30,20 +30,20 @@ class RowHunter extends Component {
             <Typography.Header small bold>
               {name}
             </Typography.Header>
-            <Typography.Text small secondary lighter>
+            <Typography.Label small lighter>
               {email}
-            </Typography.Text>
+            </Typography.Label>
           </div>
         </div>
         <div className={styles.cuponInformation}>
           {dateLastCoupon &&
             <div className={styles.date}>
-              <Typography.Text small secondary>
+              <Typography.Label small>
                 Ultimo cupon utilizado:
-              </Typography.Text>
-              <Typography.Text small secondary>
+              </Typography.Label>
+              <Typography.Label small>
                 {dateLastCoupon}
-              </Typography.Text>
+              </Typography.Label>
             </div>
           }
           <div className={styles.cupon}>

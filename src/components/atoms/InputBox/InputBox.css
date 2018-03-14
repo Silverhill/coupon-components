@@ -3,6 +3,7 @@
   neutralColorDark,
   neutralColorMedium,
   darkColor,
+  darkNeutral,
   highlightNeutral
 ) from colors;
 
@@ -43,7 +44,7 @@
 }
 
 .likePlaceholder {
-  color: neutralColorDark;
+  color: darkNeutral;
 }
 
 .lIcon{

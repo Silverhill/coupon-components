@@ -29,7 +29,7 @@
   padding: 0 0 0 50px;
 }
 
-.information p {
+.information h3 {
   margin: 0;
 }
 
@@ -45,7 +45,7 @@
   composes: flex;
 }
 
-.date p {
+.date h3 {
   padding-left: 10px;
 }
 
