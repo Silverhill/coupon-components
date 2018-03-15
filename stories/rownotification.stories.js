@@ -4,7 +4,6 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 import { RowNotification } from '../src';
-import Section from './helpers/Section';
 
 const story = storiesOf('Molecules/RowNotification', module)
 

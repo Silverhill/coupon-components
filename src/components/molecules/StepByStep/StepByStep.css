@@ -1,0 +1,67 @@
+@value colors: "Styles/palette.css";
+@value (
+  neutralColorPlain,
+  whiteColor,
+  secondaryColor,
+  lightBlueColor
+) from colors;
+
+.container{
+  position: relative;
+}
+
+.steps{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.itemIcon {
+  padding: 10px;
+  border-radius: 50%;
+  color: whiteColor !important;
+  position: relative;
+  opacity: 1 !important;
+  transition: transform 0.2s ease-in-out;
+  transform: scale(1);
+
+  &:hover {
+    transform-origin: center center;
+    transform: scale(1.2);
+  }
+
+  & svg {
+    position: relative;
+  }
+
+  &::before {
+    content: '';
+    transition: border 0.1s ease-in-out;
+    position: absolute;
+    width:100%;
+    height:100%;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    background-color: secondaryColor;
+    border-radius: 50%;
+  }
+}
+
+.isActive {
+  &::before {
+    border: 5px solid lightBlueColor;
+  }
+}
+
+.line {
+  border: 0.1rem solid neutralColorPlain;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 0;
+  box-sizing: border-box;
+}
