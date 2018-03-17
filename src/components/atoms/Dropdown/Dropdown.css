@@ -6,7 +6,13 @@
   neutralColorMedium
 ) from colors;
 
+.dropdown {
+  display: block;
+  position: relative;
+}
+
 .container {
+  position: absolute;
   display: block;
   min-width: 50px;
   min-height: 10px;
@@ -16,7 +22,6 @@
   border-radius: 2px;
   overflow: hidden;
   box-shadow: cardShadow;
-  position: absolute;
   animation-name: fadeInDown;
   animation-duration: 200ms;
   animation-timing-function: ease-in-out;
