@@ -1,0 +1,37 @@
+@value colors: 'Styles/palette.css';
+@value cardShadow from 'Styles/common.css';
+@value (
+  neutralColorLight,
+  primaryColor,
+  neutralColorMedium
+) from colors;
+
+.container {
+  display: block;
+  min-width: 50px;
+  min-height: 10px;
+  background-color: neutralColorLight;
+  padding: 0;
+  margin: 0;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: cardShadow;
+  position: absolute;
+  animation-name: fadeInDown;
+  animation-duration: 200ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0.1;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
