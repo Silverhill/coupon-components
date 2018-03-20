@@ -69,7 +69,7 @@ story.add('Nested Inputs',
 
   `)(
     () => (
-      <div style={{width: 500}}>
+      <div style={{width: 600}}>
         <Section >
           <InputNested>
             < InputBox type='text' placeholder='Input 1' />

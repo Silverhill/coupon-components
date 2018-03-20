@@ -22,7 +22,9 @@ class InputNested extends Component {
         }
         <div className={cx(styles.container, className)} >
           <div className={styles.line}/>
-          {this.props.children}
+          <div className={styles.components}>
+            {this.props.children}
+          </div>
         </div>
       </div>
     )
