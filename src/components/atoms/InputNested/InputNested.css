@@ -4,8 +4,6 @@
 ) from colors;
 
 .container {
-  display: flex;
-  justify-content: space-between;
   position: relative;
 }
 
@@ -13,6 +11,15 @@
   position: absolute;
   border: 0.1rem solid neutralColorPlain;
   top: 50%;
+  left: 0;
   transform: translateY(-50%);
-  width: 99%;
+  width: 100%;
+  z-index: 0;
+  box-sizing: border-box;
+}
+.components{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
 }
