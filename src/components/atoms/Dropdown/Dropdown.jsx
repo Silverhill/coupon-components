@@ -27,7 +27,7 @@ export default class Dropdown extends Component {
   }
 
   render () {
-    const { children } = this.props
+    const { children, className } = this.props
     const { isShowing } = this.state
     const  trigger = DropdownTrigger
     const  content = DropdownContent
@@ -48,7 +48,7 @@ export default class Dropdown extends Component {
     });
 
     return (
-      <div className={cx(styles.dropdown)}>
+      <div className={cx(styles.dropdown, className)}>
         <div onClick={this.showMenu}>
           {triggerComponent}
         </div>

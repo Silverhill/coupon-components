@@ -23,7 +23,7 @@ export default class DropdownContent extends Component {
   render () {
     const { children, className } = this.props;
     return (
-      <div  className={cx(styles.container, className)}>
+      <div className={cx(styles.container, className)}>
         {children}
       </div>
     )

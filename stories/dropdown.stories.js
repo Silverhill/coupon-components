@@ -5,23 +5,10 @@ import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions'
 import Section from './helpers/Section';
 
-import { Dropdown, DropdownTrigger, DropdownContent, Button, Cupon, Avatar } from '../src';
+import { Dropdown, DropdownTrigger, DropdownContent, Avatar } from '../src';
 
 
 const story = storiesOf('Molecules/Dropdown', module)
-
-const starbucks = {
-  maker: {
-    image: 'https://pbs.twimg.com/profile_images/968173455580397568/Qe0pSZTk_400x400.jpg',
-    cupons: 345
-  },
-  cupon: {
-    image: 'https://assets3.thrillist.com/v1/image/2439237/size/gn-gift_guide_variable_c.jpg',
-    date: '11 Feb - 20 May 2017',
-    promo: 'Enjoy 50% off any Starbucks drink',
-    address: '901 S Miami Ave #106, Miami, FL 33130, EE. UU.'
-  }
-}
 
 story.add('Dropdown onClick',
   withInfo(`
@@ -32,36 +19,20 @@ story.add('Dropdown onClick',
         <Section>
           <Dropdown>
             <DropdownTrigger>
-              <Button onClick={action('clicked')} text="TEST" shape="pill" color="baseGreen" />
-            </DropdownTrigger>
-            <DropdownContent>
-              <div className="dropdown-template">
-                <h4>leninnnnn</h4>
-                <h4>cappaaaa</h4>
-                <h4>leninnnnn</h4>
+              <div style={{display:'flex', alignItems:'center'}}>
+                <Avatar image='https://mir-s3-cdn-cf.behance.net/project_modules/1400/316d6c36433989.571c87a695d14.png' borderColor='highlightNeutral' borderSize='2px'/>
+                <h5 style={{paddingLeft:'10px'}}>Arya Stark</h5>
               </div>
-            </DropdownContent>
-          </Dropdown>
-        </Section>
-      </div>
-    )
-  )
-);
-
-story.add('Dropdown onHover',
-  withInfo(`
-    description or documentation about my component
-  `)(
-    () => (
-      <div>
-        <Section>
-          <Dropdown>
-            <DropdownTrigger>
-              <h4>Preview Coupon</h4>
             </DropdownTrigger>
             <DropdownContent>
-              <div  style={{width: "300px"}}>
-                <Cupon data={starbucks} onClick={action('Click Cupon!')} disabled={true}/>
+              <div style={{textAlign:'center'}}>
+                <h5>Arya's Kill List</h5>
+                <ul style={{listStyleType:'none', padding:'0 10px'}}>
+                  <li>Cersei Lannister</li>
+                  <li>The Mountain</li>
+                  <li>Walder Frey</li>
+                  <li>Tywin Lannister</li>
+                </ul>
               </div>
             </DropdownContent>
           </Dropdown>

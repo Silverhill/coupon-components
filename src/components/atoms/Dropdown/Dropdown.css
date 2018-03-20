@@ -28,6 +28,10 @@
   animation-fill-mode: forwards;
 }
 
+.dropdownTrigger {
+  cursor: pointer;
+}
+
 @keyframes fadeInDown {
   from {
     transform: translateY(-10px);
