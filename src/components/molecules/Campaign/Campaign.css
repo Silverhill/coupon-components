@@ -1,0 +1,25 @@
+.container {
+  padding: 10px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+.promo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 3.8rem;
+}
+.coupons {
+  display: flex;
+  margin-top: 5px;
+  width: 7rem;
+  justify-content: space-between;
+}
+.hunted {
+  display: flex;
+}
+.available {
+  display: flex;
+}
