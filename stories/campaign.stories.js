@@ -58,7 +58,7 @@ story.add('Disabled Campaign',
         <Section>
           <h4>Cupon</h4>
           <div style={{width: '320px', background: '#fafafa', borderTop:'1px solid #c7c7c7', borderBottom:'1px solid #c7c7c7'}}>
-            <Campaign data={starbucks} onClick={action('Click Campaign!')} disabled={ boolean('Disabled', true) }/>
+            <Campaign data={starbucks} onClick={action('Click Campaign!')} selected={ boolean('Selected', true) }/>
           </div>
         </Section>
       </div>

@@ -10,17 +10,20 @@ const cx = classNames.bind(styles)
 
 class Campaign extends Component {
   render () {
-    const { data, onClick, className } = this.props
+    const { data, onClick, className, selected } = this.props
+    let classNames = selected ?
+        cx(styles.container, className, styles.selected) : cx(styles.container, className)
+    let selectColor = selected ? palette.whiteColor : palette.silverColor
     return (
-      <div className={cx(styles.container, className)} onClick={onClick}>
+      <div className={classNames} onClick={onClick}>
         <div className={styles.promo}>
-          <Typography.Text small light style={{color: palette.silverColor}}>
+          <Typography.Text small light style={{color: selectColor}}>
             {data.cupon.date}
           </Typography.Text>
-          <Typography.Text lead style={{color: palette.silverColor}}>
+          <Typography.Text lead style={{color: selectColor}}>
             {data.cupon.promo}
           </Typography.Text>
-          <Typography.Text small light style={{color: palette.silverColor}}>
+          <Typography.Text small light style={{color: selectColor}}>
             {data.cupon.address}
           </Typography.Text>
         </div>
@@ -28,22 +31,22 @@ class Campaign extends Component {
           <div className={styles.hunted}>
             <Icon
                 name="CpTicket"
-                color={palette.silverColor}
+                color={selectColor}
                 size={15}
                 style={{paddingRight: 5}}
               />
-            <Typography.Text small lighter style={{color: palette.silverColor}}>
+            <Typography.Text small lighter style={{color: selectColor}}>
               {data.maker.hunted}
             </Typography.Text>
           </div>
           <div className={styles.available}>
             <Icon
                 name="CpTicket"
-                color={palette.silverColor}
+                color={selectColor}
                 size={15}
                 style={{paddingRight: 5}}
               />
-            <Typography.Text small lighter style={{color: palette.silverColor}}>
+            <Typography.Text small lighter style={{color: selectColor}}>
               {data.maker.cupons}
             </Typography.Text>
           </div>
@@ -57,7 +60,7 @@ Campaign.propTypes = {
   data: PropTypes.object,
   onClick: PropTypes.func,
   className: PropTypes.string,
-  disabled: PropTypes.bool,
+  selected: PropTypes.bool,
 }
 
 export default Campaign;
