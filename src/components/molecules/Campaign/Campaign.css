@@ -1,14 +1,18 @@
 
 @value colors: "Styles/palette.css";
 @value (
-  silverColor
+  silverColor,
+  lightNeutral
 ) from colors;
 
 .container {
   padding: 10px;
   cursor: pointer;
+  border: 1px solid silverColor;
+  border-radius: 7px;
+  background: lightNeutral;
   &:hover {
-    opacity: 0.9;
+    opacity: 0.6;
   }
 }
 .promo {
@@ -31,5 +35,4 @@
 }
 .selected{
   background: silverColor;
-  border-radius: 7px;
 }

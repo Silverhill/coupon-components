@@ -42,7 +42,7 @@ story.add('Basic Campaign',
       <div>
         <Section>
           <h4>Campaign</h4>
-          <div style={{width: '320px', background: '#fafafa', borderTop:'1px solid #c7c7c7', borderBottom:'1px solid #c7c7c7'}}>
+          <div style={{width: '320px'}}>
             <Campaign data={pizzaHut} onClick={action('Click Campaign!')}/>
           </div>
         </Section>
@@ -57,7 +57,7 @@ story.add('Disabled Campaign',
       <div>
         <Section>
           <h4>Cupon</h4>
-          <div style={{width: '320px', background: '#fafafa', borderTop:'1px solid #c7c7c7', borderBottom:'1px solid #c7c7c7'}}>
+          <div style={{width: '320px'}}>
             <Campaign data={starbucks} onClick={action('Click Campaign!')} selected={ boolean('Selected', true) }/>
           </div>
         </Section>
