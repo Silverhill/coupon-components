@@ -33,7 +33,7 @@ const items = [
 story.add('Basic Slider',
   withInfo()(
     () =>
-    <div style={{width: '500px', height: '500px'}}>
+    <div style={{width: '500px', height: '800px'}}>
       <Slider items={items}/>
     </div>
   )

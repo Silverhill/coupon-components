@@ -1,63 +1,52 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import classNames from 'classnames/bind'
-import styles from './Slider.css'
-import * as palette from 'Styles/palette.css'
-import Typography from 'Atoms/Typography'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
+import styles from './Slider.css';
+import Dots from './Dots';
+import SliderItem from './SliderItem';
 
-const cx = classNames.bind(styles)
+const cx = classNames.bind(styles);
 
 class Slider extends Component {
   state = {
-    items: [],
     currentItem: {},
+    currentIndex: 0,
   }
 
   componentWillMount() {
     const { items } = this.props;
-    this.setState({ items, currentItem: items[0] });
+    this.setState({ currentIndex: 0, currentItem: items[0] });
   }
 
-  handleItemChange = (currentItem) => {
-    const { items } = this.state;
+  handleDot = (index) => {
+    const { items } = this.props;
+    this.setState(({ currentIndex: index, currentItem: items[index] }));
+  }
 
-    const newItems = items.map(item => {
-      item.active = false;
-      if(item.id === currentItem.id) item.active = true;
-      return item;
-    });
+  componentDidMount() {
+    let defaultTime = this.props.interval || 5000;
 
-    this.setState({ currentItem: currentItem, steps: newItems });
+    setInterval(async () => {
+      const { items } = this.props;
+      await this.setState(({ currentIndex }) => {
+        const isFinalIndex = items.length === currentIndex + 1;
+        return({
+                currentIndex: isFinalIndex ? 0 : currentIndex + 1,
+                currentItem: isFinalIndex ? items[0] : items[currentIndex + 1]
+              })
+      });
+    }, defaultTime)
   }
 
   render () {
-    const { className } = this.props;
-    const { items, currentItem } = this.state;
-    let stylesComponent = currentItem.image ? {backgroundImage: `url(${currentItem.image})`} : {};
-
-    setTimeout(() => {
-      this.handleItemChange(currentItem);
-      console.log('cambio', currentItem.id)
-    }, 3000);
+    const { className, items, dots } = this.props;
+    const { currentItem, currentIndex } = this.state;
+    let enabledDots = dots || true;
 
     return (
-      <div className={cx(className, styles.container)} style={stylesComponent}>
-        <div className={cx(styles.dotsContainer)}>
-          {items && items.map((item) => {
-            let isActive = item.active;
-            return (
-              <div className={cx(styles.dot, {isActive})}/>
-            );
-          })}
-        </div>
-        <div className={cx(styles.footer)}>
-          <Typography.Title bold style={{color: palette.whiteColor, padding: '15px 10px 0px 10px'}}>
-            {currentItem.title}
-          </Typography.Title>
-          <Typography.Text light style={{color: palette.whiteColor, padding: '0px 10px 15px 10px'}}>
-            {currentItem.description}
-          </Typography.Text>
-        </div>
+      <div className={cx(className, styles.container)}>
+        { enabledDots && <Dots size={items.length} currentIndex={currentIndex} onChange={this.handleDot}/>}
+        <SliderItem currentItem={currentItem}/>
       </div>
     )
   }
@@ -66,7 +55,6 @@ class Slider extends Component {
 Slider.propTypes = {
   className: PropTypes.string,
   dots: PropTypes.bool,
-  arrows: PropTypes.bool,
   items: PropTypes.array,
   interval: PropTypes.number
 }
