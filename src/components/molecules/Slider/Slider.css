@@ -1,0 +1,74 @@
+
+@value colors: "Styles/palette.css";
+@value (
+  whiteColor,
+  primaryColor,
+  silverColor
+) from colors;
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  position: relative;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: silverColor;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.dotsContainer {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: 1.3rem;
+  right: 1.5rem;
+  z-index: 1;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid whiteColor;
+  margin-left: 3px;
+  cursor: pointer;
+}
+
+.isActive {
+  background: primaryColor;
+  border-color: primaryColor;
+}
+
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 20px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000000);
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.1;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
