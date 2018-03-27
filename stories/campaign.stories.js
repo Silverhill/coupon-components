@@ -51,7 +51,7 @@ story.add('Basic Campaign',
   )
 );
 
-story.add('Disabled Campaign',
+story.add('Selected Campaign',
   withInfo()(
     () => (
       <div>
