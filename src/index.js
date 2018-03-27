@@ -23,3 +23,4 @@ export {default as RowHunter} from './components/molecules/RowHunter';
 export {default as StepByStep} from './components/molecules/StepByStep';
 export {default as Campaign} from './components/molecules/Campaign';
 export {default as Slider} from './components/molecules/Slider';
+export {default as Select} from './components/molecules/Select';

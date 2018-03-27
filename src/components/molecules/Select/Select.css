@@ -1,0 +1,30 @@
+@value colors: "Styles/palette.css";
+@value (
+  whiteColor,
+  secondaryColor,
+  lightNeutral
+) from colors;
+
+.container {
+  width: 100%;
+  background-color: whiteColor;
+  max-height: 10rem;
+  overflow-y: scroll;
+}
+
+.option {
+  padding: 5px 1rem;
+  cursor: pointer;
+
+  &:nth-child(even) {
+    background: lightNeutral;
+  }
+
+  &:hover {
+    background-color: secondaryColor;
+
+    & p {
+      color: whiteColor !important;
+    }
+  }
+}
