@@ -13,17 +13,23 @@ export default class Dropdown extends Component {
     isShowing: false
   }
 
-  showMenu = () => {
-    this.setState({ isShowing: true })
+  exposeCurrentState = (isShowing) => {
+    const { isOpen } = this.props;
+    if(isOpen) isOpen(isShowing);
   }
 
-  dismissMenu = () => {
-    this.setState({ isShowing: false })
+  showMenu = async () => {
+    await this.setState({ isShowing: true });
+
+    const { isShowing } = this.state;
+    this.exposeCurrentState(isShowing);
   }
 
-  optionChange = (e, option) => {
-    const { onChange } = this.props
-    if (onChange) onChange(e, option)
+  dismissMenu = async () => {
+    await this.setState({ isShowing: false });
+
+    const { isShowing } = this.state;
+    this.exposeCurrentState(isShowing);
   }
 
   render () {
@@ -64,5 +70,6 @@ export default class Dropdown extends Component {
 
 Dropdown.propTypes = {
   children: PropTypes.node,
-  className: PropTypes.string
+  className: PropTypes.string,
+  isOpen: PropTypes.func
 }
