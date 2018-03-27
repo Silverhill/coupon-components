@@ -21,3 +21,4 @@ export {default as Tooltip} from 'Atoms/Tooltip';
 export {default as Cupon} from './components/molecules/Cupon';
 export {default as RowHunter} from './components/molecules/RowHunter';
 export {default as StepByStep} from './components/molecules/StepByStep';
+export {default as Campaign} from './components/molecules/Campaign';

@@ -23,3 +23,8 @@ Storybook Docs: [Storybook](https://storybook.js.org/) and [knobs](https://githu
 
 ## Build Documentation
 * `yarn build-docs` for compile and publish stoybook in github project
+
+## How to Publish
+* `npm version patch` if is a fix | `npm version minor` if is a new component | `npm version major` if is a new release with diferent issues
+* `npm run build` && `npm run build-docs`
+* `npm publish`
