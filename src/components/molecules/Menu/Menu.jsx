@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import Icon from 'Atoms/Icon'
-import MenuOptions from './MenuOptions'
-import styles from './Menu.css'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import Icon from 'Atoms/Icon';
+import MenuOptions from './MenuOptions';
+import styles from './Menu.css';
+import PropTypes from 'prop-types';
 
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
@@ -12,31 +12,49 @@ export default class Menu extends Component {
     isShowing: false
   }
 
-  showMenu = () => {
-    this.setState({ isShowing: true })
+  exposeCurrentState = (isShowing) => {
+    const { isOpen } = this.props;
+    if(isOpen) isOpen(isShowing);
   }
 
-  dismissMenu = () => {
-    this.setState({ isShowing: false })
+  showMenu = async () => {
+    await this.setState({ isShowing: true });
+
+    const { isShowing } = this.state;
+    this.exposeCurrentState(isShowing);
+  }
+
+  dismissMenu = async () => {
+    await this.setState({ isShowing: false });
+
+    const { isShowing } = this.state;
+    this.exposeCurrentState(isShowing);
   }
 
   optionChange = (e, option) => {
-    const { onChange } = this.props
-    if (onChange) onChange(e, option)
+    const { onChange } = this.props;
+    if (onChange) onChange(e, option);
   }
 
   render () {
-    const { options, leftMenu, className } = this.props
-    const { isShowing } = this.state
-    const size = 25
+    const { options, leftMenu, className, iconOptions, style } = this.props;
+    const { isShowing } = this.state;
+
+    const defaultProps = {
+      icon: {
+        size: 25,
+        name: 'IoAndroidMoreVertical',
+        ...iconOptions,
+      }
+    };
 
     return (
-      <div className={cx(styles.menu)} style={{width: size}}>
+      <div className={cx(styles.menu, className)} style={{width: defaultProps.icon.size, ...style}}>
         <Icon
           onClick={this.showMenu}
-          name='IoAndroidMoreVertical'
-          className={cx(styles.icon, className, { active: isShowing })}
-          size={size} />
+          className={cx(styles.icon, { active: isShowing })}
+          {...defaultProps.icon}
+        />
         {isShowing &&
           <MenuOptions
             dismiss={this.dismissMenu}
@@ -52,5 +70,8 @@ Menu.propTypes = {
   options: PropTypes.array,
   leftMenu: PropTypes.bool,
   onChange: PropTypes.func,
-  className: PropTypes.string
+  className: PropTypes.string,
+  isOpen: PropTypes.func,
+  iconOptions: PropTypes.object,
+  style: PropTypes.object,
 }

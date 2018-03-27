@@ -2,8 +2,9 @@
 @value cardShadow from 'Styles/common.css';
 @value (
   neutralColorLight,
-  primaryColor,
-  neutralColorMedium
+  accentColorSecondary,
+  neutralColorMedium,
+  primaryColor
 ) from colors;
 
 .menu {
@@ -27,7 +28,7 @@
   overflow: hidden;
   box-shadow: cardShadow;
   position: absolute;
-  top: 1.5rem;
+  bottom: auto;
   animation-name: fadeInDown;
   animation-duration: 200ms;
   animation-timing-function: ease-in-out;
@@ -36,6 +37,7 @@
 
 .icon {
   display: block;
+  transition: 0.2s ease-in-out;
 
   &:hover {
     color: primaryColor;
@@ -48,7 +50,7 @@
 }
 
 .active {
-  color: primaryColor !important;
+  color: accentColorSecondary !important;
 }
 
 .item {
