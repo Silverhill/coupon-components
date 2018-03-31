@@ -45,8 +45,22 @@ class InputBox extends Component {
       leftIconConfig,
       rightIconConfig,
       shape,
+      input,
+      reduxFormInput,
       ...other
     } = this.props
+
+    let inputProps = {
+      onChange,
+      value
+    };
+
+    if(reduxFormInput) {
+      inputProps = {
+        onChange: input.onChange,
+        value: input.value
+      }
+    }
 
     const iconClassNames = cx(
       {leftIcon, rightIcon},
@@ -93,6 +107,7 @@ class InputBox extends Component {
             value={value || this.state.value}
             onChange={this.handleChange}
             onKeyPress={this.handleSubmit}
+            {...inputProps}
             {...other} />
 
           {rightIcon &&
