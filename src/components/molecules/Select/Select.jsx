@@ -31,7 +31,7 @@ export default class Select extends Component {
     const { selectedOption, menuOpen } = this.state;
     const { labelText, placeholder, options } = this.props;
     const value = selectedOption && selectedOption.value;
-    const currentIcon = menuOpen ? 'FaChevronDown' : 'FaChevronUp'
+    const currentIcon = menuOpen ? 'FaCaretUp' : 'FaCaretDown'
 
     return (
       <div>
