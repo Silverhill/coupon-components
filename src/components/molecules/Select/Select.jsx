@@ -29,33 +29,40 @@ export default class Select extends Component {
 
   render () {
     const { selectedOption, menuOpen } = this.state;
-    const { placeholder, options} = this.props;
+    const { labelText, placeholder, options } = this.props;
     const value = selectedOption && selectedOption.value;
     const currentIcon = menuOpen ? 'FaChevronDown' : 'FaChevronUp'
 
     return (
-      <Dropdown isOpen={this.menuIsOpen}>
-        <DropdownTrigger>
-          <InputBox
-            rightIconConfig={{color: "black"}}
-            rightIcon={currentIcon}
-            placeholder={placeholder}
-            value={value}
-            disabled="disabled"
-          />
-        </DropdownTrigger>
-        <DropdownContent className={styles.container}>
-          {options && options.map((option, i) => {
-            return (
-              <div key={`option-${i}`} onClick={(e) => this.selectOption(e, option)} className={styles.option}>
-                <Typography.Text small>
-                  {option.value}
-                </Typography.Text>
-              </div>
-            )
-          })}
-        </DropdownContent>
-      </Dropdown>
+      <div>
+        {labelText &&
+          <Typography.Text bold>
+            {labelText}
+          </Typography.Text>
+        }
+        <Dropdown isOpen={this.menuIsOpen}>
+          <DropdownTrigger>
+            <InputBox
+              rightIconConfig={{color: "black"}}
+              rightIcon={currentIcon}
+              placeholder={placeholder}
+              value={value}
+              disabled="disabled"
+            />
+          </DropdownTrigger>
+          <DropdownContent className={styles.container}>
+            {options && options.map((option, i) => {
+              return (
+                <div key={`option-${i}`} onClick={(e) => this.selectOption(e, option)} className={styles.option}>
+                  <Typography.Text small>
+                    {option.value}
+                  </Typography.Text>
+                </div>
+              )
+            })}
+          </DropdownContent>
+        </Dropdown>
+      </div>
     );
   }
 }
