@@ -28,7 +28,7 @@ story.add('Basic Inputs',
           <InputBox type='password' placeholder='Type your pass' />
           <InputBox id='basic-input' type='text' placeholder='On Change' onChange={action('On Change')} />
           <InputBox type='text' placeholder='Input with label' labelText='I am a label' />
-
+          <InputBox type='text' placeholder='Input with label' labelText='I am a label' description='I am a description'/>
           <div style={{width: 200, marginTop: 20}}>
             <InputBox placeholder='Input with width 200px' />
           </div>
@@ -79,6 +79,13 @@ story.add('Nested Inputs',
         </Section>
         <Section>
           <InputNested labelText='Please fill the form'>
+            < InputBox type='number' placeholder='Day' />
+            < InputBox type='number' placeholder='Month' />
+            < InputBox type='number' placeholder='Year' />
+          </InputNested>
+        </Section>
+        <Section>
+          <InputNested labelText='Please fill the form' description='Todos los campos son obligatorios'>
             < InputBox type='number' placeholder='Day' />
             < InputBox type='number' placeholder='Month' />
             < InputBox type='number' placeholder='Year' />

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
-import Label from '../Typography/Label'
+import Typography from 'Atoms/Typography'
 
 import styles from './InputNested.css'
 const cx = classNames.bind(styles)
@@ -10,15 +10,21 @@ class InputNested extends Component {
   render () {
     const {
       labelText,
-      className
+      className,
+      description
     } = this.props;
 
     return (
       <div>
         {labelText &&
-          <Label>
+          <Typography.Text bold>
             {labelText}
-          </Label>
+          </Typography.Text>
+        }
+        {description &&
+          <Typography.Label light className={cx(styles.description)}>
+            {description}
+          </Typography.Label>
         }
         <div className={cx(styles.container, className)} >
           <div className={styles.line}/>

@@ -39,3 +39,18 @@ story.add('Select basic',
     )
   )
 );
+
+story.add('Custom Select',
+  withInfo(`
+    Simple select
+  `)(
+    () => (
+      <div>
+        <Section style={{width: '150px'}}>
+          <Select placeholder='Select a country' labelText='City' options={countries} selectedOption={action('selected option: ')}>
+          </Select>
+        </Section>
+      </div>
+    )
+  )
+);

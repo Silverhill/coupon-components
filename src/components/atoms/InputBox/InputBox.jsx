@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 import Icon from '../Icon/Icon'
-import Text from '../Typography/Text'
+import Typography from 'Atoms/Typography'
 
 import styles from './InputBox.css'
 const cx = classNames.bind(styles)
@@ -47,6 +47,7 @@ class InputBox extends Component {
       shape,
       input,
       reduxFormInput,
+      description,
       ...other
     } = this.props
 
@@ -83,9 +84,14 @@ class InputBox extends Component {
     return (
       <div>
         {labelText &&
-          <Text small bold>
+          <Typography.Text bold>
             {labelText}
-          </Text>
+          </Typography.Text>
+        }
+        {description &&
+          <Typography.Label light className={cx(styles.description)}>
+            {description}
+          </Typography.Label>
         }
 
         <div className={iconClassNames}>
