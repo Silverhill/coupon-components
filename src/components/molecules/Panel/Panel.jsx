@@ -8,11 +8,18 @@ const cx = classNames.bind(styles)
 
 class Panel extends Component {
   render () {
-    const { className, title, subtitle, children } = this.props;
+    const { className,
+            classNameHeader,
+            classNameContainer,
+            headerProps,
+            title,
+            subtitle,
+            children } = this.props;
+
     return (
       <div className={cx(styles.panel, className)}>
-        <HeaderBar title={title} subtitle={subtitle}/>
-        <div className={styles.container}>
+        <HeaderBar className={classNameHeader} title={title} subtitle={subtitle} {...headerProps}/>
+        <div className={cx(styles.panel, classNameContainer)}>
           {children}
         </div>
       </div>
@@ -25,6 +32,9 @@ Panel.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
   children: PropTypes.any,
+  headerProps: PropTypes.object,
+  classNameHeader: PropTypes.string,
+  classNameContainer: PropTypes.string
 }
 
 export default Panel;

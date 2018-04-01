@@ -27,3 +27,11 @@
   align-items: center;
   justify-content: center;
 }
+
+.warning {
+  color: red !important;
+}
+
+.panelContainer {
+  padding: 10px;
+}
