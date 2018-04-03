@@ -35,11 +35,11 @@ export default class Select extends Component {
 
     let selectProps = {
       onChange: this.selectOption,
-      value: value || this.state.selectedOption,
+      value,
     };
 
     if(reduxFormInput) {
-      selectProps = { ...input }
+      selectProps = { ...input, value };
     }
 
     return (
@@ -55,14 +55,18 @@ export default class Select extends Component {
               rightIconConfig={{color: "black"}}
               rightIcon={currentIcon}
               placeholder={placeholder}
-              disabled="disabled"
+              disabled
               {...selectProps}
             />
           </DropdownTrigger>
           <DropdownContent className={styles.container}>
             {options && options.map((option, i) => {
               return (
-                <div key={`option-${i}`} onClick={(e) => this.selectOption(e, option)} className={styles.option}>
+                <div key={`option-${i}`} onClick={(e) => {
+                  this.selectOption(e, option);
+                  if(reduxFormInput && !!input) input.onChange(option.key);
+                }}
+                className={styles.option}>
                   <Typography.Text small>
                     {option.value}
                   </Typography.Text>
