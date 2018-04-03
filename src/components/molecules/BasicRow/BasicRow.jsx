@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
-import styles from './RowHunter.css'
+import styles from './BasicRow.css'
 import Avatar from 'Atoms/Avatar'
 import Typography from 'Atoms/Typography';
 import Icon from 'Atoms/Icon'
@@ -9,47 +9,54 @@ import * as palette from 'Styles/palette.css';
 
 const cx = classNames.bind(styles)
 
-class RowHunter extends Component {
+class BasicRow extends Component {
   render () {
     const {
-      name,
+      title,
+      subtitle,
       image,
-      email,
-      dateLastCoupon,
-      totalCoupons,
+      label,
+      description,
+      number,
       onClick,
+      iconName,
       className
     } = this.props
+
+    const colorIcon = number ? palette.endGradient : palette.baseGrayMedium;
+    const icon = iconName ? iconName : 'CpTicket';
+    console.log(icon);
+
     return (
       <div className={cx(styles.container, className)} onClick={onClick}>
         <div className={styles.userInformation}>
+          {image &&
           <div className={styles.avatar}>
             <Avatar image={image}/>
           </div>
+          }
           <div className={styles.information}>
             <Typography.Header small bold>
-              {name}
+              {title}
             </Typography.Header>
             <Typography.Label small lighter>
-              {email}
+              {subtitle}
             </Typography.Label>
           </div>
         </div>
         <div className={styles.cuponInformation}>
-          {dateLastCoupon &&
-            <div className={styles.date}>
-              <Typography.Label small>
-                Ultimo cupon utilizado:
-              </Typography.Label>
-              <Typography.Label small>
-                {dateLastCoupon}
-              </Typography.Label>
-            </div>
-          }
+          <div className={styles.date}>
+            <Typography.Label small>
+              {label}
+            </Typography.Label>
+            <Typography.Label small>
+              {description}
+            </Typography.Label>
+          </div>
           <div className={styles.cupon}>
             <Icon
-              name="CpTicket"
-              color={palette.endGradient}
+              name={icon}
+              color={colorIcon}
               size={20}
               style={{marginRight: 20,
                       padding: 10,
@@ -58,7 +65,7 @@ class RowHunter extends Component {
                     }}
             />
             <Typography.Title>
-              {totalCoupons || 0}
+              {number || 0}
             </Typography.Title>
           </div>
         </div>
@@ -67,14 +74,16 @@ class RowHunter extends Component {
   }
 }
 
-RowHunter.propTypes = {
+BasicRow.propTypes = {
   className: PropTypes.string,
-  name: PropTypes.string,
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
   image: PropTypes.string,
-  email: PropTypes.string,
-  dateLastCoupon: PropTypes.string,
-  totalCoupons: PropTypes.number,
+  label: PropTypes.string,
+  description: PropTypes.string,
+  number: PropTypes.number,
+  iconName: PropTypes.string,
   onClick: PropTypes.func
 }
 
-export default RowHunter;
+export default BasicRow;
