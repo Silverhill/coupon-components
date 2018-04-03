@@ -29,9 +29,18 @@ export default class Select extends Component {
 
   render () {
     const { selectedOption, menuOpen } = this.state;
-    const { labelText, placeholder, options } = this.props;
+    const { labelText, placeholder, options, input, reduxFormInput } = this.props;
     const value = selectedOption && selectedOption.value;
     const currentIcon = menuOpen ? 'FaCaretUp' : 'FaCaretDown'
+
+    let selectProps = {
+      onChange: this.selectOption,
+      value,
+    };
+
+    if(reduxFormInput) {
+      selectProps = { ...input, value };
+    }
 
     return (
       <div>
@@ -46,14 +55,18 @@ export default class Select extends Component {
               rightIconConfig={{color: "black"}}
               rightIcon={currentIcon}
               placeholder={placeholder}
-              value={value}
-              disabled="disabled"
+              disabled
+              {...selectProps}
             />
           </DropdownTrigger>
           <DropdownContent className={styles.container}>
             {options && options.map((option, i) => {
               return (
-                <div key={`option-${i}`} onClick={(e) => this.selectOption(e, option)} className={styles.option}>
+                <div key={`option-${i}`} onClick={(e) => {
+                  this.selectOption(e, option);
+                  if(reduxFormInput && !!input) input.onChange(option.key);
+                }}
+                className={styles.option}>
                   <Typography.Text small>
                     {option.value}
                   </Typography.Text>

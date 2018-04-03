@@ -10,6 +10,7 @@
   background-color: whiteColor;
   max-height: 10rem;
   overflow-y: scroll;
+  text-align: left;
 }
 
 .option {
