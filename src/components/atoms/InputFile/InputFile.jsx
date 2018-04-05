@@ -15,7 +15,7 @@ class InputFile extends Component {
     this.inputRef.click();
   };
 
-  handleChange = async(ev) => {
+  handleChange = (ev) => {
     ev.persist();
 
     let { updateFile, reduxFormInput } = this.props;
