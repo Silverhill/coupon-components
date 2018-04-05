@@ -41,14 +41,6 @@ story.add('Dropdown onClick',
               </div>
             </DropdownContent>
           </Dropdown>
-          <Dropdown isOpen={action('isOpen')}>
-            <DropdownTrigger>
-              <div style={{display:'flex', alignItems:'center'}}>
-                <Avatar image='https://mir-s3-cdn-cf.behance.net/project_modules/1400/316d6c36433989.571c87a695d14.png' borderColor='highlightNeutral' borderSize='2px'/>
-                <h5 style={{paddingLeft:'10px'}}>Arya Stark</h5>
-              </div>
-            </DropdownTrigger>
-          </Dropdown>
         </Section>
       </div>
     )
