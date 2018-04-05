@@ -1,0 +1,55 @@
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.userInformation {
+  composes: flex;
+}
+
+.avatar {
+  width: 50px;
+}
+
+.information {
+  display: block;
+  text-align: left;
+  padding: 0 0 0 50px;
+}
+
+.information h3 {
+  margin: 0;
+}
+
+.information h4 {
+  margin: 5px 0;
+}
+
+.cuponInformation {
+  composes: flex;
+}
+
+.date {
+  composes: flex;
+}
+
+.date h3 {
+  padding-left: 10px;
+}
+
+.cupon {
+  composes: flex;
+  padding: 0 0 0 50px;
+}

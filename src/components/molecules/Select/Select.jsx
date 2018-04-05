@@ -64,7 +64,7 @@ export default class Select extends Component {
               return (
                 <div key={`option-${i}`} onClick={(e) => {
                   this.selectOption(e, option);
-                  if(reduxFormInput && !!input) input.onChange(option.key);
+                  if(reduxFormInput && !!input) input.onChange(option.value);
                 }}
                 className={styles.option}>
                   <Typography.Text small>

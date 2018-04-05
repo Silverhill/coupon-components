@@ -53,3 +53,9 @@
    color: clearBlue;
    border-bottom: 3px solid;
  }
+
+ :global(.truncateText) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
