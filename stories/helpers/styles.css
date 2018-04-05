@@ -45,3 +45,31 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.customCard {
+  padding: 10px;
+  border: 1px solid #EFEFF4;
+}
+
+.customHeaderCard {
+  background: #c7c7c7;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  & p {
+    font-size: 18px;
+  }
+}
+
+.customContentCard {
+  background: #1abc9c !important;
+  cursor: pointer;
+  & p {
+    color: white;
+  }
+
+  &:hover {
+    background: #3498db !important;
+  }
+}

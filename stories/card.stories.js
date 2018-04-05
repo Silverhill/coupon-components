@@ -5,6 +5,7 @@ import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions'
 import { withKnobs, text } from '@storybook/addon-knobs/react';
 import Section from './helpers/Section';
+import styles from './helpers/styles.css'
 
 import { Card, Typography } from '../src';
 
@@ -72,6 +73,27 @@ story.add('Card with title',
               <li><Typography.Header>item 3</Typography.Header></li>
               <li><Typography.Header>item 4</Typography.Header></li>
             </ul>
+          </Card>
+        </Section>
+      </div>
+    )
+  )
+);
+
+
+story.add('Card with custom class',
+  withInfo(`
+    Implementation with some class
+  `)(
+    () => (
+      <div>
+        <Section style={{width: '300px'}}>
+          <Card
+            subtitle="Think about this"
+            classNameHeader={styles.customHeaderCard}
+            classNameContent={styles.customContentCard}
+            classNameCard={styles.customCard}>
+            {content}
           </Card>
         </Section>
       </div>
