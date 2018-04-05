@@ -16,7 +16,6 @@ const pizzaHut = {
     hunted: 2
   },
   cupon: {
-    image: 'https://i2.wp.com/food.thecookbk.com/wp-content/uploads/2017/10/pizza-hut.jpg?fit=800%2C600',
     date: '11 Feb - 20 May 2017',
     promo: 'Martes 2 x 1 en pizzas',
     address: '12-34 Downtown S.Q'
@@ -29,7 +28,6 @@ const starbucks = {
     hunted: 10
   },
   cupon: {
-    image: 'https://assets3.thrillist.com/v1/image/2439237/size/gn-gift_guide_variable_c.jpg',
     date: '11 Feb - 20 May 2017',
     promo: 'Enjoy 50% off any Starbucks drink',
     address: '901 S Miami Ave #106, Miami, FL 33130, EE. UU.'
@@ -43,7 +41,13 @@ story.add('Basic Campaign',
         <Section>
           <h4>Campaign</h4>
           <div style={{width: '320px'}}>
-            <Campaign data={pizzaHut} onClick={action('Click Campaign!')}/>
+            <Campaign
+              title={pizzaHut.cupon.promo}
+              date={pizzaHut.cupon.date}
+              address={pizzaHut.cupon.address}
+              totalCoupons={pizzaHut.maker.cupons}
+              totalCouponsHunted={pizzaHut.maker.hunted}
+            onClick={action('Click Campaign!')}/>
           </div>
         </Section>
       </div>
@@ -58,7 +62,14 @@ story.add('Selected Campaign',
         <Section>
           <h4>Cupon</h4>
           <div style={{width: '320px'}}>
-            <Campaign data={starbucks} onClick={action('Click Campaign!')} selected={ boolean('Selected', true) }/>
+            <Campaign
+              title={starbucks.cupon.promo}
+              date={starbucks.cupon.date}
+              address={starbucks.cupon.address}
+              totalCoupons={starbucks.maker.cupons}
+              totalCouponsHunted={pizzaHut.maker.hunted}
+              onClick={action('Click Campaign!')}
+              selected={ boolean('Selected', true) }/>
           </div>
         </Section>
       </div>

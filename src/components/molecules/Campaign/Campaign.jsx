@@ -10,7 +10,16 @@ const cx = classNames.bind(styles)
 
 class Campaign extends Component {
   render () {
-    const { data, onClick, className, selected } = this.props
+    const {
+      title,
+      date,
+      address,
+      totalCouponsHunted,
+      totalCoupons,
+      onClick,
+      className,
+      selected
+    } = this.props
     let classNames = selected ?
         cx(styles.container, className, styles.selected) : cx(styles.container, className)
     let selectColor = selected ? palette.whiteColor : palette.silverColor
@@ -18,13 +27,13 @@ class Campaign extends Component {
       <div className={classNames} onClick={onClick}>
         <div className={styles.promo}>
           <Typography.Text small light style={{color: selectColor}}>
-            {data.cupon.date}
+            {date}
           </Typography.Text>
           <Typography.Text lead style={{color: selectColor}} className="truncateText">
-            {data.cupon.promo}
+            {title}
           </Typography.Text>
           <Typography.Text small light style={{color: selectColor}} className="truncateText">
-            {data.cupon.address}
+            {address}
           </Typography.Text>
         </div>
         <div className={styles.coupons}>
@@ -36,7 +45,7 @@ class Campaign extends Component {
                 style={{paddingRight: 5}}
               />
             <Typography.Text small lighter style={{color: selectColor}}>
-              {data.maker.hunted}
+              {totalCouponsHunted}
             </Typography.Text>
           </div>
           <div className={styles.available}>
@@ -47,7 +56,7 @@ class Campaign extends Component {
                 style={{paddingRight: 5}}
               />
             <Typography.Text small lighter style={{color: selectColor}}>
-              {data.maker.cupons}
+              {totalCoupons}
             </Typography.Text>
           </div>
         </div>
@@ -57,7 +66,11 @@ class Campaign extends Component {
 }
 
 Campaign.propTypes = {
-  data: PropTypes.object,
+  title: PropTypes.string,
+  date: PropTypes.string,
+  address: PropTypes.string,
+  totalCoupons: PropTypes.number,
+  totalCouponsHunted: PropTypes.number,
   onClick: PropTypes.func,
   className: PropTypes.string,
   selected: PropTypes.bool,
