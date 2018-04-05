@@ -8,10 +8,21 @@ const cx = classNames.bind(styles)
 
 class Card extends Component {
   render () {
-    const { className, width, flex, height, style, title, subtitle, ...other } = this.props
+    const {
+      classNameContent,
+      classNameHeader,
+      classNameCard,
+      width,
+      flex,
+      height,
+      style,
+      title,
+      subtitle,
+      ...other
+    } = this.props
     return (
-      <div>
-        <div className={styles.description}>
+      <div className={classNameCard}>
+        <div className={cx(styles.description, classNameHeader)}>
           {title &&
             <div className={styles.title}>
               <div className={styles.line}></div>
@@ -28,7 +39,10 @@ class Card extends Component {
             </div>
           }
         </div>
-        <div className={cx(styles.cardWrapper, 'card', className)} style={{width, flex, height, ...style}} {...other}>
+        <div
+          className={cx(styles.cardWrapper, 'card', classNameContent)}
+          style={{width, flex, height, ...style}}
+          {...other}>
           {this.props.children}
         </div>
       </div>
@@ -38,7 +52,9 @@ class Card extends Component {
 
 Card.propTypes = {
   children: PropTypes.any,
-  className: PropTypes.string,
+  classNameCard: PropTypes.string,
+  classNameContent: PropTypes.string,
+  classNameHeader: PropTypes.string,
   width: PropTypes.string,
   flex: PropTypes.number,
   height: PropTypes.string,
