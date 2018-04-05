@@ -4,16 +4,17 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean } from '@storybook/addon-knobs/react';
-import { Cupon } from '../src';
+import { Coupon } from '../src';
 import Section from './helpers/Section';
 
-const story = storiesOf('Molecules/Cupon', module)
+const story = storiesOf('Molecules/Coupon', module)
 story.addDecorator(withKnobs);
 
 const pizzaHut = {
   maker: {
     image: 'https://aalfredosalinas.files.wordpress.com/2010/09/pizza-hut-logo1.jpg',
-    cupons: 125
+    cupons: 125,
+    name: "Pizza Hut"
   },
   cupon: {
     image: 'https://i2.wp.com/food.thecookbk.com/wp-content/uploads/2017/10/pizza-hut.jpg?fit=800%2C600',
@@ -49,14 +50,21 @@ const kfc = {
   }
 }
 
-story.add('Basic Cupon',
+story.add('Basic Coupon',
   withInfo()(
     () => (
       <div>
         <Section>
-          <h4>Cupon</h4>
+          <h4>Coupon</h4>
           <div style={{width: '320px'}}>
-            <Cupon data={pizzaHut} onClick={action('Click Cupon!')}/>
+            <Coupon
+              image={pizzaHut.cupon.image}
+              logo={pizzaHut.maker.image}
+              title={pizzaHut.cupon.promo}
+              date={pizzaHut.cupon.date}
+              address={pizzaHut.cupon.address}
+              totalCoupons={pizzaHut.maker.cupons}
+              onClick={action('Click Cupon!')}/>
           </div>
         </Section>
       </div>
@@ -64,14 +72,22 @@ story.add('Basic Cupon',
   )
 );
 
-story.add('Disabled Cupon',
+story.add('Disabled Coupon',
   withInfo()(
     () => (
       <div>
         <Section>
-          <h4>Cupon</h4>
+          <h4>Coupon</h4>
           <div style={{width: '320px'}}>
-            <Cupon data={starbucks} onClick={action('Click Cupon!')} disabled={ boolean('Disabled', true) }/>
+            <Coupon
+              image={starbucks.cupon.image}
+              logo={starbucks.maker.image}
+              title={starbucks.cupon.promo}
+              date={starbucks.cupon.date}
+              address={starbucks.cupon.address}
+              totalCoupons={starbucks.maker.cupons}
+              onClick={action('Click Cupon!')}
+              disabled={ boolean('Disabled', true) }/>
           </div>
         </Section>
       </div>
@@ -79,14 +95,22 @@ story.add('Disabled Cupon',
   )
 );
 
-story.add('Gold Cupon',
+story.add('Gold Coupon',
   withInfo()(
     () => (
       <div>
         <Section>
-          <h4>Cupon</h4>
+          <h4>Coupon</h4>
           <div style={{width: '320px'}}>
-            <Cupon data={kfc} onClick={action('Click Cupon!')} gold={true}/>
+            <Coupon
+              image={kfc.cupon.image}
+              logo={kfc.maker.image}
+              title={kfc.cupon.promo}
+              date={kfc.cupon.date}
+              address={kfc.cupon.address}
+              totalCoupons={kfc.maker.cupons}
+              onClick={action('Click Cupon!')}
+              gold={true}/>
           </div>
         </Section>
       </div>
