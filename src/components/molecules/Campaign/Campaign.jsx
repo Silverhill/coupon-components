@@ -20,10 +20,10 @@ class Campaign extends Component {
           <Typography.Text small light style={{color: selectColor}}>
             {data.cupon.date}
           </Typography.Text>
-          <Typography.Text lead style={{color: selectColor}}>
+          <Typography.Text lead style={{color: selectColor}} className="truncateText">
             {data.cupon.promo}
           </Typography.Text>
-          <Typography.Text small light style={{color: selectColor}}>
+          <Typography.Text small light style={{color: selectColor}} className="truncateText">
             {data.cupon.address}
           </Typography.Text>
         </div>
