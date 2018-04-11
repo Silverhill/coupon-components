@@ -11,15 +11,17 @@ const cx = classNames.bind(styles)
 class SliderItem extends Component {
   state = {
     fade: false,
+    itemShow: {}
   }
 
   //TODO: Migrar a react-transition-group cuando se utilicen animaciones avanzadas en otros componentes
-  async componentWillReceiveProps() {
-    await this.setState({fade: true });
-
-    setTimeout(() => {
-      this.setState({ fade: false });
-    }, 500)
+  async componentWillReceiveProps(newProps) {
+    if(this.state.itemShow.id !== newProps.currentItem.id){
+      await this.setState({fade: true, itemShow: newProps.currentItem});
+      setTimeout(() => {
+        this.setState({ fade: false });
+      }, 500)
+    }
   }
 
   render() {
