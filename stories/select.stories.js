@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions'
 import Section from './helpers/Section';
+import styles from './helpers/styles.css'
 
 import {
   Typography,
@@ -48,6 +49,20 @@ story.add('Custom Select',
       <div>
         <Section style={{width: '150px'}}>
           <Select placeholder='Select a country' labelText='City' options={countries} selectedOption={action('selected option: ')}>
+          </Select>
+        </Section>
+      </div>
+    )
+  )
+);
+
+story.add('Custom Class',
+  withInfo()(
+    () => (
+      <div>
+        <Section style={{width: '150px'}}>
+          <Select className={styles.section}
+                placeholder='Select a country' labelText='City' options={countries} selectedOption={action('selected option: ')}>
           </Select>
         </Section>
       </div>
