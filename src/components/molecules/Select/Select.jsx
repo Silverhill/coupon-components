@@ -29,7 +29,12 @@ export default class Select extends Component {
 
   render () {
     const { selectedOption, menuOpen } = this.state;
-    const { labelText, placeholder, options, input, reduxFormInput } = this.props;
+    const { className,
+            labelText,
+            placeholder,
+            options,
+            input,
+            reduxFormInput } = this.props;
     const value = selectedOption && selectedOption.value;
     const currentIcon = menuOpen ? 'FaCaretUp' : 'FaCaretDown'
 
@@ -43,7 +48,7 @@ export default class Select extends Component {
     }
 
     return (
-      <div>
+      <div className={className}>
         {labelText &&
           <Typography.Text bold>
             {labelText}
@@ -81,6 +86,7 @@ export default class Select extends Component {
 }
 
 Select.propTypes = {
+  className: PropTypes.string,
   options: PropTypes.array,
   placeholder: PropTypes.string,
   selectedOption: PropTypes.func
