@@ -9,13 +9,8 @@ import PropTypes from 'prop-types';
 
 export default class Select extends Component {
   state = {
-    selectedOption: null,
+    currentOption: null,
     menuOpen: false
-  }
-
-  exposeCurrentState = (option) => {
-    const { selectedOption } = this.props;
-    if(selectedOption) selectedOption(option);
   }
 
   menuIsOpen = (isOpen) => {
@@ -23,29 +18,30 @@ export default class Select extends Component {
   }
 
   selectOption = (e, option) => {
-    this.setState({ selectedOption: option });
-    this.exposeCurrentState(option);
+    let { reduxFormInput, selectedOption } = this.props;
+
+    //callback of the parent Component
+    if(selectedOption && !reduxFormInput ) selectedOption(option);
+
+    //callback of reduxForm
+    if (reduxFormInput && !selectedOption ){
+      let {input:{onChange, onBlur}} = this.props;
+      onChange(option);
+      onBlur(option);
+    }
+    this.setState({ currentOption: option });
   }
 
   render () {
-    const { selectedOption, menuOpen } = this.state;
+    const { currentOption, menuOpen } = this.state;
     const { className,
             labelText,
             placeholder,
-            options,
-            input,
-            reduxFormInput } = this.props;
-    const value = selectedOption && selectedOption.value;
+            options } = this.props;
+    const value = currentOption && currentOption.value;
     const currentIcon = menuOpen ? 'FaCaretUp' : 'FaCaretDown'
 
-    let selectProps = {
-      onChange: this.selectOption,
-      value,
-    };
-
-    if(reduxFormInput) {
-      selectProps = { ...input, value };
-    }
+    let inputProps = { onChange: this.selectOption, onBlur: this.selectOption, value };
 
     return (
       <div className={className}>
@@ -61,17 +57,13 @@ export default class Select extends Component {
               rightIcon={currentIcon}
               placeholder={placeholder}
               disabled
-              {...selectProps}
+              {...inputProps}
             />
           </DropdownTrigger>
           <DropdownContent className={styles.container}>
             {options && options.map((option, i) => {
               return (
-                <div key={`option-${i}`} onClick={(e) => {
-                  this.selectOption(e, option);
-                  if(reduxFormInput && !!input) input.onChange(option.value);
-                }}
-                className={styles.option}>
+                <div key={`option-${i}`} onClick={(e) => this.selectOption(e, option)} className={styles.option}>
                   <Typography.Text small>
                     {option.value}
                   </Typography.Text>
