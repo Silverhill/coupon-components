@@ -26,9 +26,9 @@ class InputFile extends Component {
       let infoFile =  { file: file, imagePreviewUrl: reader.result };
 
       //callback of the parent Component
-      if (updateFile) updateFile(ev, infoFile);
+      if (updateFile && !reduxFormInput) updateFile(ev, infoFile);
       //callback of reduxForm
-      if (reduxFormInput){
+      if (reduxFormInput && !updateFile){
         let {input:{onChange, onBlur}} = this.props;
         onChange(infoFile);
         onBlur(infoFile);
