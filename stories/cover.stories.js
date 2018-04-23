@@ -10,15 +10,15 @@ import { Cover } from '../src';
 const story = storiesOf('Atoms/Cover', module)
 
 const data = {
-  status: "abierto",
-  leftLabel: "soy un label",
-  leftText: "soy el texto",
-  rightLabel: "label 2",
-  rightText: "hola",
-  image: "https://www.boxpark.co.uk/assets/Uploads/_resampled/FillWyIxOTIwIiwiMTA4MCJd/Bao-Bao-Holder3.jpg",
+  leftLabel: "Address",
+  leftText: "13-24 AV 4 Illinois - 32 Monaco Street",
+  rightLabel: "Starbucks",
+  rightText: "Starbucks",
+  image: "https://sg-everydayonsales-infomartglobal.netdna-ssl.com/wp-content/uploads/2017/10/Starbucks-Festive-beverages-Promotion.jpg",
+  logo: "https://pbs.twimg.com/profile_images/968173455580397568/Qe0pSZTk_400x400.jpg",
 }
 
-story.add('Basic cover',
+story.add('Cover with logo',
   withInfo(`
     Implementation for basic cover with custom size width
   `)(
@@ -26,25 +26,52 @@ story.add('Basic cover',
       <div>
         <Section>
           <Cover
-            status={data.status}
+            status="Closed"
+            logo={data.logo}
             leftLabel={data.leftLabel}
             leftText={data.leftText}
-            rightLabel={data.rightLabel}
+            rightLabel="Company"
             rightText={data.rightText}
-            image={data.image}
+            backgroundColor="#00643b"
+            stylesStatus= {
+              {
+                color: 'white',
+                backgroundColor: 'red'
+              }
+            }
           />
         </Section>
         <Section>
           <Cover
-            status={data.status}
+            logo={data.logo}
+            rightLabel="Company"
+            rightText={data.rightText}
+            backgroundColor="#f7f7f7"
+          />
+        </Section>
+      </div>
+    )
+  )
+);
+
+story.add('Cover with background',
+  withInfo(`
+    Implementation for basic cover with custom size width
+  `)(
+    () => (
+      <div>
+        <Section>
+          <Cover
+            status="Active"
+            rightLabel="coupons"
+            rightText="300"
+            image={data.image}
             leftLabel={data.leftLabel}
             leftText={data.leftText}
-            rightLabel={data.rightLabel}
-            rightText={data.rightText}
             stylesStatus= {
               {
                 color: 'white',
-                backgroundColor: 'yellow'
+                backgroundColor: '#00643b'
               }
             }
           />
@@ -54,3 +81,29 @@ story.add('Basic cover',
   )
 );
 
+story.add('Cover background and logo',
+  withInfo(`
+    Implementation for basic cover with custom size width
+  `)(
+    () => (
+      <div>
+        <Section>
+          <Cover
+            image="http://mouse.latercera.com/wp-content/uploads/2017/11/starbucks-900x600.jpg"
+            status="Open"
+            logo={data.logo}
+            leftLabel={data.leftLabel}
+            leftText={data.leftText}
+            rightText={data.rightText}
+            stylesStatus= {
+              {
+                color: 'white',
+                backgroundColor: '#dfbf85'
+              }
+            }
+          />
+        </Section>
+      </div>
+    )
+  )
+);

@@ -1,5 +1,6 @@
 .container {
   position: relative;
+  min-width: 250px;
 }
 
 .cover {
@@ -7,13 +8,9 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  background-color: #464646;
-  min-height: 200px;
+  min-height: 250px;
 }
 
-.cover p, h1 {
-  color: white;
-}
 
 .contentText {
   /* position: relative; */
@@ -29,18 +26,23 @@
   margin: 10px;
   padding: 0px 15px;
   border-radius: 20px;
-
-  & .link {
-    font-size: 12px;
-    background-color: pinkRed;
-    color: white;
-
-    &:hover {
-      opacity: 0.9;
-    }
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
 }
 
+.status::hover{
+   opacity: 0.9;
+}
+
+.cover .logo {
+  width: 90px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top:50%;
+  left: 50%;
+}
 .address {
   position: absolute;
   bottom: 0;
@@ -56,7 +58,7 @@
   padding: 10px;
 }
 
-.cover::before {
+.backdrop::before {
   content: '';
   position: absolute;
   width: 100%;

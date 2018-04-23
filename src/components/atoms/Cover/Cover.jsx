@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 import styles from './Cover.css'
 import Typography from '../Typography'
+import Avatar from '../Avatar'
+import * as palette from 'Styles/palette.css'
 
 const cx = classNames.bind(styles)
 
@@ -17,38 +19,54 @@ class Cover extends Component {
       rightText,
       image,
       stylesStatus,
-      // width,
-      // flex,
-      // height,
-      style,
-      ...other
+      backgroundColor,
+      logo
     } = this.props
 
-    let stylesImage = {backgroundImage: `url(${image})`}
+    const stylesImage = {backgroundImage: `url(${image})`, backgroundColor: backgroundColor};
+    const backdrop = image ? 'backdrop' : '';
+    let isLightColor = false;
+
+    // formula to know if a color is light
+    if (backgroundColor){
+      const c = backgroundColor.substring(1);      // strip #
+      const rgb = parseInt(c, 16);   // convert rrggbb to decimal
+      const r = (rgb >> 16) & 0xff;  // extract red
+      const g = (rgb >>  8) & 0xff;  // extract green
+      const b = (rgb >>  0) & 0xff;  // extract blue
+      const form = (r * 299 + g * 587 + b * 114) / 1000
+      isLightColor = form < 128;
+    }
+
+    const colorText = isLightColor || image ? {color: palette.whiteColor} : {color: palette.dark};
 
     return (
       <div className={cx(styles.container, className)}>
-        <div className={styles.cover} style={stylesImage}>
+        <div className={cx(styles.cover, backdrop)} style={stylesImage}>
+          {logo &&
+            <div className={styles.logo}>
+              <Avatar image={logo}/>
+            </div>
+          }
           <div className={styles.contentText}>
             <div className={styles.status} style={stylesStatus}>
-              {status}
+              <Typography.Text small style={colorText}>
+                {status}
+              </Typography.Text>
             </div>
             <div className={styles.address}>
-              <Typography.Text small bold>
+              <Typography.Text small style={colorText}>
                 {leftLabel}
               </Typography.Text>
-              <Typography.Text small>
+              <Typography.Text small bold style={colorText}>
                 {leftText}
-              </Typography.Text>
-              <Typography.Text small style={{paddingTop: '5px'}}>
-                {rightLabel}
               </Typography.Text>
             </div>
             <div className={styles.coupons}>
-              <Typography.Text small>
+              <Typography.Text small style={colorText}>
                 {rightLabel}
               </Typography.Text>
-              <Typography.Title bold>
+              <Typography.Title bold style={colorText}>
                 {rightText}
               </Typography.Title>
             </div>
