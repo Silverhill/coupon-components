@@ -14,7 +14,6 @@ export {default as DropdownTrigger} from './components/atoms/Dropdown/DropdownTr
 export {default as DropdownContent} from './components/atoms/Dropdown/DropdownContent';
 export {default as InputFile} from './components/atoms/InputFile';
 export {default as Tooltip} from 'Atoms/Tooltip';
-export {default as Cover} from 'Atoms/Cover';
 //molecules
 export {default as Menu} from './components/molecules/Menu';
 export {default as Modal} from './components/molecules/Modal';
@@ -28,3 +27,4 @@ export {default as StepByStep} from './components/molecules/StepByStep';
 export {default as Campaign} from './components/molecules/Campaign';
 export {default as Slider} from './components/molecules/Slider';
 export {default as Select} from './components/molecules/Select';
+export {default as Cover} from './components/molecules/Cover';

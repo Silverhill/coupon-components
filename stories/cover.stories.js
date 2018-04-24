@@ -7,7 +7,7 @@ import Section from './helpers/Section';
 
 import { Cover } from '../src';
 
-const story = storiesOf('Atoms/Cover', module)
+const story = storiesOf('Molecules/Cover', module)
 
 const data = {
   leftLabel: "Address",
@@ -20,7 +20,7 @@ const data = {
 
 story.add('Cover with logo',
   withInfo(`
-    Implementation for basic cover with custom size width
+    Implementation for basic cover with background color
   `)(
     () => (
       <div>
@@ -56,7 +56,7 @@ story.add('Cover with logo',
 
 story.add('Cover with background',
   withInfo(`
-    Implementation for basic cover with custom size width
+    Implementation cover with background and status
   `)(
     () => (
       <div>
@@ -83,7 +83,7 @@ story.add('Cover with background',
 
 story.add('Cover background and logo',
   withInfo(`
-    Implementation for basic cover with custom size width
+    Implementation cover with background and logo
   `)(
     () => (
       <div>
