@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import Icon from 'Atoms/Icon';
+import Preloader from 'Atoms/Loaders';
 
 import styles from './InputFile.css';
 const cx = classNames.bind(styles);
@@ -12,7 +14,10 @@ class InputFile extends Component {
   };
 
   handleClick = e => {
-    this.inputRef.click();
+    let { isLoading } = this.props;
+    if(!isLoading){
+      this.inputRef.click();
+    }
   };
 
   handleChange = (ev) => {
@@ -40,14 +45,16 @@ class InputFile extends Component {
 
 
   render () {
-    const { className, input, children } = this.props;
+    const { className, input, children, isLoading, loader } = this.props;
     let inputProps = { onChange: this.handleChange, onBlur: this.handleChange };
 
     return (
       <div className={cx(className, styles.container)}>
-        <input className={cx(styles.inputField)} type="file" ref={this.storeRef} {...inputProps}/>
-        <div className={cx(styles.container)} onClick={this.handleClick}>
+        <input className={styles.inputField} type="file" ref={this.storeRef} {...inputProps}/>
+        <div className={styles.triggerContainer} onClick={this.handleClick}>
           {children}
+          {!isLoading && <Icon name="FaCamera" className={styles.uploadIcon}/>}
+          {isLoading && <Preloader color='white' {...loader} className={styles.loader}/>}
         </div>
       </div>
     )
@@ -57,7 +64,9 @@ class InputFile extends Component {
 InputFile.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
-  updateFile: PropTypes.func
+  updateFile: PropTypes.func,
+  isLoading: PropTypes.bool,
+  loader: PropTypes.object,
 }
 
 export default InputFile
