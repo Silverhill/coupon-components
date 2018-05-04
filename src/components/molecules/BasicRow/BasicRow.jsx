@@ -81,7 +81,7 @@ BasicRow.propTypes = {
   image: PropTypes.string,
   label: PropTypes.string,
   description: PropTypes.string,
-  number: PropTypes.number,
+  number: PropTypes.string,
   iconName: PropTypes.string,
   onClick: PropTypes.func
 }

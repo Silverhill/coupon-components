@@ -72,7 +72,7 @@ Cupon.propTypes = {
   title: PropTypes.string,
   date: PropTypes.string,
   address: PropTypes.string,
-  totalCoupons: PropTypes.number,
+  totalCoupons: PropTypes.string,
   onClick: PropTypes.func,
   className: PropTypes.string,
   disabled: PropTypes.bool,
