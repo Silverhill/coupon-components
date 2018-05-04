@@ -13,7 +13,7 @@ story.addDecorator(withKnobs);
 const pizzaHut = {
   maker: {
     image: 'https://aalfredosalinas.files.wordpress.com/2010/09/pizza-hut-logo1.jpg',
-    cupons: 125,
+    cupons: '125',
     name: "Pizza Hut"
   },
   cupon: {
@@ -27,7 +27,7 @@ const pizzaHut = {
 const starbucks = {
   maker: {
     image: 'https://pbs.twimg.com/profile_images/968173455580397568/Qe0pSZTk_400x400.jpg',
-    cupons: 345
+    cupons: '345'
   },
   cupon: {
     image: 'https://assets3.thrillist.com/v1/image/2439237/size/gn-gift_guide_variable_c.jpg',
@@ -40,7 +40,7 @@ const starbucks = {
 const kfc = {
   maker: {
     image: 'http://www.dubaimap.mobi/logos/1346237029images.jpg',
-    cupons: 1
+    cupons: '1'
   },
   cupon: {
     image: 'http://ideasmakemarket.com/wp-content/uploads/2013/02/184292_587742674586648_553621982_n.jpg',

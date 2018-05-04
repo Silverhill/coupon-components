@@ -16,7 +16,7 @@ const data = {
   },
   coupon: {
     date: '19/12/2017',
-    total: 50
+    total: '50'
   }
 }
 
@@ -55,7 +55,7 @@ story.add('Simple Row',
               subtitle={maker.company.direction}
               label='Promotion:'
               description='Mocaccino 10% less'
-              number={0}
+              number={'0'}
               onClick={action('Click Row!')}
             />
           </div>
