@@ -12,8 +12,8 @@ story.addDecorator(withKnobs);
 
 const pizzaHut = {
   maker: {
-    cupons: 125,
-    hunted: 2
+    cupons: '125',
+    hunted: '2'
   },
   cupon: {
     date: '11 Feb - 20 May 2017',
@@ -24,8 +24,8 @@ const pizzaHut = {
 
 const starbucks = {
   maker: {
-    cupons: 345,
-    hunted: 10
+    cupons: '345',
+    hunted: '10'
   },
   cupon: {
     date: '11 Feb - 20 May 2017',
