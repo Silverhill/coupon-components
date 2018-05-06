@@ -62,6 +62,12 @@ module.exports = {
     'react': 'react',
     'react-dom': 'react-dom',
     'prop-types': 'prop-types',
+    'react-icons': 'react-icons',
+    'react-icons/lib/io': 'react-icons/lib/io',
+    'react-icons/lib/fa': 'react-icons/lib/fa',
+    'react-icons/lib/md': 'react-icons/lib/md',
+    'react-icons/lib/go': 'react-icons/lib/go',
+    'react-icons/lib/ti': 'react-icons/lib/ti',
   },
   output: {
     // The build folder.
