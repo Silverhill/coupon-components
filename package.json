@@ -1,6 +1,6 @@
 {
   "name": "coupon-components",
-  "version": "0.7.5",
+  "version": "0.7.6",
   "private": false,
   "main": "build/main.js",
   "peerDependencies": {
@@ -64,7 +64,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build-docs": "npm run build-storybook && rm -rf docs && mv storybook-static docs",
-    "prepublish": "npm run build-docs && rm -rf ./build && npm run build"
+    "prepublish": "rm -rf ./build && npm run build"
   },
   "jest": {
     "collectCoverageFrom": [
