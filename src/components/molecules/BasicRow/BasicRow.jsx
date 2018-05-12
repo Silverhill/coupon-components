@@ -74,7 +74,7 @@ class BasicRow extends Component {
             <Tooltip content={num} direction="top">
               <Typography.Header bold
                 className='truncateText'
-                style={{fontSize:'20px'}}>
+                style={{width: '50px', fontSize:'20px'}}>
                 {num}
               </Typography.Header>
             </Tooltip>
