@@ -25,7 +25,7 @@ const Bubble = ({ direction, className, content, show, width }) => {
 Bubble.propTypes = {
   direction: PropTypes.string,
   className: PropTypes.string,
-  content: PropTypes.string,
+  content: PropTypes.any,
   show: PropTypes.bool,
   width: PropTypes.string,
 };

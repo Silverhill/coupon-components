@@ -53,7 +53,7 @@ export default class Tooltip extends Component {
 
 Tooltip.propTypes = {
   direction: PropTypes.string,
-  content: PropTypes.string,
+  content: PropTypes.any,
   containerClass: PropTypes.string,
   bubbleClass: PropTypes.string,
   width: PropTypes.string,

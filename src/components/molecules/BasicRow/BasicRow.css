@@ -1,6 +1,5 @@
 .flex {
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
@@ -17,16 +16,18 @@
 
 .userInformation {
   composes: flex;
+  width: 60%;
 }
 
 .avatar {
-  width: 50px;
+  min-width: 50px;
+  max-width: 50px;
 }
 
 .information {
   display: block;
   text-align: left;
-  padding: 0 0 0 50px;
+  padding: 0 0 0 1rem;
 }
 
 .information h3 {
@@ -38,11 +39,13 @@
 }
 
 .cuponInformation {
-  composes: flex;
+  display: flex;
+  width: 40%;
 }
 
 .date {
   composes: flex;
+  width: 60%;
 }
 
 .date h3 {
@@ -51,5 +54,6 @@
 
 .cupon {
   composes: flex;
-  padding: 0 0 0 50px;
+  padding: 0 0 0 1rem;
+  width: 40%;
 }
