@@ -72,6 +72,76 @@ story.add('Basic Coupon',
   )
 );
 
+story.add('With Plain Color',
+  withInfo()(
+    () => (
+      <div>
+        <Section>
+          <h4>Coupon</h4>
+          <div style={{width: '320px'}}>
+            <Coupon
+              image={pizzaHut.cupon.image}
+              logo={pizzaHut.maker.image}
+              title={pizzaHut.cupon.promo}
+              date={pizzaHut.cupon.date}
+              address={pizzaHut.cupon.address}
+              totalCoupons={pizzaHut.maker.cupons}
+              background="rgb(169,6,7)"
+              onClick={action('Click Cupon!')}/>
+          </div>
+        </Section>
+      </div>
+    )
+  )
+);
+
+story.add('With Gradient Color',
+  withInfo()(
+    () => (
+      <div>
+        <Section>
+          <h4>Coupon</h4>
+          <div style={{width: '320px'}}>
+            <Coupon
+              image={pizzaHut.cupon.image}
+              logo={pizzaHut.maker.image}
+              title={pizzaHut.cupon.promo}
+              date={pizzaHut.cupon.date}
+              address={pizzaHut.cupon.address}
+              totalCoupons={pizzaHut.maker.cupons}
+              background="linear-gradient(rgb(249, 5, 11), rgb(10, 5, 7) 85%)"
+              onClick={action('Click Cupon!')}/>
+          </div>
+        </Section>
+      </div>
+    )
+  )
+);
+
+story.add('With Pattern Background',
+  withInfo()(
+    () => (
+      <div>
+        <Section>
+          <h4>Coupon</h4>
+          <div style={{width: '320px'}}>
+            <Coupon
+              image={pizzaHut.cupon.image}
+              logo={pizzaHut.maker.image}
+              title={pizzaHut.cupon.promo}
+              date={pizzaHut.cupon.date}
+              address={pizzaHut.cupon.address}
+              totalCoupons={pizzaHut.maker.cupons}
+              background="https://static8.depositphotos.com/1332722/1017/v/950/depositphotos_10178209-stock-illustration-seamless-christmas-pattern.jpg"
+              onClick={action('Click Cupon!')}/>
+          </div>
+        </Section>
+      </div>
+    )
+  )
+);
+
+
 story.add('Disabled Coupon',
   withInfo()(
     () => (
@@ -117,4 +187,3 @@ story.add('Gold Coupon',
     )
   )
 );
-
