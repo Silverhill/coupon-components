@@ -14,6 +14,7 @@ export {default as DropdownTrigger} from './components/atoms/Dropdown/DropdownTr
 export {default as DropdownContent} from './components/atoms/Dropdown/DropdownContent';
 export {default as InputFile} from './components/atoms/InputFile';
 export {default as Tooltip} from 'Atoms/Tooltip';
+export {default as Table} from 'Atoms/Table';
 //molecules
 export {default as Menu} from './components/molecules/Menu';
 export {default as Modal} from './components/molecules/Modal';

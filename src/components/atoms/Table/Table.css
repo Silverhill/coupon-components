@@ -1,0 +1,44 @@
+@value colors: "Styles/palette.css";
+@value (
+  paleGray,
+  lightNeutral,
+  pinkRed,
+  whiteColor
+) from colors;
+
+.table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+.table thead {
+  text-align: left;
+  background-color: pinkRed;
+}
+
+.table th, td {
+  padding: 4px 0 4px 10px;
+}
+
+.table thead tr th {
+  color: whiteColor;
+}
+
+.table thead tr th p,h1,h2,h3,h4,h5{
+  color: whiteColor;
+}
+
+.table tbody tr{
+  padding: 5px 0;
+
+  &:nth-child(odd) {
+    background-color: lightNeutral;
+  }
+
+  &:hover {
+    background-color: paleGray;
+  }
+}
+
+
+
