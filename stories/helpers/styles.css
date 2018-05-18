@@ -73,3 +73,17 @@
     background: #3498db !important;
   }
 }
+
+.tableCustom {
+  width: 50%;
+}
+
+.tableCustom thead {
+  background: black;
+}
+
+.tableCustom tbody tr{
+  &:hover {
+    background-color: #ff4a67;
+  }
+}

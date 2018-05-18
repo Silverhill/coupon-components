@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 
 import styles from './Table.css'
-import * as palette from 'Styles/palette.css';
 
 const cx = classNames.bind(styles)
 
@@ -20,7 +19,7 @@ class Table extends Component {
       <thead>
         <tr>
           {columns && columns.map(function(column, index) {
-            return <th key={index}>{column}</th>
+            return <th key={index}>{column.title}</th>
           })}
         </tr>
       </thead>
@@ -32,7 +31,7 @@ class Table extends Component {
           return (
             <tr key={index}>
               {columns && columns.map(function(column, index) {
-                return <td key={index}>{row[column]}</td>
+                return <td key={index}>{row[column.field]}</td>
               })}
             </tr>
           )
@@ -41,7 +40,7 @@ class Table extends Component {
     )
 
     return (
-      <table className={className} width="100%">
+      <table className={cx(className, styles.table)}>
         {tableHeaders}
         {tableBody}
       </table>
