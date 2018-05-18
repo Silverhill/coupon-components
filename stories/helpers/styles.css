@@ -76,14 +76,18 @@
 
 .tableCustom {
   width: 50%;
-}
 
-.tableCustom thead {
-  background: black;
-}
+  & thead {
+    background: black;
+  }
 
-.tableCustom tbody tr{
-  &:hover {
-    background-color: #ff4a67;
+  & tbody {
+
+    & tr{
+      &:hover {
+        background-color: #ff4a67;
+      }
+    }
   }
 }
+

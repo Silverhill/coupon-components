@@ -9,34 +9,34 @@
 .table {
   width: 100%;
   border-spacing: 0;
-}
 
-.table thead {
-  text-align: left;
-  background-color: pinkRed;
-}
+  & thead {
+    text-align: left;
+    background-color: pinkRed;
 
-.table th, td {
-  padding: 4px 0 4px 10px;
-}
+    & tr, & th {
+      color: whiteColor;
 
-.table thead tr th {
-  color: whiteColor;
-}
-
-.table thead tr th p,h1,h2,h3,h4,h5{
-  color: whiteColor;
-}
-
-.table tbody tr{
-  padding: 5px 0;
-
-  &:nth-child(odd) {
-    background-color: lightNeutral;
+      & p, & h1, & h2, & h3, & h5, & h6, & span {
+        color: whiteColor;
+      }
+    }
   }
 
-  &:hover {
-    background-color: paleGray;
+  & th, & td {
+    padding: 5px 0 5px 10px;
+  }
+
+  & tbody tr{
+    padding: 5px 0;
+
+    &:nth-child(odd) {
+      background-color: lightNeutral;
+    }
+
+    &:hover {
+      background-color: paleGray;
+    }
   }
 }
 
