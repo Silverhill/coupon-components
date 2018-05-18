@@ -19,18 +19,50 @@ class Cupon extends Component {
       totalCoupons,
       date,
       onClick,
-      color,
+      background,
       className,
       disabled,
-      gold
+      gold,
+      textColorCoupons,
+      textColor,
     } = this.props
 
+    const getBackground = (value) => {
+
+      const rgbExp = /rgb\(\d{1,3},\d{1,3},\d{1,3}\)/;
+      const hexExp = /^#\w{6,8}/;
+      const urlExp = /^http/;
+      const linearExp = /^linear-gradient/;
+      const RadialExp = /^radial-gradient/;
+
+      if(rgbExp.test(value) || hexExp.test(value) ){ //hex or RGB
+        return {backgroundColor: value}
+      }
+
+      if(urlExp.test(value)){ //https
+        return {backgroundImage: `url(${value})`, backgroundSize: 'contain'}
+      }
+
+      if(linearExp.test(value)){ //linear-gradient
+        return {backgroundImage: value}
+      }
+
+      if(RadialExp.test(value)){ //radial-gradient
+        return {background: value}
+      }
+
+      return null;
+    }
+
     let stylesImage = {backgroundImage: `url(${image})`}
-    let colorCupon = palette[color] || palette.accentColorSecondary
-    colorCupon = disabled ? palette.neutralColorPlain : colorCupon
-    colorCupon = gold ? palette.goldGradient : colorCupon
+    let backgroundCupon = background || palette.accentColorSecondary
+    backgroundCupon = disabled ? palette.neutralColorPlain : backgroundCupon
+    backgroundCupon = gold ? palette.goldGradient : backgroundCupon
+    const patternStyles = getBackground(backgroundCupon)
+    const txColor = textColor || palette.whiteColor
+    const txColorCoupons = textColorCoupons || palette.whiteColor
     return (
-      <div className={cx(styles.container, className)} onClick={onClick} style={{background: colorCupon}}>
+      <div className={cx(styles.container, className)} onClick={onClick} style={patternStyles}>
         <div className={styles.brandCampaing}>
           <div className={styles.avatar}>
             <Avatar image={logo}/>
@@ -38,25 +70,24 @@ class Cupon extends Component {
           <div className={styles.cupons}>
             <Icon
                 name="CpTicket"
-                color={palette.whiteColor}
+                color={txColorCoupons}
                 size={15}
                 style={{paddingRight: 5}}
               />
-            <Typography.Text small lighter style={{color: palette.whiteColor}}>
+            <Typography.Text small lighter style={{color: txColorCoupons}}>
               {totalCoupons}
             </Typography.Text>
           </div>
         </div>
-        <div className={styles.cuponInformation} style={stylesImage}>
-          <div className={styles.backgroundPromo} />
+        <div className={cx(styles.cuponInformation, styles.backgroundPromo)} style={stylesImage}>
           <div className={styles.promo}>
-            <Typography.Text small light style={{color: palette.whiteColor}}>
+            <Typography.Text small light style={{color: txColor}}>
               {date}
             </Typography.Text>
-            <Typography.Text lead className={styles.promoTitle} style={{color: palette.whiteColor}}>
+            <Typography.Text lead className={styles.promoTitle} style={{color: txColor}}>
               {title}
             </Typography.Text>
-            <Typography.Text small light style={{color: palette.whiteColor}}>
+            <Typography.Text small light style={{color: txColor}}>
               {address}
             </Typography.Text>
           </div>
@@ -76,7 +107,9 @@ Cupon.propTypes = {
   onClick: PropTypes.func,
   className: PropTypes.string,
   disabled: PropTypes.bool,
-  gold: PropTypes.bool
+  gold: PropTypes.bool,
+  textColor: PropTypes.string,
+  textColorCoupons: PropTypes.string,
 }
 
 export default Cupon;
