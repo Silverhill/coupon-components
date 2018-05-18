@@ -23,6 +23,8 @@ class Cupon extends Component {
       className,
       disabled,
       gold,
+      textColorCoupons,
+      textColor,
     } = this.props
 
     const getBackground = (value) => {
@@ -57,6 +59,8 @@ class Cupon extends Component {
     backgroundCupon = disabled ? palette.neutralColorPlain : backgroundCupon
     backgroundCupon = gold ? palette.goldGradient : backgroundCupon
     const patternStyles = getBackground(backgroundCupon)
+    const txColor = textColor || palette.whiteColor
+    const txColorCoupons = textColorCoupons || palette.whiteColor
     return (
       <div className={cx(styles.container, className)} onClick={onClick} style={patternStyles}>
         <div className={styles.brandCampaing}>
@@ -66,24 +70,24 @@ class Cupon extends Component {
           <div className={styles.cupons}>
             <Icon
                 name="CpTicket"
-                color={palette.whiteColor}
+                color={txColorCoupons}
                 size={15}
                 style={{paddingRight: 5}}
               />
-            <Typography.Text small lighter style={{color: palette.whiteColor}}>
+            <Typography.Text small lighter style={{color: txColorCoupons}}>
               {totalCoupons}
             </Typography.Text>
           </div>
         </div>
         <div className={cx(styles.cuponInformation, styles.backgroundPromo)} style={stylesImage}>
           <div className={styles.promo}>
-            <Typography.Text small light style={{color: palette.whiteColor}}>
+            <Typography.Text small light style={{color: txColor}}>
               {date}
             </Typography.Text>
-            <Typography.Text lead className={styles.promoTitle} style={{color: palette.whiteColor}}>
+            <Typography.Text lead className={styles.promoTitle} style={{color: txColor}}>
               {title}
             </Typography.Text>
-            <Typography.Text small light style={{color: palette.whiteColor}}>
+            <Typography.Text small light style={{color: txColor}}>
               {address}
             </Typography.Text>
           </div>
@@ -104,6 +108,8 @@ Cupon.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
   gold: PropTypes.bool,
+  textColor: PropTypes.string,
+  textColorCoupons: PropTypes.string,
 }
 
 export default Cupon;
