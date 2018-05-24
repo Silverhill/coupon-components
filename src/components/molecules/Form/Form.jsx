@@ -1,77 +1,73 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Form.css';
+import classNames from 'classnames/bind';
+
+const cx = classNames.bind(styles);
 
 class Form extends Component {
-    state = {
-        isValidated: false
-    }
+  storeRef = ref => {
+    this.inputRef = ref;
+  };
 
-    validate = () => {
-        const formLength = this.formEl.length;
+  forceSubmit = () => {
+    this.inputRef.click();
+  }
 
-        if (this.formEl.checkValidity() === false) {
-            for(let i=0; i<formLength; i++) {
-                const elem = this.formEl[i];
-                const errorLabel = elem.parentNode.parentNode.parentNode.querySelector('.invalid-feedback');
-                if (errorLabel && elem.nodeName.toLowerCase() !== 'button') {
+  validate = () => {
+    const formLength = this.formEl.length;
 
-                    if (!elem.validity.valid) {
-                        errorLabel.textContent = elem.validationMessage;
-                    } else {
-                        errorLabel.textContent = '';
-                    }
-                }
-            }
-            return false;
-        } else {
-            for(let i=0; i<formLength; i++) {
-                const elem = this.formEl[i];
-                const errorLabel = elem.parentNode.parentNode.querySelector('.invalid-feedback');
-                if (errorLabel && elem.nodeName.toLowerCase() !== 'button') {
-                    errorLabel.textContent = '';
-                }
-            };
+    if (this.formEl.checkValidity() === false) {
+      for (let i = 0; i < formLength - 1; i++) {
+        const elem = this.formEl[i];
+        const errorLabel = elem.parentNode.parentNode.parentNode.querySelector('.invalid-feedback');
+        if (errorLabel && elem.nodeName.toLowerCase() !== 'button') {
 
-            return true;
+          if (!elem.validity.valid) {
+            errorLabel.textContent = elem.validationMessage;
+          } else {
+            errorLabel.textContent = '';
+          }
         }
-    }
-
-    submitHandler = (event) => {
-        event.preventDefault();
-
-        if (this.validate()) {
-            this.props.submit();
+      }
+      return false;
+    } else {
+      for (let i = 0; i < formLength; i++) {
+        const elem = this.formEl[i];
+        const errorLabel = elem.parentNode.parentNode.querySelector('.invalid-feedback');
+        if (errorLabel && elem.nodeName.toLowerCase() !== 'button') {
+          errorLabel.textContent = '';
         }
+      };
 
-        this.setState({isValidated: true});
+      return true;
     }
+  }
 
-    render() {
-        const props = [...this.props];
+  submitHandler = (event) => {
+    event.preventDefault();
 
-        let classNames = [];
-        if (props.className) {
-            classNames = [...props.className];
-            delete props.className;
-        }
-
-        if (this.state.isValidated) {
-            classNames.push('.was-validated');
-        }
-
-        return (
-            <form ref={form => this.formEl = form} onSubmit={this.submitHandler} {...props} className={classNames} noValidate>
-                {this.props.children}
-            </form>
-        );
+    if (this.validate()) {
+      this.props.submit();
     }
+  }
+
+  render() {
+    const { className, submit, ...rest } = this.props;
+    console.log('render');
+    return (
+      <form ref={form => this.formEl = form} onSubmit={this.submitHandler} {...rest} className={cx(className)} noValidate>
+        {this.props.children}
+        <input className={styles.inputSubmit} type="submit" ref={this.storeRef} />
+      </form>
+    );
+  }
 }
 
 Form.propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-    submit: PropTypes.func.isRequired
+  children: PropTypes.node,
+  className: PropTypes.string,
+  submit: PropTypes.func.isRequired
 };
 
 export default Form;
