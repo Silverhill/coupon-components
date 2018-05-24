@@ -4,7 +4,8 @@
   neutralColorMedium,
   darkColor,
   darkNeutral,
-  highlightNeutral
+  highlightNeutral,
+  dangerAccent
 ) from colors;
 
 @value paddingLeftWithIcon: 40px;

@@ -30,9 +30,7 @@ class InputBox extends Component {
 
   render () {
     const {
-      type,
       className,
-      style,
       placeholder,
       onKeyPress, // eslint-disable-line no-unused-vars
       onEnter, // eslint-disable-line no-unused-vars
@@ -63,8 +61,7 @@ class InputBox extends Component {
 
     const iconClassNames = cx(
       {leftIcon, rightIcon},
-      styles.input,
-      className
+      styles.input
     )
 
     const leftIconC = {...leftIconConfig}
@@ -82,7 +79,7 @@ class InputBox extends Component {
     )
 
     return (
-      <div>
+      <div className={className}>
         {labelText &&
           <Typography.Text bold>
             {labelText}
@@ -103,14 +100,10 @@ class InputBox extends Component {
               style={leftIconC.style}
             />
           }
-
-          <input type={type}
-            className={cx(styles.inputBox, shape)}
-            style={style}
+          <input className={cx(styles.inputBox, shape)}
             placeholder={placeholder}
             {...inputProps}
             {...other} />
-
           {rightIcon &&
             <Icon
               name={rightIcon}
@@ -120,6 +113,7 @@ class InputBox extends Component {
             />
           }
         </div>
+        <Typography.Text error small className="invalid-feedback"/>
       </div>
     )
   }
@@ -127,10 +121,7 @@ class InputBox extends Component {
 
 InputBox.propTypes = {
   placeholder: PropTypes.string,
-  submitCallback: PropTypes.func,
-  type: PropTypes.string,
   className: PropTypes.string,
-  style: PropTypes.object,
   onChange: PropTypes.func,
   onEnter: PropTypes.func,
   resetOnEnter: PropTypes.bool,

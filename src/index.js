@@ -29,3 +29,4 @@ export {default as Campaign} from './components/molecules/Campaign';
 export {default as Slider} from './components/molecules/Slider';
 export {default as Select} from './components/molecules/Select';
 export {default as Cover} from './components/molecules/Cover';
+export {default as Form} from './components/molecules/Form';

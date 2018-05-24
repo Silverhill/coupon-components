@@ -1,0 +1,7 @@
+.form-control:valid~.invalid-feedback {
+  display: none;
+}
+
+.inputSubmit {
+  display: none;
+}

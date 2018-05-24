@@ -75,19 +75,13 @@
 }
 
 .tableCustom {
-  width: 50%;
+  width: 50% !important;
 
   & thead {
-    background: black;
-  }
-
-  & tbody {
-
-    & tr{
-      &:hover {
-        background-color: #ff4a67;
-      }
-    }
+    background: black !important;
   }
 }
 
+.customClassInput {
+  margin-bottom: 10px;
+}

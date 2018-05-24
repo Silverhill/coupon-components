@@ -94,3 +94,9 @@ story.add('Custom Size',
     () => <Button onClick={action('clicked')} text="Ingresar" shape="pill" size="small"/>
   )
 );
+
+story.add('Loading button',
+  withInfo()(
+    () => <Button onClick={action('clicked')} text="Ingresar" shape="pill" size="small" loading={true} />
+  )
+);
