@@ -6,6 +6,8 @@ import { action } from '@storybook/addon-actions';
 import { Form, InputBox, Button } from '../src';
 import Section from './helpers/Section';
 
+import styles from './helpers/styles.css'
+
 const story = storiesOf('Molecules/Form', module)
 
 const data = {
@@ -21,40 +23,34 @@ story.add('Simple Form',
         <Section>
           <h4>Simple Form</h4>
           <div style={{ width: '750px' }}>
-            <Form submit={action('Click Cupon!')}>
-              <div>
-                <InputBox
-                  name="email"
-                  placeholder="E - Mail"
-                  shape="pill"
-                  value={data.email}
-                  type="email"
-                  minLength="6"
-                  required />
-                <div className="invalid-feedback"></div>
-              </div>
-              <div>
-                <InputBox
-                  name="zipcode"
-                  placeholder="ZIP Code"
-                  shape="pill"
-                  value={data.zip}
-                  type="text"
-                  maxLength="5"
-                  required />
-                <div className="invalid-feedback"></div>
-              </div>
-              <div>
-                <InputBox
-                  name="otro31"
-                  placeholder="Número de Tickets"
-                  shape="pill"
-                  value={data.tickets}
-                  minLength="6"
-                  type="number"
-                  required />
-                <div className="invalid-feedback"></div>
-              </div>
+            <Form onSubmit={action('on Submit!')}>
+              <InputBox
+                className={styles.customClassInput}
+                name="email"
+                placeholder="E - Mail"
+                shape="pill"
+                value={data.email}
+                type="email"
+                minLength="6"
+                required />
+              <InputBox
+                className={styles.customClassInput}
+                name="zipcode"
+                placeholder="ZIP Code"
+                shape="pill"
+                value={data.zip}
+                type="text"
+                maxLength="5"
+                required />
+              <InputBox
+                className={styles.customClassInput}
+                name="otro31"
+                placeholder="Número de Tickets"
+                shape="pill"
+                value={data.tickets}
+                minLength="6"
+                type="number"
+                required />
               <Button shape="pill"
                 gradient
                 type="submit"
@@ -82,7 +78,6 @@ class CustomForm extends Component {
         ...field,
       }
     }));
-    console.log('form', this.state.form);
   }
 
   forceSubmit = () => {
@@ -94,43 +89,36 @@ class CustomForm extends Component {
       <div>
         <h4>Custom Form</h4>
         <Form
-          submit={action('Click Cupon!')}
+          onSubmit={action('on Submit')}
           onChange={this.onChange}
-          ref={ref => this.form = ref}
-        >
-          <div>
-            <InputBox
-              name="email"
-              placeholder="E - Mail"
-              shape="pill"
-              value={data.email}
-              type="email"
-              minLength="6"
-              required />
-            <div className="invalid-feedback"></div>
-          </div>
-          <div>
-            <InputBox
-              name="zipcode"
-              placeholder="ZIP Code"
-              shape="pill"
-              value={data.zip}
-              type="text"
-              maxLength="5"
-              required />
-            <div className="invalid-feedback"></div>
-          </div>
-          <div>
-            <InputBox
-              name="otro31"
-              placeholder="Número de Tickets"
-              shape="pill"
-              value={data.tickets}
-              minLength="6"
-              type="number"
-              required />
-            <div className="invalid-feedback"></div>
-          </div>
+          ref={ref => this.form = ref}>
+          <InputBox
+            className={styles.customClassInput}
+            name="email"
+            placeholder="E - Mail"
+            shape="pill"
+            value={data.email}
+            type="email"
+            minLength="6"
+            required />
+          <InputBox
+            className={styles.customClassInput}
+            name="zipcode"
+            placeholder="ZIP Code"
+            shape="pill"
+            value={data.zip}
+            type="text"
+            maxLength="5"
+            required />
+          <InputBox
+            className={styles.customClassInput}
+            name="otro31"
+            placeholder="Número de Tickets"
+            shape="pill"
+            value={data.tickets}
+            minLength="6"
+            type="number"
+            required />
         </Form>
         <Button shape="pill"
           gradient
@@ -145,9 +133,11 @@ class CustomForm extends Component {
 story.add('Form with button external',
   withInfo()(
     () => (
-      <div style={{ width: '750px' }}>
-        <CustomForm />
-      </div>
+      <Section>
+        <div style={{ width: '750px' }}>
+          <CustomForm />
+        </div>
+      </Section>
     )
   )
 );

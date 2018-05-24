@@ -20,7 +20,7 @@ class Form extends Component {
     if (this.formEl.checkValidity() === false) {
       for (let i = 0; i < formLength - 1; i++) {
         const elem = this.formEl[i];
-        const errorLabel = elem.parentNode.parentNode.parentNode.querySelector('.invalid-feedback');
+        const errorLabel = elem.parentNode.parentNode.querySelector('.invalid-feedback');
         if (errorLabel && elem.nodeName.toLowerCase() !== 'button') {
 
           if (!elem.validity.valid) {
@@ -34,7 +34,7 @@ class Form extends Component {
     } else {
       for (let i = 0; i < formLength; i++) {
         const elem = this.formEl[i];
-        const errorLabel = elem.parentNode.parentNode.querySelector('.invalid-feedback');
+        const errorLabel = elem.parentNode.querySelector('.invalid-feedback');
         if (errorLabel && elem.nodeName.toLowerCase() !== 'button') {
           errorLabel.textContent = '';
         }
@@ -48,15 +48,15 @@ class Form extends Component {
     event.preventDefault();
 
     if (this.validate()) {
-      this.props.submit();
+      this.props.onSubmit();
     }
   }
 
   render() {
-    const { className, submit, ...rest } = this.props;
-    console.log('render');
+    const { className, onSubmit, ...rest } = this.props;
+
     return (
-      <form ref={form => this.formEl = form} onSubmit={this.submitHandler} {...rest} className={cx(className)} noValidate>
+      <form ref={form => this.formEl = form} onSubmit={this.submitHandler} className={cx(className)} noValidate {...rest}>
         {this.props.children}
         <input className={styles.inputSubmit} type="submit" ref={this.storeRef} />
       </form>
@@ -67,7 +67,7 @@ class Form extends Component {
 Form.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  submit: PropTypes.func.isRequired
+  onSubmit: PropTypes.func.isRequired
 };
 
 export default Form;
