@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Icon from 'Atoms/Icon';
+import Preloader from 'Atoms/Loaders';
 
 import styles from './Button.css';
 import * as palette from 'Styles/palette.css';
@@ -21,6 +22,8 @@ const Button = ({
   disabled,
   size,
   style,
+  loading,
+  loaderProps,
   ...other }) => {
 
   const colorBtn = palette[color] || palette.primaryColor
@@ -33,6 +36,11 @@ const Button = ({
       [styles[size]]: size,
     },
   );
+  const copyLoaderProps = loaderProps || {};
+  const loaderOptions = {
+    size: copyLoaderProps.size || 40,
+    color: copyLoaderProps.color || palette.whiteColor
+  }
 
   return (
     <div className={className} {...other}>
@@ -41,9 +49,9 @@ const Button = ({
         className={classNames}
         onClick={onClick}
       >
-        {leftIcon && <Icon className={styles.leftIcon} name={leftIcon} size={16} />}
-        {text}
-        {rightIcon && <Icon className={styles.rightIcon} name={rightIcon} size={16} />}
+        {leftIcon && !loading && <Icon className={styles.leftIcon} name={leftIcon} size={16} />}
+        {loading ? <Preloader {...loaderOptions} /> : text}
+        {rightIcon && !loading && <Icon className={styles.rightIcon} name={rightIcon} size={16} />}
       </button>
     </div>
   )
@@ -63,6 +71,7 @@ Button.propTypes = {
   customWidth: PropTypes.string,
   disabled: PropTypes.bool,
   size: PropTypes.string,
+  loading: PropTypes.bool,
 }
 
 export default Button

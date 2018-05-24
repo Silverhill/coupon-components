@@ -12,7 +12,7 @@
 
   & thead {
     text-align: left;
-    background-color: pinkRed;
+    background: pinkRed;
 
     & tr, & th {
       color: whiteColor;
@@ -39,6 +39,3 @@
     }
   }
 }
-
-
-

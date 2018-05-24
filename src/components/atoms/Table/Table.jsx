@@ -40,7 +40,7 @@ class Table extends Component {
     )
 
     return (
-      <table className={cx(className, styles.table)}>
+      <table className={cx(styles.table, className)}>
         {tableHeaders}
         {tableBody}
       </table>
