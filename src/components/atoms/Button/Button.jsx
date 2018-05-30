@@ -72,7 +72,7 @@ Button.propTypes = {
   shape: PropTypes.string,
   customWidth: PropTypes.string,
   disabled: PropTypes.bool,
-  size: PropTypes.string,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
   loading: PropTypes.bool,
 }
 
