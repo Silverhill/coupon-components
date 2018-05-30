@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 import Icon from '../Icon/Icon'
 import Typography from 'Atoms/Typography'
-import { mediumNeutral } from 'Styles/palette.css'
 
 import styles from './InputBox.css'
 const cx = classNames.bind(styles)
@@ -97,7 +96,7 @@ class InputBox extends Component {
             <Icon
               className={customClassLeftIcon}
               name={leftIcon}
-              color={leftIconC.color || mediumNeutral}
+              color={leftIconC.color}
               style={leftIconC.style}
             />
           }
