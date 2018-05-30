@@ -29,7 +29,7 @@ story.add('Custom size',
             <h5>50px</h5>
           </div>
           <div style={{width: '25px', textAlign:'center'}}>
-            <Avatar image='https://i.pinimg.com/564x/df/ba/63/dfba6384ad4d33d5967d600df5cc1319.jpg' />
+            <Avatar />
             <h5>25px</h5>
           </div>
         </Section>

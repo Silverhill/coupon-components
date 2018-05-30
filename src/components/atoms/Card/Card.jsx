@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 import styles from './Card.css'
 import Text from '../Typography/Text'
+import { darkNeutral } from 'Styles/palette.css'
 
 const cx = classNames.bind(styles)
 
@@ -26,18 +27,12 @@ class Card extends Component {
           {title &&
             <div className={styles.title}>
               <div className={styles.line}></div>
-              <Text small>
+              <Text small bold>
                 {title}
               </Text>
             </div>
           }
-          {subtitle &&
-            <div>
-              <Text small>
-                {subtitle}
-              </Text>
-            </div>
-          }
+          {subtitle && <Text small style={{color: darkNeutral}}>{subtitle}</Text>}
         </div>
         <div
           className={cx(styles.cardWrapper, 'card', classNameContent)}
