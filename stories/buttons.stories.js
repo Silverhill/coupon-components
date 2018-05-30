@@ -100,3 +100,9 @@ story.add('Loading button',
     () => <Button onClick={action('clicked')} text="Ingresar" shape="pill" size="small" loading={true} />
   )
 );
+
+story.add('Neutral button',
+  withInfo()(
+    () => <Button neutral onClick={action('clicked')} text="Edit Profile" />
+  )
+);

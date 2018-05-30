@@ -24,9 +24,10 @@ const Button = ({
   style,
   loading,
   loaderProps,
+  neutral,
   ...other }) => {
 
-  const colorBtn = palette[color] || palette.primaryColor
+  const colorBtn = !neutral && (palette[color] || palette.primaryColor);
   let classNames = cx(
     styles.btn,
     shape,
@@ -34,6 +35,7 @@ const Button = ({
       [styles.gradient]: gradient,
       disabled,
       [styles[size]]: size,
+      neutral,
     },
   );
   const copyLoaderProps = loaderProps || {};
