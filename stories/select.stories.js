@@ -69,3 +69,21 @@ story.add('Custom Class',
     )
   )
 );
+
+story.add('Set option by default',
+  withInfo()(
+    () => (
+      <div>
+        <Section style={{width: '150px'}}>
+          <Select className={styles.section}
+                placeholder='Select a country'
+                labelText='City'
+                options={countries}
+                currentOption={countries[2]}
+                selectedOption={action('selected option: ')}>
+          </Select>
+        </Section>
+      </div>
+    )
+  )
+);

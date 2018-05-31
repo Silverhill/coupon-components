@@ -16,7 +16,12 @@
 .option {
   padding: 5px 1rem;
   cursor: pointer;
-
+  &.itemSelected {
+    background: secondaryColor !important;
+    & p {
+      color: whiteColor !important;
+    }
+  }
   &:nth-child(even) {
     background: lightNeutral;
   }
