@@ -6,11 +6,19 @@ import DropdownTrigger from 'Atoms/Dropdown/DropdownTrigger';
 import DropdownContent from 'Atoms/Dropdown/DropdownContent';
 import styles from './Select.css';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind'
+
+const cx = classNames.bind(styles)
 
 export default class Select extends Component {
   state = {
     currentOption: null,
     menuOpen: false
+  }
+
+  componentWillMount() {
+    const { currentOption } = this.props;
+    this.setState({ currentOption });
   }
 
   menuIsOpen = (isOpen) => {
@@ -62,8 +70,10 @@ export default class Select extends Component {
           </DropdownTrigger>
           <DropdownContent className={styles.container}>
             {options && options.map((option, i) => {
+              let classNames = (currentOption && (currentOption.value === option.value))?
+                cx(styles.itemSelected, styles.option) : cx(styles.option);
               return (
-                <div key={`option-${i}`} onClick={(e) => this.selectOption(e, option)} className={styles.option}>
+                <div key={`option-${i}`} className={classNames} onClick={(e) => this.selectOption(e, option)}>
                   <Typography.Text small>
                     {option.value}
                   </Typography.Text>
@@ -81,5 +91,6 @@ Select.propTypes = {
   className: PropTypes.string,
   options: PropTypes.array,
   placeholder: PropTypes.string,
-  selectedOption: PropTypes.func
+  selectedOption: PropTypes.func,
+  currentItem: PropTypes.object
 }
