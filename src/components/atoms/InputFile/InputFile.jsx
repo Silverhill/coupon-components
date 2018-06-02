@@ -50,7 +50,10 @@ class InputFile extends Component {
 
     return (
       <div className={cx(className, styles.container)}>
-        <input className={styles.inputField} type="file" ref={this.storeRef} {...inputProps}/>
+        <input className={styles.inputField}
+              type="file"
+              accept=".png,.gif,.jpeg,.svg"
+              ref={this.storeRef} {...inputProps}/>
         <div className={styles.triggerContainer} onClick={this.handleClick}>
           {children}
           {!isLoading && <Icon name="FaCamera" className={styles.uploadIcon}/>}
