@@ -92,5 +92,5 @@ Select.propTypes = {
   options: PropTypes.array,
   placeholder: PropTypes.string,
   selectedOption: PropTypes.func,
-  currentItem: PropTypes.object
+  currentOption: PropTypes.object
 }
