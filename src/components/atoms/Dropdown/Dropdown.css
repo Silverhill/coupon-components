@@ -26,12 +26,10 @@
   animation-duration: 200ms;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
-  z-index: 1;
 }
 
 .dropdownTrigger {
   cursor: pointer;
-  z-index: 0;
 }
 
 @keyframes fadeInDown {
