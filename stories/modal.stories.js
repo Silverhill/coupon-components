@@ -6,6 +6,8 @@ import Section from './helpers/Section';
 
 import { Modal, Button, Typography } from '../src';
 
+import styles from './helpers/styles.css';
+
 const story = storiesOf('Molecules/Modal', module)
 
 story.add('Simple Modal',
@@ -39,7 +41,7 @@ class OpenModal extends React.Component {
         <Modal
           isOpen={modalIsOpen}
           dismiss={this.modalDismiss}
-        >
+          classNameModal={styles.customSizeModal}>
           <div>
             <h3>Modal in the house</h3>
           </div>

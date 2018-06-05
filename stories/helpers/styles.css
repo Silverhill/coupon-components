@@ -85,3 +85,7 @@
 .customClassInput {
   margin-bottom: 10px;
 }
+
+.customSizeModal {
+  width: 800px !important;
+}
