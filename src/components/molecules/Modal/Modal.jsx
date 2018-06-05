@@ -5,6 +5,8 @@ import PropTypes from 'prop-types'
 import Icon from 'Atoms/Icon'
 import styles from './Modal.css'
 import { accentColor } from 'Styles/palette.css'
+import classNames from 'classnames/bind'
+const cx = classNames.bind(styles)
 
 class Modal extends Component {
   leaveDelay = 200
@@ -70,11 +72,11 @@ class Modal extends Component {
         transitionAppear
       >
         <div className={styles.modal}>
-          <div className={styles.box}>
+          <div className={cx(styles.box, this.props.classNameModal)}>
             <div className={styles.modalClose}>
               <Icon name='IoCloseRound' onClick={this.dismiss} color={accentColor} />
             </div>
-            <div className={styles.content}>
+            <div className={cx(styles.content, this.props.classNameContent)}>
               {this.props.children}
             </div>
           </div>
@@ -96,6 +98,8 @@ class Modal extends Component {
 }
 
 Modal.propTypes = {
+  classNameModal: PropTypes.string,
+  classNameContent: PropTypes.string,
   children: PropTypes.any,
   isOpen: PropTypes.bool,
   dismiss: PropTypes.func
