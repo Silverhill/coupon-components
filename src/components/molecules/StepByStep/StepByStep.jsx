@@ -8,11 +8,22 @@ import Tooltip from 'Atoms/Tooltip';
 const cx = classNames.bind(styles);
 
 class StepByStep extends Component {
+  state = {
+    currentStep:{}
+  }
+
+  componentWillMount() {
+    const { steps } = this.props;
+    let activeItem = steps.filter((step) => { return step.active});
+    if(activeItem[0]) this.setState({ currentStep:  activeItem});
+  }
 
   onPressIcon = (step) => {
     const { onChange } = this.props;
-    if(onChange){
+    const { currentStep } = this.state;
+    if(onChange && (currentStep.label !== step.label)){
       onChange(step);
+      this.setState({ currentStep: step });
     }
   }
 
