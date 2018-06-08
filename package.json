@@ -1,6 +1,6 @@
 {
   "name": "coupon-components",
-  "version": "0.11.9",
+  "version": "0.11.12",
   "private": false,
   "main": "build/main.js",
   "peerDependencies": {
@@ -9,7 +9,8 @@
     "react-icons": "^2.2.7"
   },
   "dependencies": {
-    "react-icons": "^2.2.7"
+    "react-icons": "^2.2.7",
+    "react-transition-group": "^1.2.1"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.3.2",
@@ -65,8 +66,7 @@
     "test": "node scripts/test.js --env=jsdom",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build-docs": "npm run build-storybook && rm -rf docs && mv storybook-static docs",
-    "prepublish": "rm -rf ./build && npm run build"
+    "build-docs": "npm run build-storybook && rm -rf docs && mv storybook-static docs"
   },
   "jest": {
     "collectCoverageFrom": [
