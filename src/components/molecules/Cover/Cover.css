@@ -11,12 +11,6 @@
   min-height: 250px;
 }
 
-
-.contentText {
-  /* position: relative; */
-
-}
-
 .status {
   position: absolute;
   top: 0;
@@ -33,7 +27,7 @@
 }
 
 .status::hover{
-   opacity: 0.9;
+  opacity: 0.9;
 }
 
 .cover .logo {
@@ -43,6 +37,7 @@
   top:50%;
   left: 50%;
 }
+
 .address {
   position: absolute;
   bottom: 0;
