@@ -1,6 +1,6 @@
 {
   "name": "coupon-components",
-  "version": "0.11.8",
+  "version": "0.11.9",
   "private": false,
   "main": "build/main.js",
   "peerDependencies": {
