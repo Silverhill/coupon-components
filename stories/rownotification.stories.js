@@ -15,20 +15,22 @@ const data = {
   coupon: {
     date: '07 Nov 2017',
     code: 12341234
+  },
+  campaign: {
+    title: '2x1'
   }
 }
 
 story.add('Simple Row',
   withInfo()(
     () =>
-    <div style={{width: '750px', borderTop:'1px solid #c7c7c7', borderBottom:'1px solid #c7c7c7'}}>
+    <div style={{width: '330px'}}>
       <RowNotification
-        name={data.user.name}
-        image={data.user.image}
-        email={data.user.email}
-        dateCoupon={data.coupon.date}
-        codeCoupon={data.coupon.code}
-        onClick={action('Click Row!')}/>
+        user={data.user}
+        coupon={data.coupon}
+        campaign={data.campaign}
+        onClick={action('Click Row!')}
+        onClose={action('Close Row!')}/>
     </div>
   )
 );
